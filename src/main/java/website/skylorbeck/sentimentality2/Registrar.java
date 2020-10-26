@@ -8,10 +8,11 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 
-public class Main implements ModInitializer {
+public class Registrar {
 
-    @Override
-    public void onInitialize() {
-    Registrar.register();
+    public static final Item fleather = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+
+    public static void register() {
+        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "fleather"), fleather);
     }
 }
