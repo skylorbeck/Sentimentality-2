@@ -10,10 +10,10 @@ import net.minecraft.util.registry.Registry;
 
 public class Main implements ModInitializer {
 
-    public static final Item test_item = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    public static final Item fleather = new Item(new FabricItemSettings().group(ItemGroup.MISC));
 
     @Override
     public void onInitialize() {
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "test_item"), test_item);
+        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "fleather"), fleather);
     }
 }
