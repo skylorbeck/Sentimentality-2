@@ -6,7 +6,7 @@
   "name": "Sentimentality 2",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
-    "Me!"
+    "Skylor Beck"
   ],
   "contact": {
     "homepage": "www.skylorbeck.website",
@@ -14,7 +14,7 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/sentimentality2/icon.png",
 
   "environment": "*",
   "entrypoints": {

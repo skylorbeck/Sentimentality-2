@@ -1,4 +1,19 @@
 package website.skylorbeck.sentimentality2;
 
-public class Main {
+import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
+
+
+public class Main implements ModInitializer {
+
+    public static final Item test_item = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+
+    @Override
+    public void onInitialize() {
+        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "test_item"), test_item);
+    }
 }
