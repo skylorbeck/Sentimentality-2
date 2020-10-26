@@ -3,7 +3,7 @@
   "id": "sentimentality2",
   "version": "${version}",
 
-  "name": "Example Mod",
+  "name": "Sentimentality 2",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
     "Me!"
@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "website.skylorbeck.sentimentality2.Main"
     ]
   },
   "mixins": [

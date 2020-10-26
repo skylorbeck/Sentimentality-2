@@ -1,12 +1,12 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.fabricmc.example.mixin",
+  "package": "website.skylorbeck.sentimentality2.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
   ],
   "client": [
-    "ExampleMixin"
+    "website.skylorbeck.sentimentality2.ExampleMixin"
   ],
   "injectors": {
     "defaultRequire": 1
