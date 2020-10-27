@@ -14,6 +14,13 @@ repositories {
 	maven {
 		url = "https://maven.theillusivec4.top"
 	}
+	maven {
+		url = "https://jitpack.io"
+	}
+	maven {
+		name = "NerdHubMC"
+		url = "https://maven.abusedmaster.xyz/"
+	}
 }
 
 dependencies {
@@ -25,6 +32,8 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:0.24.1+build.412-1.16"
 	//Elytra
 	modImplementation "top.theillusivec4.caelus:caelus-fabric:0.0.9-1.16.3"
+	//trinkets
+	modImplementation "com.github.emilyploszaj:trinkets:2.6.6"
 
 }
 
