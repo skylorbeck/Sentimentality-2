@@ -2,6 +2,7 @@ package website.skylorbeck.sentimentality2;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
@@ -12,6 +13,9 @@ public class Registrar {
 
     public static void register() {
         Registry.register(Registry.ITEM, new Identifier("sentimentality2", "fleather"), Declarer.fleather);
+        Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "charcoal_block"), Declarer.charcoal_block);
+        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "charcoal_blockitem"), Declarer.charcoal_blockitem);
+        FuelRegistry.INSTANCE.add(Declarer.charcoal_blockitem,16000);
         Registry.register(Registry.ITEM, new Identifier("sentimentality2","granitepick"),ExtraToolDeclaration.granitepick);
         Registry.register(Registry.ITEM, new Identifier("sentimentality2","graniteaxe"),ExtraToolDeclaration.graniteaxe);
         Registry.register(Registry.ITEM, new Identifier("sentimentality2","graniteshovel"),ExtraToolDeclaration.graniteshovel);
@@ -72,6 +76,10 @@ public class Registrar {
         Registry.register(Registry.ITEM, new Identifier("sentimentality2","flintshovel"),ExtraToolDeclaration.flintshovel);
         Registry.register(Registry.ITEM, new Identifier("sentimentality2","flintsword"),ExtraToolDeclaration.flintsword);
         Registry.register(Registry.ITEM, new Identifier("sentimentality2","flinthoe"),ExtraToolDeclaration.flinthoe);
-
+        Registry.register(Registry.ITEM, new Identifier("sentimentality2","redstonepick"),ExtraToolDeclaration.redstonepick);
+        Registry.register(Registry.ITEM, new Identifier("sentimentality2","redstoneaxe"),ExtraToolDeclaration.redstoneaxe);
+        Registry.register(Registry.ITEM, new Identifier("sentimentality2","redstoneshovel"),ExtraToolDeclaration.redstoneshovel);
+        Registry.register(Registry.ITEM, new Identifier("sentimentality2","redstonesword"),ExtraToolDeclaration.redstonesword);
+        Registry.register(Registry.ITEM, new Identifier("sentimentality2","redstonehoe"),ExtraToolDeclaration.redstonehoe);
     }
 }
