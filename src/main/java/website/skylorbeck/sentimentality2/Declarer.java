@@ -22,4 +22,12 @@ public class Declarer {
     public static final BlockItem granite_furnace = new BlockItem(granite_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
     public static final Block diorite_furnaceblock = new ExtraFurnaceBlock(FabricBlockSettings.copyOf(Blocks.FURNACE));
     public static final BlockItem diorite_furnace = new BlockItem(diorite_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
+    public static final Block netherrack_furnaceblock = new ExtraFurnaceBlock(FabricBlockSettings.copyOf(Blocks.FURNACE));
+    public static final BlockItem netherrack_furnace = new BlockItem(netherrack_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
+    public static final Block endstone_furnaceblock = new ExtraFurnaceBlock(FabricBlockSettings.copyOf(Blocks.FURNACE));
+    public static final BlockItem endstone_furnace = new BlockItem(endstone_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
+    public static final Block blackstone_furnaceblock = new ExtraFurnaceBlock(FabricBlockSettings.copyOf(Blocks.FURNACE));
+    public static final BlockItem blackstone_furnace = new BlockItem(blackstone_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
+    public static final Block basalt_furnaceblock = new ExtraFurnaceBlock(FabricBlockSettings.copyOf(Blocks.FURNACE));
+    public static final BlockItem basalt_furnace = new BlockItem(basalt_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
 }

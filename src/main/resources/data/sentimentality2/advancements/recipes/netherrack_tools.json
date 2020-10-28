@@ -21,7 +21,8 @@
       "sentimentality2:extratool/netherrack_hoe",
       "sentimentality2:extratool/netherrack_pickaxe",
       "sentimentality2:extratool/netherrack_shovel",
-      "sentimentality2:extratool/netherrack_sword"
+      "sentimentality2:extratool/netherrack_sword",
+      "sentimentality2:netherrack_furnace"
     ]
   }
 }

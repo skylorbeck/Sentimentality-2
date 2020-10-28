@@ -1,0 +1,16 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    "###",
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "tag": "sentimentality2:endstone"
+    }
+  },
+  "result": {
+    "item": "sentimentality2:endstone_furnaceitem"
+  }
+}

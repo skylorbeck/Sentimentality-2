@@ -11,7 +11,20 @@ import java.util.List;
 
 public class Registrar {
 
-    public static BlockEntityType<ExtraFurnaceBlockEntity> EXTRAFURNACEENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,"sentimentality2:extrafurnaceentity",BlockEntityType.Builder.create(ExtraFurnaceBlockEntity::new,Declarer.sandstone_furnaceblock,Declarer.red_sandstone_furnaceblock,Declarer.andesite_furnaceblock,Declarer.granite_furnaceblock,Declarer.diorite_furnaceblock).build(null));
+    public static BlockEntityType<ExtraFurnaceBlockEntity> EXTRAFURNACEENTITY = Registry.register(
+            Registry.BLOCK_ENTITY_TYPE,
+            "sentimentality2:extrafurnaceentity",
+            BlockEntityType.Builder.create(ExtraFurnaceBlockEntity::new,
+                    Declarer.sandstone_furnaceblock,
+                    Declarer.red_sandstone_furnaceblock,
+                    Declarer.andesite_furnaceblock,
+                    Declarer.granite_furnaceblock,
+                    Declarer.diorite_furnaceblock,
+                    Declarer.endstone_furnaceblock,
+                    Declarer.blackstone_furnaceblock,
+                    Declarer.netherrack_furnaceblock,
+                    Declarer.basalt_furnaceblock
+            ).build(null));
 
 
     public static void register() {
@@ -30,6 +43,14 @@ public class Registrar {
         Registry.register(Registry.ITEM, new Identifier("sentimentality2", "granite_furnaceitem"), Declarer.granite_furnace);
         Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "diorite_furnace"), Declarer.diorite_furnaceblock);
         Registry.register(Registry.ITEM, new Identifier("sentimentality2", "diorite_furnaceitem"), Declarer.diorite_furnace);
+        Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "endstone_furnace"), Declarer.endstone_furnaceblock);
+        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "endstone_furnaceitem"), Declarer.endstone_furnace);
+        Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "blackstone_furnace"), Declarer.blackstone_furnaceblock);
+        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "blackstone_furnaceitem"), Declarer.blackstone_furnace);
+        Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "netherrack_furnace"), Declarer.netherrack_furnaceblock);
+        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "netherrack_furnaceitem"), Declarer.netherrack_furnace);
+        Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "basalt_furnace"), Declarer.basalt_furnaceblock);
+        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "basalt_furnaceitem"), Declarer.basalt_furnace);
 
         Registry.register(Registry.ITEM, new Identifier("sentimentality2","granitepick"),ExtraToolDeclaration.granitepick);
         Registry.register(Registry.ITEM, new Identifier("sentimentality2","graniteaxe"),ExtraToolDeclaration.graniteaxe);
