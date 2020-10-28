@@ -18,4 +18,6 @@ public class Declarer {
     public static final BlockItem red_sandstone_furnace = new BlockItem(red_sandstone_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
     public static final Block andesite_furnaceblock = new ExtraFurnaceBlock(FabricBlockSettings.copyOf(Blocks.FURNACE));
     public static final BlockItem andesite_furnace = new BlockItem(andesite_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
+    public static final Block granite_furnaceblock = new ExtraFurnaceBlock(FabricBlockSettings.copyOf(Blocks.FURNACE));
+    public static final BlockItem granite_furnace = new BlockItem(granite_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
 }
