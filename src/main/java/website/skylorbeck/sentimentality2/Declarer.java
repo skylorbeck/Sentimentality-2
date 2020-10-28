@@ -8,10 +8,14 @@ import net.minecraft.item.*;
 
 public class Declarer {
     public static final Item fleather = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+
     public static final Block charcoal_block =new Block(FabricBlockSettings.copyOf(Blocks.COAL_BLOCK));
     public static final BlockItem charcoal_blockitem = new BlockItem(charcoal_block,new Item.Settings().group(ItemGroup.BUILDING_BLOCKS));
+
     public static final Block sandstone_furnaceblock = new ExtraFurnaceBlock(FabricBlockSettings.copyOf(Blocks.FURNACE));
     public static final BlockItem sandstone_furnace = new BlockItem(sandstone_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
+    public static final Block red_sandstone_furnaceblock = new ExtraFurnaceBlock(FabricBlockSettings.copyOf(Blocks.FURNACE));
+    public static final BlockItem red_sandstone_furnace = new BlockItem(red_sandstone_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
     public static final Block andesite_furnaceblock = new ExtraFurnaceBlock(FabricBlockSettings.copyOf(Blocks.FURNACE));
     public static final BlockItem andesite_furnace = new BlockItem(andesite_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
 }
