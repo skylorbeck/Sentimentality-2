@@ -15,3 +15,8 @@ public class Main implements ModInitializer {
     Registrar.register();
     }
 }
+//todo diorite textures
+//todo endstone textures
+//todo blackstone textures
+//todo basalt textures
+//todo netherrack textures

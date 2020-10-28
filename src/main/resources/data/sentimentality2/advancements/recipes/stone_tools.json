@@ -33,7 +33,8 @@
       "sentimentality2:extratool/granite_shovel",
       "sentimentality2:extratool/granite_sword",
       "sentimentality2:andesite_furnace",
-      "sentimentality2:granite_furnace"
+      "sentimentality2:granite_furnace",
+      "sentimentality2:diorite_furnace"
     ]
   }
 }

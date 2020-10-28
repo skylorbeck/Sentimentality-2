@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Registrar {
 
-    public static BlockEntityType<ExtraFurnaceBlockEntity> EXTRAFURNACEENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,"sentimentality2:extrafurnaceentity",BlockEntityType.Builder.create(ExtraFurnaceBlockEntity::new,Declarer.sandstone_furnaceblock,Declarer.red_sandstone_furnaceblock,Declarer.andesite_furnaceblock,Declarer.granite_furnaceblock).build(null));
+    public static BlockEntityType<ExtraFurnaceBlockEntity> EXTRAFURNACEENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,"sentimentality2:extrafurnaceentity",BlockEntityType.Builder.create(ExtraFurnaceBlockEntity::new,Declarer.sandstone_furnaceblock,Declarer.red_sandstone_furnaceblock,Declarer.andesite_furnaceblock,Declarer.granite_furnaceblock,Declarer.diorite_furnaceblock).build(null));
 
 
     public static void register() {
@@ -28,6 +28,8 @@ public class Registrar {
         Registry.register(Registry.ITEM, new Identifier("sentimentality2", "andesite_furnaceitem"), Declarer.andesite_furnace);
         Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "granite_furnace"), Declarer.granite_furnaceblock);
         Registry.register(Registry.ITEM, new Identifier("sentimentality2", "granite_furnaceitem"), Declarer.granite_furnace);
+        Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "diorite_furnace"), Declarer.diorite_furnaceblock);
+        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "diorite_furnaceitem"), Declarer.diorite_furnace);
 
         Registry.register(Registry.ITEM, new Identifier("sentimentality2","granitepick"),ExtraToolDeclaration.granitepick);
         Registry.register(Registry.ITEM, new Identifier("sentimentality2","graniteaxe"),ExtraToolDeclaration.graniteaxe);
