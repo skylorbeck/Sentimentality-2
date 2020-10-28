@@ -1,9 +1,3 @@
-# Fabric Example Mod
+# Sentimentality 2
 
-## Setup
-
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+This is the sequel to Sentimentality for MC1.16.3 on Fabric. There will never be a forge version again, as I dislike having to play on old versions of MC.
