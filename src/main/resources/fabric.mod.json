@@ -23,6 +23,7 @@
     ]
   },
   "mixins": [
+    "sentimentality2.mixins.json"
   ],
 
   "depends": {

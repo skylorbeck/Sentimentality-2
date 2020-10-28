@@ -96,12 +96,20 @@ public class ExtraFurnaceBlock extends BlockWithEntity {
 
     }
     @Override
+    public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+        if (world.getBlockEntity(pos) instanceof ExtraFurnaceBlockEntity) {
+            ((ExtraFurnaceBlockEntity) world.getBlockEntity(pos)).dropExperience(player);
+        }
+
+        super.onBreak(world, pos, state, player);
+    }
+    @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (!state.isOf(newState.getBlock())) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof ExtraFurnaceBlockEntity) {
                 ItemScatterer.spawn(world, pos, (ExtraFurnaceBlockEntity)blockEntity);
-                ((ExtraFurnaceBlockEntity)blockEntity).method_27354(world, Vec3d.ofCenter(pos));
+                ((ExtraFurnaceBlockEntity)blockEntity).dropExperience(world, Vec3d.ofCenter(pos));
                 world.updateComparators(pos, this);
             }
 

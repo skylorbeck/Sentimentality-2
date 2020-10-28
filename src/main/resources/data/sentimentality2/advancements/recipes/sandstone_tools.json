@@ -6,7 +6,7 @@
       "conditions": {
         "items": [
           {
-            "item": "minecraft:sandstone"
+            "tag": "sentimentality2:sandstone"
           }
         ]
       }
@@ -16,7 +16,7 @@
       "conditions": {
         "items": [
           {
-            "item": "minecraft:red_sandstone"
+            "tag": "sentimentality2:redsandstone"
           }
         ]
       }
@@ -36,7 +36,9 @@
       "sentimentality2:extratool/red_sandstone_hoe",
       "sentimentality2:extratool/red_sandstone_pickaxe",
       "sentimentality2:extratool/red_sandstone_shovel",
-      "sentimentality2:extratool/red_sandstone_sword"
+      "sentimentality2:extratool/red_sandstone_sword",
+      "sentimentality2:extratool/sandstone_furnace"
+
     ]
   }
 }

@@ -1,7 +1,8 @@
 {
-  "item.sentimentality2.fleather": "Fleather",
-  "item.sentimentality2.charcoal_blockitem": "Charcoal Block",
   "block.sentimentality2.charcoal_block": "Charcoal Block",
+  "block.sentimentality2.sandstone_furnace": "Sandstone Furnace",
+  "block.sentimentality2.andesite_furnace": "Andesite Furnace",
+  "item.sentimentality2.fleather": "Fleather",
   "item.sentimentality2.granitesword": "Granite Sword",
   "item.sentimentality2.graniteshovel": "Granite Shovel",
   "item.sentimentality2.graniteaxe": "Granite Axe",
@@ -66,6 +67,5 @@
   "item.sentimentality2.flintshovel": "Flint Shovel",
   "item.sentimentality2.flintaxe": "Flint Axe",
   "item.sentimentality2.flintpick": "Flint Pickaxe",
-  "item.sentimentality2.flinthoe": "Flint Hoe",
-  "container.sentimentality2.sandstonefurnace": "Sandstone Furnace"
+  "item.sentimentality2.flinthoe": "Flint Hoe"
 }

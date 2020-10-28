@@ -31,13 +31,15 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.rmi.registry.Registry;
 import java.util.Iterator;
 import java.util.List;
-//todo figure out why xp doesnt drop and add droptables
+import java.util.Map;
+
 public class ExtraFurnaceBlockEntity extends LockableContainerBlockEntity implements SidedInventory, RecipeUnlocker, RecipeInputProvider, Tickable {
     private static final int[] TOP_SLOTS = new int[]{0};
     private static final int[] BOTTOM_SLOTS = new int[]{2, 1};
@@ -52,8 +54,8 @@ public class ExtraFurnaceBlockEntity extends LockableContainerBlockEntity implem
     protected final RecipeType<? extends AbstractCookingRecipe> recipeType;
 
     @Override
-    protected Text getContainerName() {
-        return new TranslatableText("container.sentimentality2.sandstonefurnace");
+    public Text getContainerName() {
+        return new TranslatableText("container.furnace");//"container.sentimentality2.sandstonefurnace"
     }
     @Override
     protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory) {
@@ -367,12 +369,12 @@ public class ExtraFurnaceBlockEntity extends LockableContainerBlockEntity implem
     }
 
     public void dropExperience(PlayerEntity player) {
-        List<Recipe<?>> list = this.method_27354(player.world, player.getPos());
+        List<Recipe<?>> list = this.dropExperience(player.world, player.getPos());
         player.unlockRecipes(list);
         this.recipesUsed.clear();
     }
 
-    public List<Recipe<?>> method_27354(World world, Vec3d vec3d) {
+    public List<Recipe<?>> dropExperience(World world, Vec3d vec3d) {
         List<Recipe<?>> list = Lists.newArrayList();
         ObjectIterator var4 = this.recipesUsed.object2IntEntrySet().iterator();
 
@@ -387,6 +389,7 @@ public class ExtraFurnaceBlockEntity extends LockableContainerBlockEntity implem
         return list;
     }
 
+
     private static void dropExperience(World world, Vec3d vec3d, int i, float f) {
         int j = MathHelper.floor((float)i * f);
         float g = MathHelper.fractionalPart((float)i * f);
@@ -400,7 +403,9 @@ public class ExtraFurnaceBlockEntity extends LockableContainerBlockEntity implem
             world.spawnEntity(new ExperienceOrbEntity(world, vec3d.x, vec3d.y, vec3d.z, k));
         }
 
+
     }
+
     @Override
     public void provideRecipeInputs(RecipeFinder finder) {
         Iterator var2 = this.inventory.iterator();

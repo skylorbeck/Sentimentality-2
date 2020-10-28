@@ -1,29 +1,29 @@
 package website.skylorbeck.sentimentality2;
 
-import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+
+import java.util.List;
 
 
 public class Registrar {
 
-    public static BlockEntityType<ExtraFurnaceBlockEntity> EXTRAFURNACEENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,"sentimentality2:extrafurnaceentity",BlockEntityType.Builder.create(ExtraFurnaceBlockEntity::new,Declarer.sandstone_furnace).build(null));
+    public static BlockEntityType<ExtraFurnaceBlockEntity> EXTRAFURNACEENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,"sentimentality2:extrafurnaceentity",BlockEntityType.Builder.create(ExtraFurnaceBlockEntity::new,Declarer.sandstone_furnaceblock,Declarer.andesite_furnaceblock).build(null));
+
 
     public static void register() {
         Registry.register(Registry.ITEM, new Identifier("sentimentality2", "fleather"), Declarer.fleather);
         Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "charcoal_block"), Declarer.charcoal_block);
         Registry.register(Registry.ITEM, new Identifier("sentimentality2", "charcoal_blockitem"), Declarer.charcoal_blockitem);
         FuelRegistry.INSTANCE.add(Declarer.charcoal_blockitem,16000);
-        Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "sandstone_furnace"), Declarer.sandstone_furnace);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "sandstone_furnaceitem"), Declarer.sandstone_furnaceitem);
+        Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "sandstone_furnace"), Declarer.sandstone_furnaceblock);
+        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "sandstone_furnaceitem"), Declarer.sandstone_furnace);
+        Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "andesite_furnace"), Declarer.andesite_furnaceblock);
+        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "andesite_furnaceitem"), Declarer.andesite_furnace);
+
 
         Registry.register(Registry.ITEM, new Identifier("sentimentality2","granitepick"),ExtraToolDeclaration.granitepick);
         Registry.register(Registry.ITEM, new Identifier("sentimentality2","graniteaxe"),ExtraToolDeclaration.graniteaxe);
