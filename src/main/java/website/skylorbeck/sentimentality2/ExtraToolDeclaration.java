@@ -1,6 +1,8 @@
 package website.skylorbeck.sentimentality2;
 
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
+import net.minecraft.util.Rarity;
 
 public class ExtraToolDeclaration {
     //Granite
@@ -81,6 +83,4 @@ public class ExtraToolDeclaration {
     public static Item flintpick = new ExtraPickaxeItem(ExtraToolMaterials.FLINT,1,-2.8F,(new Item.Settings().group(ItemGroup.TOOLS)));
     public static Item flintaxe = new ExtraAxeItem(ExtraToolMaterials.FLINT, 7.0F, -3.2F, (new Item.Settings()).group(ItemGroup.TOOLS));
     public static Item flinthoe = new ExtraHoeItem(ExtraToolMaterials.FLINT, -1,-2.0F, (new Item.Settings()).group(ItemGroup.TOOLS));
-
-
 }
