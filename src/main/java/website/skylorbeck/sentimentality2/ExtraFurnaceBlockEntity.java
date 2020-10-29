@@ -55,14 +55,14 @@ public class ExtraFurnaceBlockEntity extends LockableContainerBlockEntity implem
 
     @Override
     public Text getContainerName() {
-        return new TranslatableText("container.furnace");//"container.sentimentality2.sandstonefurnace"
+        return new TranslatableText("container.furnace");
     }
     @Override
     protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory) {
         return new FurnaceScreenHandler(syncId, playerInventory, this, this.propertyDelegate);
     }
     protected ExtraFurnaceBlockEntity() {
-        super(Registrar.EXTRAFURNACEENTITY);
+        super(Declarer.EXTRA_FURNACE_ENTITY);
         this.inventory = DefaultedList.ofSize(3, ItemStack.EMPTY);
         this.propertyDelegate = new PropertyDelegate() {
             public int get(int index) {

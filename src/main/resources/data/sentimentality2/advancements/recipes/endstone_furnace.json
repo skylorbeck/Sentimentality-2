@@ -6,7 +6,7 @@
             "conditions": {
                 "items": [
                     {
-                        "item": "minecraft:endstone"
+                        "item": "minecraft:end_stone"
                     }
                 ]
             }

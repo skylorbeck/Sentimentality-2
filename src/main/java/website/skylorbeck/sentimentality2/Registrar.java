@@ -1,121 +1,128 @@
 package website.skylorbeck.sentimentality2;
 
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
+import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
-import net.minecraft.block.Block;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.client.particle.FlameParticle;
+import net.minecraft.client.particle.ParticleManager;
+import net.minecraft.particle.DefaultParticleType;
+import net.minecraft.particle.ParticleEffect;
+import net.minecraft.particle.ParticleType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-
-import java.util.List;
 
 
 public class Registrar {
 
-    public static BlockEntityType<ExtraFurnaceBlockEntity> EXTRAFURNACEENTITY = Registry.register(
-            Registry.BLOCK_ENTITY_TYPE,
-            "sentimentality2:extrafurnaceentity",
-            BlockEntityType.Builder.create(ExtraFurnaceBlockEntity::new,
-                    Declarer.sandstone_furnaceblock,
-                    Declarer.red_sandstone_furnaceblock,
-                    Declarer.andesite_furnaceblock,
-                    Declarer.granite_furnaceblock,
-                    Declarer.diorite_furnaceblock,
-                    Declarer.endstone_furnaceblock,
-                    Declarer.blackstone_furnaceblock,
-                    Declarer.netherrack_furnaceblock,
-                    Declarer.basalt_furnaceblock
-            ).build(null));
-
 
     public static void register() {
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "fleather"), Declarer.fleather);
-        Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "charcoal_block"), Declarer.charcoal_block);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "charcoal_blockitem"), Declarer.charcoal_blockitem);
-        FuelRegistry.INSTANCE.add(Declarer.charcoal_blockitem,16000);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "fleather"), Declarer.fleather);
+        Registry.register(Registry.BLOCK, new Identifier(Ref.MODID, "charcoal_block"), Declarer.charcoal_block);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "charcoal_blockitem"), Declarer.charcoal_blockitem);
+        FuelRegistry.INSTANCE.add(Declarer.charcoal_blockitem, 16000);
 
-        Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "sandstone_furnace"), Declarer.sandstone_furnaceblock);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "sandstone_furnaceitem"), Declarer.sandstone_furnace);
-        Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "red_sandstone_furnace"), Declarer.red_sandstone_furnaceblock);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "red_sandstone_furnaceitem"), Declarer.red_sandstone_furnace);
-        Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "andesite_furnace"), Declarer.andesite_furnaceblock);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "andesite_furnaceitem"), Declarer.andesite_furnace);
-        Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "granite_furnace"), Declarer.granite_furnaceblock);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "granite_furnaceitem"), Declarer.granite_furnace);
-        Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "diorite_furnace"), Declarer.diorite_furnaceblock);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "diorite_furnaceitem"), Declarer.diorite_furnace);
-        Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "endstone_furnace"), Declarer.endstone_furnaceblock);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "endstone_furnaceitem"), Declarer.endstone_furnace);
-        Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "blackstone_furnace"), Declarer.blackstone_furnaceblock);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "blackstone_furnaceitem"), Declarer.blackstone_furnace);
-        Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "netherrack_furnace"), Declarer.netherrack_furnaceblock);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "netherrack_furnaceitem"), Declarer.netherrack_furnace);
-        Registry.register(Registry.BLOCK, new Identifier("sentimentality2", "basalt_furnace"), Declarer.basalt_furnaceblock);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2", "basalt_furnaceitem"), Declarer.basalt_furnace);
 
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","granitepick"),ExtraToolDeclaration.granitepick);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","graniteaxe"),ExtraToolDeclaration.graniteaxe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","graniteshovel"),ExtraToolDeclaration.graniteshovel);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","granitesword"),ExtraToolDeclaration.granitesword);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","granitehoe"),ExtraToolDeclaration.granitehoe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","dioritepick"),ExtraToolDeclaration.dioritepick);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","dioriteaxe"),ExtraToolDeclaration.dioriteaxe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","dioriteshovel"),ExtraToolDeclaration.dioriteshovel);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","dioritesword"),ExtraToolDeclaration.dioritesword);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","dioritehoe"),ExtraToolDeclaration.dioritehoe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","andesitepick"),ExtraToolDeclaration.andesitepick);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","andesiteaxe"),ExtraToolDeclaration.andesiteaxe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","andesiteshovel"),ExtraToolDeclaration.andesiteshovel);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","andesitesword"),ExtraToolDeclaration.andesitesword);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","andesitehoe"),ExtraToolDeclaration.andesitehoe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","quartzpick"),ExtraToolDeclaration.quartzpick);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","quartzaxe"),ExtraToolDeclaration.quartzaxe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","quartzshovel"),ExtraToolDeclaration.quartzshovel);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","quartzsword"),ExtraToolDeclaration.quartzsword);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","quartzhoe"),ExtraToolDeclaration.quartzhoe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","netherrackpick"),ExtraToolDeclaration.netherrackpick);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","netherrackaxe"),ExtraToolDeclaration.netherrackaxe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","netherrackshovel"),ExtraToolDeclaration.netherrackshovel);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","netherracksword"),ExtraToolDeclaration.netherracksword);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","netherrackhoe"),ExtraToolDeclaration.netherrackhoe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","netherbrickpick"),ExtraToolDeclaration.netherbrickpick);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","netherbrickaxe"),ExtraToolDeclaration.netherbrickaxe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","netherbrickshovel"),ExtraToolDeclaration.netherbrickshovel);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","netherbricksword"),ExtraToolDeclaration.netherbricksword);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","netherbrickhoe"),ExtraToolDeclaration.netherbrickhoe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","rednetherbrickpick"),ExtraToolDeclaration.rednetherbrickpick);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","rednetherbrickaxe"),ExtraToolDeclaration.rednetherbrickaxe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","rednetherbrickshovel"),ExtraToolDeclaration.rednetherbrickshovel);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","rednetherbricksword"),ExtraToolDeclaration.rednetherbricksword);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","rednetherbrickhoe"),ExtraToolDeclaration.rednetherbrickhoe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","sandstonepick"),ExtraToolDeclaration.sandstonepick);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","sandstoneaxe"),ExtraToolDeclaration.sandstoneaxe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","sandstoneshovel"),ExtraToolDeclaration.sandstoneshovel);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","sandstonesword"),ExtraToolDeclaration.sandstonesword);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","sandstonehoe"),ExtraToolDeclaration.sandstonehoe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","redsandstonepick"),ExtraToolDeclaration.redsandstonepick);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","redsandstoneaxe"),ExtraToolDeclaration.redsandstoneaxe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","redsandstoneshovel"),ExtraToolDeclaration.redsandstoneshovel);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","redsandstonesword"),ExtraToolDeclaration.redsandstonesword);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","redsandstonehoe"),ExtraToolDeclaration.redsandstonehoe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","lapispick"),ExtraToolDeclaration.lapispick);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","lapisaxe"),ExtraToolDeclaration.lapisaxe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","lapisshovel"),ExtraToolDeclaration.lapisshovel);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","lapissword"),ExtraToolDeclaration.lapissword);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","lapishoe"),ExtraToolDeclaration.lapishoe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","emeraldpick"),ExtraToolDeclaration.emeraldpick);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","emeraldaxe"),ExtraToolDeclaration.emeraldaxe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","emeraldshovel"),ExtraToolDeclaration.emeraldshovel);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","emeraldsword"),ExtraToolDeclaration.emeraldsword);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","emeraldhoe"),ExtraToolDeclaration.emeraldhoe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","flintpick"),ExtraToolDeclaration.flintpick);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","flintaxe"),ExtraToolDeclaration.flintaxe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","flintshovel"),ExtraToolDeclaration.flintshovel);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","flintsword"),ExtraToolDeclaration.flintsword);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","flinthoe"),ExtraToolDeclaration.flinthoe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","redstonepick"),ExtraToolDeclaration.redstonepick);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","redstoneaxe"),ExtraToolDeclaration.redstoneaxe);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","redstoneshovel"),ExtraToolDeclaration.redstoneshovel);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","redstonesword"),ExtraToolDeclaration.redstonesword);
-        Registry.register(Registry.ITEM, new Identifier("sentimentality2","redstonehoe"),ExtraToolDeclaration.redstonehoe);
+        Declarer.END_FIRE_FLAME = Registry.register(Registry.PARTICLE_TYPE, new Identifier(Ref.MODID, "end_fire_flame"), FabricParticleTypes.simple());
+        ParticleFactoryRegistry.getInstance().register(Declarer.END_FIRE_FLAME, FlameParticle.Factory::new);
+
+        Declarer.EXTRA_FURNACE_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
+                "sentimentality2:extrafurnaceentity",
+                BlockEntityType.Builder.create(ExtraFurnaceBlockEntity::new,
+                        Declarer.sandstone_furnaceblock,
+                        Declarer.red_sandstone_furnaceblock,
+                        Declarer.andesite_furnaceblock,
+                        Declarer.granite_furnaceblock,
+                        Declarer.diorite_furnaceblock,
+                        Declarer.endstone_furnaceblock,
+                        Declarer.blackstone_furnaceblock,
+                        Declarer.netherrack_furnaceblock,
+                        Declarer.basalt_furnaceblock
+                ).build(null));
+
+        Registry.register(Registry.BLOCK, new Identifier(Ref.MODID, "sandstone_furnace"), Declarer.sandstone_furnaceblock);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "sandstone_furnaceitem"), Declarer.sandstone_furnace);
+        Registry.register(Registry.BLOCK, new Identifier(Ref.MODID, "red_sandstone_furnace"), Declarer.red_sandstone_furnaceblock);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "red_sandstone_furnaceitem"), Declarer.red_sandstone_furnace);
+        Registry.register(Registry.BLOCK, new Identifier(Ref.MODID, "andesite_furnace"), Declarer.andesite_furnaceblock);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "andesite_furnaceitem"), Declarer.andesite_furnace);
+        Registry.register(Registry.BLOCK, new Identifier(Ref.MODID, "granite_furnace"), Declarer.granite_furnaceblock);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "granite_furnaceitem"), Declarer.granite_furnace);
+        Registry.register(Registry.BLOCK, new Identifier(Ref.MODID, "diorite_furnace"), Declarer.diorite_furnaceblock);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "diorite_furnaceitem"), Declarer.diorite_furnace);
+        Registry.register(Registry.BLOCK, new Identifier(Ref.MODID, "endstone_furnace"), Declarer.endstone_furnaceblock);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "endstone_furnaceitem"), Declarer.endstone_furnace);
+        Registry.register(Registry.BLOCK, new Identifier(Ref.MODID, "blackstone_furnace"), Declarer.blackstone_furnaceblock);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "blackstone_furnaceitem"), Declarer.blackstone_furnace);
+        Registry.register(Registry.BLOCK, new Identifier(Ref.MODID, "netherrack_furnace"), Declarer.netherrack_furnaceblock);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "netherrack_furnaceitem"), Declarer.netherrack_furnace);
+        Registry.register(Registry.BLOCK, new Identifier(Ref.MODID, "basalt_furnace"), Declarer.basalt_furnaceblock);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "basalt_furnaceitem"), Declarer.basalt_furnace);
+
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "granitepick"), ExtraToolDeclaration.granitepick);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "graniteaxe"), ExtraToolDeclaration.graniteaxe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "graniteshovel"), ExtraToolDeclaration.graniteshovel);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "granitesword"), ExtraToolDeclaration.granitesword);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "granitehoe"), ExtraToolDeclaration.granitehoe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "dioritepick"), ExtraToolDeclaration.dioritepick);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "dioriteaxe"), ExtraToolDeclaration.dioriteaxe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "dioriteshovel"), ExtraToolDeclaration.dioriteshovel);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "dioritesword"), ExtraToolDeclaration.dioritesword);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "dioritehoe"), ExtraToolDeclaration.dioritehoe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "andesitepick"), ExtraToolDeclaration.andesitepick);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "andesiteaxe"), ExtraToolDeclaration.andesiteaxe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "andesiteshovel"), ExtraToolDeclaration.andesiteshovel);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "andesitesword"), ExtraToolDeclaration.andesitesword);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "andesitehoe"), ExtraToolDeclaration.andesitehoe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "quartzpick"), ExtraToolDeclaration.quartzpick);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "quartzaxe"), ExtraToolDeclaration.quartzaxe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "quartzshovel"), ExtraToolDeclaration.quartzshovel);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "quartzsword"), ExtraToolDeclaration.quartzsword);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "quartzhoe"), ExtraToolDeclaration.quartzhoe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "netherrackpick"), ExtraToolDeclaration.netherrackpick);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "netherrackaxe"), ExtraToolDeclaration.netherrackaxe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "netherrackshovel"), ExtraToolDeclaration.netherrackshovel);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "netherracksword"), ExtraToolDeclaration.netherracksword);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "netherrackhoe"), ExtraToolDeclaration.netherrackhoe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "netherbrickpick"), ExtraToolDeclaration.netherbrickpick);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "netherbrickaxe"), ExtraToolDeclaration.netherbrickaxe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "netherbrickshovel"), ExtraToolDeclaration.netherbrickshovel);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "netherbricksword"), ExtraToolDeclaration.netherbricksword);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "netherbrickhoe"), ExtraToolDeclaration.netherbrickhoe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "rednetherbrickpick"), ExtraToolDeclaration.rednetherbrickpick);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "rednetherbrickaxe"), ExtraToolDeclaration.rednetherbrickaxe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "rednetherbrickshovel"), ExtraToolDeclaration.rednetherbrickshovel);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "rednetherbricksword"), ExtraToolDeclaration.rednetherbricksword);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "rednetherbrickhoe"), ExtraToolDeclaration.rednetherbrickhoe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "sandstonepick"), ExtraToolDeclaration.sandstonepick);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "sandstoneaxe"), ExtraToolDeclaration.sandstoneaxe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "sandstoneshovel"), ExtraToolDeclaration.sandstoneshovel);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "sandstonesword"), ExtraToolDeclaration.sandstonesword);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "sandstonehoe"), ExtraToolDeclaration.sandstonehoe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "redsandstonepick"), ExtraToolDeclaration.redsandstonepick);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "redsandstoneaxe"), ExtraToolDeclaration.redsandstoneaxe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "redsandstoneshovel"), ExtraToolDeclaration.redsandstoneshovel);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "redsandstonesword"), ExtraToolDeclaration.redsandstonesword);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "redsandstonehoe"), ExtraToolDeclaration.redsandstonehoe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "lapispick"), ExtraToolDeclaration.lapispick);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "lapisaxe"), ExtraToolDeclaration.lapisaxe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "lapisshovel"), ExtraToolDeclaration.lapisshovel);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "lapissword"), ExtraToolDeclaration.lapissword);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "lapishoe"), ExtraToolDeclaration.lapishoe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "emeraldpick"), ExtraToolDeclaration.emeraldpick);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "emeraldaxe"), ExtraToolDeclaration.emeraldaxe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "emeraldshovel"), ExtraToolDeclaration.emeraldshovel);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "emeraldsword"), ExtraToolDeclaration.emeraldsword);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "emeraldhoe"), ExtraToolDeclaration.emeraldhoe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "flintpick"), ExtraToolDeclaration.flintpick);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "flintaxe"), ExtraToolDeclaration.flintaxe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "flintshovel"), ExtraToolDeclaration.flintshovel);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "flintsword"), ExtraToolDeclaration.flintsword);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "flinthoe"), ExtraToolDeclaration.flinthoe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "redstonepick"), ExtraToolDeclaration.redstonepick);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "redstoneaxe"), ExtraToolDeclaration.redstoneaxe);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "redstoneshovel"), ExtraToolDeclaration.redstoneshovel);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "redstonesword"), ExtraToolDeclaration.redstonesword);
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "redstonehoe"), ExtraToolDeclaration.redstonehoe);
     }
 }

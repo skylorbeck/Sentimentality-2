@@ -16,10 +16,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.state.StateManager;
-import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.DirectionProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.state.property.Property;
+import net.minecraft.state.property.*;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -34,11 +31,14 @@ import java.util.Random;
 public class ExtraFurnaceBlock extends BlockWithEntity {
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     public static final BooleanProperty LIT = Properties.LIT;
+    private static final IntProperty DIM = IntProperty.of("dim",0,2);
 
-    protected ExtraFurnaceBlock(Settings settings) {
+    protected ExtraFurnaceBlock(Settings settings,int dimension) {
         super(settings);
+        this.setDefaultState(this.getDefaultState().with(DIM,dimension));
         this.setDefaultState(this.getDefaultState().with(FACING, Direction.NORTH).with(LIT, false));
     }
+
     @Override
     public BlockEntity createBlockEntity(BlockView world) {
         return new ExtraFurnaceBlockEntity();
@@ -78,7 +78,18 @@ public class ExtraFurnaceBlock extends BlockWithEntity {
             double double_7 = random.nextDouble() * 6.0D / 16.0D;
             double double_8 = direction$Axis_1 == Direction.Axis.Z ? (double) direction_1.getOffsetZ() * 0.52D : double_5;
             world.addParticle(ParticleTypes.SMOKE, x + double_6, y + double_7, z + double_8, 0.0D, 0.0D, 0.0D);
-            world.addParticle(ParticleTypes.FLAME, x + double_6, y + double_7, z + double_8, 0.0D, 0.0D, 0.0D);
+
+            switch (state.get(DIM)){
+                case 0:
+                    world.addParticle(ParticleTypes.FLAME, x + double_6, y + double_7, z + double_8, 0.0D, 0.0D, 0.0D);
+                    break;
+                case 1:
+                    world.addParticle(ParticleTypes.SOUL_FIRE_FLAME, x + double_6, y + double_7, z + double_8, 0.0D, 0.0D, 0.0D);
+                    break;
+                case 2:
+                    world.addParticle(Declarer.END_FIRE_FLAME, x + double_6, y + double_7, z + double_8, 0.0D, 0.0D, 0.0D);
+                    break;
+            }
         }
     }
     @Override
@@ -139,6 +150,7 @@ public class ExtraFurnaceBlock extends BlockWithEntity {
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(new Property[]{FACING, LIT});
+        builder.add(DIM);
     }
 }
 
