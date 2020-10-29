@@ -10,6 +10,16 @@
   "block.sentimentality2.netherrack_furnace": "Netherrack Furnace",
   "block.sentimentality2.basalt_furnace": "Basalt Furnace",
 
+  "block.sentimentality2.sandstone_blast_furnace": "Sandstone Blast Furnace",
+  "block.sentimentality2.red_sandstone_blast_furnace": "Red Blast Sandstone Furnace",
+  "block.sentimentality2.andesite_blast_furnace": "Andesite Blast Furnace",
+  "block.sentimentality2.granite_blast_furnace": "Granite Blast Furnace",
+  "block.sentimentality2.diorite_blast_furnace": "Diorite Blast Furnace",
+  "block.sentimentality2.endstone_blast_furnace": "Endstone Blast Furnace",
+  "block.sentimentality2.blackstone_blast_furnace": "Blackstone Blast Furnace",
+  "block.sentimentality2.netherrack_blast_furnace": "Netherrack Blast Furnace",
+  "block.sentimentality2.basalt_blast_furnace": "Basalt Blast Furnace",
+  
   "item.sentimentality2.fleather": "Fleather",
 
   "item.sentimentality2.granitesword": "Granite Sword",

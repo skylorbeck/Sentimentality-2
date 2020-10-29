@@ -42,6 +42,20 @@ public class Registrar {
                         Declarer.basalt_furnaceblock
                 ).build(null));
 
+        Declarer.EXTRA_BLAST_FURNACE_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
+                "sentimentality2:extrablastfurnaceentity",
+                BlockEntityType.Builder.create(ExtraBlastFurnaceBlockEntity::new,
+                        Declarer.sandstone_blast_furnaceblock,
+                        Declarer.red_sandstone_blast_furnaceblock,
+                        Declarer.andesite_blast_furnaceblock,
+                        Declarer.granite_blast_furnaceblock,
+                        Declarer.diorite_blast_furnaceblock,
+                        Declarer.endstone_blast_furnaceblock,
+                        Declarer.blackstone_blast_furnaceblock,
+                        Declarer.netherrack_blast_furnaceblock,
+                        Declarer.basalt_blast_furnaceblock
+                ).build(null));
+
         regBlock( "sandstone_furnace", Declarer.sandstone_furnaceblock);
         regItem("sandstone_furnaceitem", Declarer.sandstone_furnace);
         regBlock( "red_sandstone_furnace", Declarer.red_sandstone_furnaceblock);
@@ -60,6 +74,26 @@ public class Registrar {
         regItem("netherrack_furnaceitem", Declarer.netherrack_furnace);
         regBlock( "basalt_furnace", Declarer.basalt_furnaceblock);
         regItem("basalt_furnaceitem", Declarer.basalt_furnace);
+
+        regBlock( "sandstone_blast_furnace", Declarer.sandstone_blast_furnaceblock);
+        regItem("sandstone_blast_furnaceitem", Declarer.sandstone_blast_furnace);
+        regBlock( "red_sandstone_blast_furnace", Declarer.red_sandstone_blast_furnaceblock);
+        regItem("red_sandstone_blast_furnaceitem", Declarer.red_sandstone_blast_furnace);
+        regBlock( "andesite_blast_furnace", Declarer.andesite_blast_furnaceblock);
+        regItem("andesite_blast_furnaceitem", Declarer.andesite_blast_furnace);
+        regBlock( "granite_blast_furnace", Declarer.granite_blast_furnaceblock);
+        regItem("granite_blast_furnaceitem", Declarer.granite_blast_furnace);
+        regBlock( "diorite_blast_furnace", Declarer.diorite_blast_furnaceblock);
+        regItem("diorite_blast_furnaceitem", Declarer.diorite_blast_furnace);
+        regBlock( "endstone_blast_furnace", Declarer.endstone_blast_furnaceblock);
+        regItem("endstone_blast_furnaceitem", Declarer.endstone_blast_furnace);
+        regBlock( "blackstone_blast_furnace", Declarer.blackstone_blast_furnaceblock);
+        regItem("blackstone_blast_furnaceitem", Declarer.blackstone_blast_furnace);
+        regBlock( "netherrack_blast_furnace", Declarer.netherrack_blast_furnaceblock);
+        regItem("netherrack_blast_furnaceitem", Declarer.netherrack_blast_furnace);
+        regBlock( "basalt_blast_furnace", Declarer.basalt_blast_furnaceblock);
+        regItem("basalt_blast_furnaceitem", Declarer.basalt_blast_furnace);
+
 
         regItem("granitepick", Declarer.granitepick);
         regItem("graniteaxe", Declarer.graniteaxe);
