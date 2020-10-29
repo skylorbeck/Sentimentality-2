@@ -47,7 +47,16 @@ public enum ExtraToolMaterials implements ToolMaterial {
     }),
     FLINT(1,250,4.0F,1.0F,14,()->{//durability of iron, else stone
         return Ingredient.ofItems(Items.FLINT);
-    })
+    }),
+    BLACKSTONE(1, 131, 4.0F, 1.0F, 5, () -> {//stone
+        return Ingredient.ofItems(Blocks.BLACKSTONE,Blocks.POLISHED_BLACKSTONE);
+    }),
+    BASALT(1, 131, 4.0F, 1.0F, 5, () -> {//stone
+        return Ingredient.ofItems(Blocks.BASALT,Blocks.POLISHED_BASALT);
+    }),
+    ENDSTONE(1, 131, 4.0F, 1.0F, 5, () -> {//stone
+        return Ingredient.ofItems(Blocks.END_STONE,Blocks.END_STONE_BRICKS);
+    }),
 
     ;
     private final int miningLevel;

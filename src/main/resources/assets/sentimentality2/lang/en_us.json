@@ -10,8 +10,8 @@
   "block.sentimentality2.netherrack_furnace": "Netherrack Furnace",
   "block.sentimentality2.basalt_furnace": "Basalt Furnace",
 
-
   "item.sentimentality2.fleather": "Fleather",
+
   "item.sentimentality2.granitesword": "Granite Sword",
   "item.sentimentality2.graniteshovel": "Granite Shovel",
   "item.sentimentality2.graniteaxe": "Granite Axe",
@@ -76,5 +76,21 @@
   "item.sentimentality2.flintshovel": "Flint Shovel",
   "item.sentimentality2.flintaxe": "Flint Axe",
   "item.sentimentality2.flintpick": "Flint Pickaxe",
-  "item.sentimentality2.flinthoe": "Flint Hoe"
+  "item.sentimentality2.flinthoe": "Flint Hoe",
+  "item.sentimentality2.endstonesword": "Endstone Sword",
+  "item.sentimentality2.endstoneshovel": "Endstone Shovel",
+  "item.sentimentality2.endstoneaxe": "Endstone Axe",
+  "item.sentimentality2.endstonepick": "Endstone Pickaxe",
+  "item.sentimentality2.endstonehoe": "Endstone Hoe",
+  "item.sentimentality2.blackstonesword": "Blackstone Sword",
+  "item.sentimentality2.blackstoneshovel": "Blackstone Shovel",
+  "item.sentimentality2.blackstoneaxe": "Blackstone Axe",
+  "item.sentimentality2.blackstonepick": "Blackstone Pickaxe",
+  "item.sentimentality2.blackstonehoe": "Blackstone Hoe",
+  "item.sentimentality2.basaltsword": "Basalt Sword",
+  "item.sentimentality2.basaltshovel": "Basalt Shovel",
+  "item.sentimentality2.basaltaxe": "Basalt Axe",
+  "item.sentimentality2.basaltpick": "Basalt Pickaxe",
+  "item.sentimentality2.basalthoe": "Basalt Hoe"
+
 }
