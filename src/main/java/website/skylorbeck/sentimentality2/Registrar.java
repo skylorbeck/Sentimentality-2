@@ -4,8 +4,14 @@ import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.SmokerBlock;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.block.entity.FurnaceBlockEntity;
+import net.minecraft.block.entity.SmokerBlockEntity;
 import net.minecraft.client.particle.FlameParticle;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -20,12 +26,11 @@ public class Registrar {
         regItem("charcoal_blockitem", Declarer.charcoal_blockitem);
         FuelRegistry.INSTANCE.add(Declarer.charcoal_blockitem, 16000);
 
-
         Declarer.END_FIRE_FLAME = Registry.register(Registry.PARTICLE_TYPE, new Identifier(Ref.MODID, "end_fire_flame"), FabricParticleTypes.simple());
         ParticleFactoryRegistry.getInstance().register(Declarer.END_FIRE_FLAME, FlameParticle.Factory::new);
 
         Declarer.EXTRA_FURNACE_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
-                "sentimentality2:extrafurnaceentity",
+                "sentimentality2:furnace",
                 BlockEntityType.Builder.create(ExtraFurnaceBlockEntity::new,
                         Declarer.sandstone_furnaceblock,
                         Declarer.red_sandstone_furnaceblock,
@@ -50,6 +55,14 @@ public class Registrar {
                         Declarer.blackstone_blast_furnaceblock,
                         Declarer.netherrack_blast_furnaceblock,
                         Declarer.basalt_blast_furnaceblock
+                ).build(null));
+
+        regItem("test_furnaceitem",Declarer.test_blockitem);
+        regBlock("test_furnace",Declarer.test_block);
+        Declarer.EXTRA_SMOKER_FURNACE_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
+                "sentimentality2:smoker",
+                BlockEntityType.Builder.create(SmokerBlockEntity::new,
+                        Declarer.test_block
                 ).build(null));
 
         regBlock( "sandstone_furnace", Declarer.sandstone_furnaceblock);
@@ -89,7 +102,6 @@ public class Registrar {
         regItem("netherrack_blast_furnaceitem", Declarer.netherrack_blast_furnace);
         regBlock( "basalt_blast_furnace", Declarer.basalt_blast_furnaceblock);
         regItem("basalt_blast_furnaceitem", Declarer.basalt_blast_furnace);
-
 
         regItem("granitepick", Declarer.granitepick);
         regItem("graniteaxe", Declarer.graniteaxe);

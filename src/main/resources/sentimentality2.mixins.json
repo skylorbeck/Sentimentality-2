@@ -3,7 +3,7 @@
   "package": "website.skylorbeck.sentimentality2.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "FurnaceXPFix"
+    "XPFixMixin"
   ],
   "injectors": {
     "defaultRequire": 1

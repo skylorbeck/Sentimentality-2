@@ -4,6 +4,8 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.block.entity.FurnaceBlockEntity;
+import net.minecraft.block.entity.SmokerBlockEntity;
 import net.minecraft.item.*;
 import net.minecraft.particle.DefaultParticleType;
 
@@ -12,7 +14,9 @@ public class Declarer {
     public static DefaultParticleType END_FIRE_FLAME;
     public static BlockEntityType<ExtraFurnaceBlockEntity> EXTRA_FURNACE_ENTITY;
     public static BlockEntityType<ExtraBlastFurnaceBlockEntity> EXTRA_BLAST_FURNACE_ENTITY;
-
+    public static BlockEntityType<SmokerBlockEntity> EXTRA_SMOKER_FURNACE_ENTITY;
+    public static Block test_block = new ExtraSmokerBlock(FabricBlockSettings.copyOf(Blocks.SMOKER));
+    public static BlockItem test_blockitem = new BlockItem(test_block,new Item.Settings().group(ItemGroup.DECORATIONS));
 
     public static final Item fleather = new Item(new FabricItemSettings().group(ItemGroup.MISC));
 
@@ -38,23 +42,23 @@ public class Declarer {
     public static final Block endstone_furnaceblock = new ExtraFurnaceBlock(FabricBlockSettings.copyOf(Blocks.FURNACE),2);
     public static final BlockItem endstone_furnace = new BlockItem(endstone_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
 
-    public static final Block sandstone_blast_furnaceblock = new ExtraBlastFurnaceBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE),0);
+    public static final Block sandstone_blast_furnaceblock = new ExtraBlastFurnaceBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE));
     public static final BlockItem sandstone_blast_furnace = new BlockItem(sandstone_blast_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
-    public static final Block red_sandstone_blast_furnaceblock = new ExtraBlastFurnaceBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE),0);
+    public static final Block red_sandstone_blast_furnaceblock = new ExtraBlastFurnaceBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE));
     public static final BlockItem red_sandstone_blast_furnace = new BlockItem(red_sandstone_blast_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
-    public static final Block andesite_blast_furnaceblock = new ExtraBlastFurnaceBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE),0);
+    public static final Block andesite_blast_furnaceblock = new ExtraBlastFurnaceBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE));
     public static final BlockItem andesite_blast_furnace = new BlockItem(andesite_blast_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
-    public static final Block granite_blast_furnaceblock = new ExtraBlastFurnaceBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE),0);
+    public static final Block granite_blast_furnaceblock = new ExtraBlastFurnaceBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE));
     public static final BlockItem granite_blast_furnace = new BlockItem(granite_blast_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
-    public static final Block diorite_blast_furnaceblock = new ExtraBlastFurnaceBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE),0);
+    public static final Block diorite_blast_furnaceblock = new ExtraBlastFurnaceBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE));
     public static final BlockItem diorite_blast_furnace = new BlockItem(diorite_blast_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
-    public static final Block netherrack_blast_furnaceblock = new ExtraBlastFurnaceBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE),1);
+    public static final Block netherrack_blast_furnaceblock = new ExtraBlastFurnaceBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE));
     public static final BlockItem netherrack_blast_furnace = new BlockItem(netherrack_blast_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
-    public static final Block blackstone_blast_furnaceblock = new ExtraBlastFurnaceBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE),1);
+    public static final Block blackstone_blast_furnaceblock = new ExtraBlastFurnaceBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE));
     public static final BlockItem blackstone_blast_furnace = new BlockItem(blackstone_blast_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
-    public static final Block basalt_blast_furnaceblock = new ExtraBlastFurnaceBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE),1);
+    public static final Block basalt_blast_furnaceblock = new ExtraBlastFurnaceBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE));
     public static final BlockItem basalt_blast_furnace = new BlockItem(basalt_blast_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
-    public static final Block endstone_blast_furnaceblock = new ExtraBlastFurnaceBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE),2);
+    public static final Block endstone_blast_furnaceblock = new ExtraBlastFurnaceBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE));
     public static final BlockItem endstone_blast_furnace = new BlockItem(endstone_blast_furnaceblock,new Item.Settings().group(ItemGroup.DECORATIONS));
 
     public static Item granitesword = new SwordItem(ExtraToolMaterials.GRANITE, 3, -2.4F, (new Item.Settings()).group(ItemGroup.COMBAT));

@@ -11,26 +11,25 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 import java.util.Random;
 
-
-public class ExtraBlastFurnaceBlock extends AbstractExtraFurnaceBlock {
-    protected ExtraBlastFurnaceBlock(Settings settings) {
+public class ExtraSmokerBlock extends AbstractExtraFurnaceBlock {
+    protected ExtraSmokerBlock(Settings settings) {
         super(settings);
     }
+
     public BlockEntity createBlockEntity(BlockView world) {
-        return new ExtraBlastFurnaceBlockEntity();
+        return new ExtraSmokerBlockEntity();
     }
 
     protected void openScreen(World world, BlockPos pos, PlayerEntity player) {
         BlockEntity blockEntity = world.getBlockEntity(pos);
-        if (blockEntity instanceof ExtraBlastFurnaceBlockEntity) {
+        if (blockEntity instanceof ExtraSmokerBlockEntity) {
             player.openHandledScreen((NamedScreenHandlerFactory)blockEntity);
-            player.incrementStat(Stats.INTERACT_WITH_BLAST_FURNACE);
+            player.incrementStat(Stats.INTERACT_WITH_SMOKER);
         }
 
     }
@@ -42,17 +41,10 @@ public class ExtraBlastFurnaceBlock extends AbstractExtraFurnaceBlock {
             double e = (double)pos.getY();
             double f = (double)pos.getZ() + 0.5D;
             if (random.nextDouble() < 0.1D) {
-                world.playSound(d, e, f, SoundEvents.BLOCK_BLASTFURNACE_FIRE_CRACKLE, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
+                world.playSound(d, e, f, SoundEvents.BLOCK_SMOKER_SMOKE, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
             }
 
-            Direction direction = (Direction)state.get(FACING);
-            Direction.Axis axis = direction.getAxis();
-            double g = 0.52D;
-            double h = random.nextDouble() * 0.6D - 0.3D;
-            double i = axis == Direction.Axis.X ? (double)direction.getOffsetX() * 0.52D : h;
-            double j = random.nextDouble() * 9.0D / 16.0D;
-            double k = axis == Direction.Axis.Z ? (double)direction.getOffsetZ() * 0.52D : h;
-            world.addParticle(ParticleTypes.SMOKE, d + i, e + j, f + k, 0.0D, 0.0D, 0.0D);
+            world.addParticle(ParticleTypes.SMOKE, d, e + 1.1D, f, 0.0D, 0.0D, 0.0D);
         }
     }
 }
