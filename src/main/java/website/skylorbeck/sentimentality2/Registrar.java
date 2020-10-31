@@ -44,7 +44,7 @@ public class Registrar {
                 ).build(null));
 
         Declarer.EXTRA_BLAST_FURNACE_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
-                "sentimentality2:extrablastfurnaceentity",
+                "sentimentality2:blast_furnace",
                 BlockEntityType.Builder.create(ExtraBlastFurnaceBlockEntity::new,
                         Declarer.sandstone_blast_furnaceblock,
                         Declarer.red_sandstone_blast_furnaceblock,
@@ -56,13 +56,19 @@ public class Registrar {
                         Declarer.netherrack_blast_furnaceblock,
                         Declarer.basalt_blast_furnaceblock
                 ).build(null));
-
-        regItem("test_furnaceitem",Declarer.test_blockitem);
-        regBlock("test_furnace",Declarer.test_block);
+        
         Declarer.EXTRA_SMOKER_FURNACE_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
                 "sentimentality2:smoker",
                 BlockEntityType.Builder.create(SmokerBlockEntity::new,
-                        Declarer.test_block
+                        Declarer.sandstone_smokerblock,
+                        Declarer.red_sandstone_smokerblock,
+                        Declarer.andesite_smokerblock,
+                        Declarer.granite_smokerblock,
+                        Declarer.diorite_smokerblock,
+                        Declarer.endstone_smokerblock,
+                        Declarer.blackstone_smokerblock,
+                        Declarer.netherrack_smokerblock,
+                        Declarer.basalt_smokerblock
                 ).build(null));
 
         regBlock( "sandstone_furnace", Declarer.sandstone_furnaceblock);
@@ -103,6 +109,25 @@ public class Registrar {
         regBlock( "basalt_blast_furnace", Declarer.basalt_blast_furnaceblock);
         regItem("basalt_blast_furnaceitem", Declarer.basalt_blast_furnace);
 
+        regBlock( "sandstone_smoker", Declarer.sandstone_smokerblock);
+        regItem("sandstone_smokeritem", Declarer.sandstone_smoker);
+        regBlock( "red_sandstone_smoker", Declarer.red_sandstone_smokerblock);
+        regItem("red_sandstone_smokeritem", Declarer.red_sandstone_smoker);
+        regBlock( "andesite_smoker", Declarer.andesite_smokerblock);
+        regItem("andesite_smokeritem", Declarer.andesite_smoker);
+        regBlock( "granite_smoker", Declarer.granite_smokerblock);
+        regItem("granite_smokeritem", Declarer.granite_smoker);
+        regBlock( "diorite_smoker", Declarer.diorite_smokerblock);
+        regItem("diorite_smokeritem", Declarer.diorite_smoker);
+        regBlock( "endstone_smoker", Declarer.endstone_smokerblock);
+        regItem("endstone_smokeritem", Declarer.endstone_smoker);
+        regBlock( "blackstone_smoker", Declarer.blackstone_smokerblock);
+        regItem("blackstone_smokeritem", Declarer.blackstone_smoker);
+        regBlock( "netherrack_smoker", Declarer.netherrack_smokerblock);
+        regItem("netherrack_smokeritem", Declarer.netherrack_smoker);
+        regBlock( "basalt_smoker", Declarer.basalt_smokerblock);
+        regItem("basalt_smokeritem", Declarer.basalt_smoker);
+        
         regItem("granitepick", Declarer.granitepick);
         regItem("graniteaxe", Declarer.graniteaxe);
         regItem("graniteshovel", Declarer.graniteshovel);
