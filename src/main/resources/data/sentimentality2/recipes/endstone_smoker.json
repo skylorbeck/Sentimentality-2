@@ -10,10 +10,10 @@
       "tag": "minecraft:logs"
     },
     "X": {
-      "item": "sentimentality2:endstone_furnace"
+      "item": "sentimentality2:endstone_furnaceitem"
     }
   },
   "result": {
-    "item": "sentimentality2:endstone_smoker"
+    "item": "sentimentality2:endstone_smokeritem"
   }
 }

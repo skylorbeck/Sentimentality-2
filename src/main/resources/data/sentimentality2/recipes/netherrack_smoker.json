@@ -10,10 +10,10 @@
       "tag": "minecraft:logs"
     },
     "X": {
-      "item": "sentimentality2:netherrack_furnace"
+      "item": "sentimentality2:netherrack_furnaceitem"
     }
   },
   "result": {
-    "item": "sentimentality2:netherrack_smoker"
+    "item": "sentimentality2:netherrack_smokeritem"
   }
 }
