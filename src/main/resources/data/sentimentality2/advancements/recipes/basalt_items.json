@@ -19,6 +19,7 @@
         "recipes": [
             "sentimentality2:basalt_furnace",
             "sentimentality2:basalt_blast_furnace",
+            "sentimentality2:basalt_smoker",
             "sentimentality2:basalt_axe",
             "sentimentality2:basalt_hoe",
             "sentimentality2:basalt_pickaxe",

@@ -19,6 +19,7 @@
         "recipes": [
             "sentimentality2:blackstone_furnace",
             "sentimentality2:blackstone_blast_furnace",
+            "sentimentality2:blackstone_smoker",
             "sentimentality2:blackstone_axe",
             "sentimentality2:blackstone_hoe",
             "sentimentality2:blackstone_pickaxe",

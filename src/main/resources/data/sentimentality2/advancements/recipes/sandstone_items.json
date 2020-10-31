@@ -39,8 +39,10 @@
       "sentimentality2:extratool/red_sandstone_sword",
       "sentimentality2:sandstone_furnace",
       "sentimentality2:sandstone_blast_furnace",
+      "sentimentality2:sandstone_smoker",
       "sentimentality2:red_sandstone_furnace",
-      "sentimentality2:red_sandstone_blast_furnace"
+      "sentimentality2:red_sandstone_blast_furnace",
+      "sentimentality2:red_sandstone_smoker"
 
     ]
   }

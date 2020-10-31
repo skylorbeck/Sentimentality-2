@@ -23,7 +23,8 @@
       "sentimentality2:extratool/netherrack_shovel",
       "sentimentality2:extratool/netherrack_sword",
       "sentimentality2:netherrack_furnace",
-      "sentimentality2:netherrack_blast_furnace"
+      "sentimentality2:netherrack_blast_furnace",
+      "sentimentality2:netherrack_blast_smoker"
     ]
   }
 }
