@@ -1,5 +1,7 @@
 {
   "block.sentimentality2.charcoal_block": "Charcoal Block",
+  "item.sentimentality2.fleather": "Fleather",
+
   "block.sentimentality2.sandstone_furnace": "Sandstone Furnace",
   "block.sentimentality2.red_sandstone_furnace": "Red Sandstone Furnace",
   "block.sentimentality2.andesite_furnace": "Andesite Furnace",
@@ -19,9 +21,17 @@
   "block.sentimentality2.blackstone_blast_furnace": "Blackstone Blast Furnace",
   "block.sentimentality2.netherrack_blast_furnace": "Netherrack Blast Furnace",
   "block.sentimentality2.basalt_blast_furnace": "Basalt Blast Furnace",
-  
-  "item.sentimentality2.fleather": "Fleather",
 
+  "block.sentimentality2.sandstone_smoker": "Sandstone Smoker",
+  "block.sentimentality2.red_sandstone_smoker": "Red Sandstone Smoker",
+  "block.sentimentality2.andesite_smoker": "Andesite Smoker",
+  "block.sentimentality2.granite_smoker": "Granite Smoker",
+  "block.sentimentality2.diorite_smoker": "Diorite Smoker",
+  "block.sentimentality2.endstone_smoker": "Endstone Smoker",
+  "block.sentimentality2.blackstone_smoker": "Blackstone Smoker",
+  "block.sentimentality2.netherrack_smoker": "Netherrack Smoker",
+  "block.sentimentality2.basalt_smoker": "Basalt Smoker",
+  
   "item.sentimentality2.granitesword": "Granite Sword",
   "item.sentimentality2.graniteshovel": "Granite Shovel",
   "item.sentimentality2.graniteaxe": "Granite Axe",
