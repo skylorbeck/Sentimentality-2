@@ -14,7 +14,7 @@ public class Declarer {
     public static DefaultParticleType END_FIRE_FLAME;
     public static BlockEntityType<ExtraFurnaceBlockEntity> EXTRA_FURNACE_ENTITY;
     public static BlockEntityType<ExtraBlastFurnaceBlockEntity> EXTRA_BLAST_FURNACE_ENTITY;
-    public static BlockEntityType<SmokerBlockEntity> EXTRA_SMOKER_FURNACE_ENTITY;
+    public static BlockEntityType<ExtraSmokerBlockEntity> EXTRA_SMOKER_FURNACE_ENTITY;
 
     public static final Item fleather = new Item(new FabricItemSettings().group(ItemGroup.MISC));
 

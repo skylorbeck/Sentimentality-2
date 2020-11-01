@@ -59,7 +59,7 @@ public class Registrar {
         
         Declarer.EXTRA_SMOKER_FURNACE_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
                 "sentimentality2:smoker",
-                BlockEntityType.Builder.create(SmokerBlockEntity::new,
+                BlockEntityType.Builder.create(ExtraSmokerBlockEntity::new,
                         Declarer.sandstone_smokerblock,
                         Declarer.red_sandstone_smokerblock,
                         Declarer.andesite_smokerblock,
