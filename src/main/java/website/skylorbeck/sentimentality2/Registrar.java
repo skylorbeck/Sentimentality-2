@@ -127,7 +127,12 @@ public class Registrar {
         regItem("netherrack_smokeritem", Declarer.netherrack_smoker);
         regBlock( "basalt_smoker", Declarer.basalt_smokerblock);
         regItem("basalt_smokeritem", Declarer.basalt_smoker);
-        
+
+        regItem("wool_helmet",Declarer.wool_helmet);
+        regItem("wool_chestplate",Declarer.wool_chestplate);
+        regItem("wool_leggings",Declarer.wool_leggings);
+        regItem("wool_boots",Declarer.wool_boots);
+
         regItem("granitepick", Declarer.granitepick);
         regItem("graniteaxe", Declarer.graniteaxe);
         regItem("graniteshovel", Declarer.graniteshovel);

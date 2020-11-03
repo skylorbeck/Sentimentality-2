@@ -1,11 +1,15 @@
 package website.skylorbeck.sentimentality2;
 
+import dev.emi.trinkets.TrinketSlot;
+import dev.emi.trinkets.api.TrinketComponent;
+import dev.emi.trinkets.api.TrinketSlots;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.FurnaceBlockEntity;
 import net.minecraft.block.entity.SmokerBlockEntity;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.particle.DefaultParticleType;
 
@@ -77,7 +81,12 @@ public class Declarer {
     public static final BlockItem basalt_smoker = new BlockItem(basalt_smokerblock,new Item.Settings().group(ItemGroup.DECORATIONS));
     public static final Block endstone_smokerblock = new ExtraSmokerBlock(FabricBlockSettings.copyOf(Blocks.SMOKER));
     public static final BlockItem endstone_smoker = new BlockItem(endstone_smokerblock,new Item.Settings().group(ItemGroup.DECORATIONS));
-    
+
+    public static final Item wool_helmet = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.HEAD,new Item.Settings().group(ItemGroup.COMBAT));//todo figure out how to change default color to white from brown
+    public static final Item wool_chestplate = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.CHEST,new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item wool_leggings = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.LEGS,new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item wool_boots = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.FEET,new Item.Settings().group(ItemGroup.COMBAT));
+
     public static final Item granitesword = new SwordItem(ExtraToolMaterials.GRANITE, 3, -2.4F, (new Item.Settings()).group(ItemGroup.COMBAT));
     public static final Item graniteshovel = new ShovelItem(ExtraToolMaterials.GRANITE, 1.5F, -3.0F, (new Item.Settings()).group(ItemGroup.TOOLS));
     public static final Item granitepick = new ExtraPickaxeItem(ExtraToolMaterials.GRANITE,1,-2.8F,(new Item.Settings().group(ItemGroup.TOOLS)));
