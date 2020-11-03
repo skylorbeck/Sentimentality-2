@@ -11,6 +11,7 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.FurnaceBlockEntity;
 import net.minecraft.block.entity.SmokerBlockEntity;
 import net.minecraft.client.color.item.ItemColorProvider;
+import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -78,7 +79,14 @@ public class Registrar {
                         Declarer.basalt_smokerblock
                 ).build(null));
 
-        //ColorProviderRegistry.ITEM.register((stack, tintIndex) -> );//todo
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) ->
+        stack.getSubTag(Ref.display) != null && stack.getSubTag(Ref.display).contains(Ref.color, 99) ? stack.getSubTag(Ref.display).getInt(Ref.color) : 10511680,
+                Declarer.wool_helmet,
+                Declarer.wool_chestplate,
+                Declarer.wool_leggings,
+                Declarer.wool_boots
+        );
+
         regBlock( "sandstone_furnace", Declarer.sandstone_furnaceblock);
         regItem("sandstone_furnaceitem", Declarer.sandstone_furnace);
         regBlock( "red_sandstone_furnace", Declarer.red_sandstone_furnaceblock);
