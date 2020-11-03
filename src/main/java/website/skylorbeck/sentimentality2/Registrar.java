@@ -67,7 +67,7 @@ public class Registrar {
                 ).build(null));
 
         ColorProviderRegistry.ITEM.register((stack, tintIndex) ->
-        stack.getSubTag(Ref.display) != null && stack.getSubTag(Ref.display).contains(Ref.color, 99) ? stack.getSubTag(Ref.display).getInt(Ref.color) :16777215 /*10511680*/,
+        stack.getSubTag(Ref.display) != null && stack.getSubTag(Ref.display).contains(Ref.color, 99) ? stack.getSubTag(Ref.display).getInt(Ref.color) :/*16777215*/ 10511680,
                 Declarer.wool_helmet,
                 Declarer.wool_chestplate,
                 Declarer.wool_leggings,
