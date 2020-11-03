@@ -1,6 +1,5 @@
 package website.skylorbeck.sentimentality2;
 
-import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.RecipeType;

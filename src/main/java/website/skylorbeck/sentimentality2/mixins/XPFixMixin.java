@@ -12,9 +12,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import website.skylorbeck.sentimentality2.AbstractExtraFurnaceBlockEntity;
-import website.skylorbeck.sentimentality2.ExtraBlastFurnaceBlockEntity;
-import website.skylorbeck.sentimentality2.ExtraFurnaceBlockEntity;
-import website.skylorbeck.sentimentality2.ExtraSmokerBlockEntity;
 
 @Mixin(FurnaceOutputSlot.class)
 public class XPFixMixin extends Slot {

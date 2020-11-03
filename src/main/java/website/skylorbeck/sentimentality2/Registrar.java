@@ -5,22 +5,9 @@ import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.SmokerBlock;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.block.entity.FurnaceBlockEntity;
-import net.minecraft.block.entity.SmokerBlockEntity;
-import net.minecraft.client.color.item.ItemColorProvider;
-import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.client.particle.FlameParticle;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.item.DyeableArmorItem;
-import net.minecraft.item.DyeableItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -80,7 +67,7 @@ public class Registrar {
                 ).build(null));
 
         ColorProviderRegistry.ITEM.register((stack, tintIndex) ->
-        stack.getSubTag(Ref.display) != null && stack.getSubTag(Ref.display).contains(Ref.color, 99) ? stack.getSubTag(Ref.display).getInt(Ref.color) : 10511680,
+        stack.getSubTag(Ref.display) != null && stack.getSubTag(Ref.display).contains(Ref.color, 99) ? stack.getSubTag(Ref.display).getInt(Ref.color) :16777215 /*10511680*/,
                 Declarer.wool_helmet,
                 Declarer.wool_chestplate,
                 Declarer.wool_leggings,
