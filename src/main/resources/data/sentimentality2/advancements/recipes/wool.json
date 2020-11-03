@@ -32,7 +32,11 @@
             "sentimentality2:wool/purple_wool",
             "sentimentality2:wool/red_wool",
             "sentimentality2:wool/white_wool",
-            "sentimentality2:wool/yellow_wool"
+            "sentimentality2:wool/yellow_wool",
+            "sentimentality2:woolboot",
+            "sentimentality2:woolchest",
+            "sentimentality2:woolhelm",
+            "sentimentality2:woolpant"
         ]
     }
 }

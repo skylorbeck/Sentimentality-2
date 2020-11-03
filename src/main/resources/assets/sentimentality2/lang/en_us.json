@@ -31,7 +31,12 @@
   "block.sentimentality2.blackstone_smoker": "Blackstone Smoker",
   "block.sentimentality2.netherrack_smoker": "Netherrack Smoker",
   "block.sentimentality2.basalt_smoker": "Basalt Smoker",
-  
+
+  "item.sentimentality2.wool_leggings": "Wool Leggings",
+  "item.sentimentality2.wool_chestplate": "Wool Chestplate",
+  "item.sentimentality2.wool_helmet": "Wool Helmet",
+  "item.sentimentality2.wool_boots": "Wool Boots",
+
   "item.sentimentality2.granitesword": "Granite Sword",
   "item.sentimentality2.graniteshovel": "Granite Shovel",
   "item.sentimentality2.graniteaxe": "Granite Axe",

@@ -1,6 +1,7 @@
 package website.skylorbeck.sentimentality2;
 
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Block;
@@ -9,10 +10,16 @@ import net.minecraft.block.SmokerBlock;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.FurnaceBlockEntity;
 import net.minecraft.block.entity.SmokerBlockEntity;
+import net.minecraft.client.color.item.ItemColorProvider;
 import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.DyeableArmorItem;
+import net.minecraft.item.DyeableItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -71,6 +78,7 @@ public class Registrar {
                         Declarer.basalt_smokerblock
                 ).build(null));
 
+        //ColorProviderRegistry.ITEM.register((stack, tintIndex) -> );//todo
         regBlock( "sandstone_furnace", Declarer.sandstone_furnaceblock);
         regItem("sandstone_furnaceitem", Declarer.sandstone_furnace);
         regBlock( "red_sandstone_furnace", Declarer.red_sandstone_furnaceblock);
