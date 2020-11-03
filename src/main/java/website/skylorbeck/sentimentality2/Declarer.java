@@ -83,7 +83,7 @@ public class Declarer {
     public static final BlockItem endstone_smoker = new BlockItem(endstone_smokerblock,new Item.Settings().group(ItemGroup.DECORATIONS));
 
     public static final Item wool_helmet = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.HEAD,new Item.Settings().group(ItemGroup.COMBAT));//todo figure out how to change default color to white from brown
-    public static final Item wool_chestplate = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.CHEST,new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item wool_chestplate = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.CHEST,new Item.Settings().group(ItemGroup.COMBAT));//todo make better textures
     public static final Item wool_leggings = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.LEGS,new Item.Settings().group(ItemGroup.COMBAT));
     public static final Item wool_boots = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.FEET,new Item.Settings().group(ItemGroup.COMBAT));
 
