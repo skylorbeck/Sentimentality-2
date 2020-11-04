@@ -16,6 +16,7 @@ public class Declarer {
     public static BlockEntityType<ExtraBlastFurnaceBlockEntity> EXTRA_BLAST_FURNACE_ENTITY;
     public static BlockEntityType<ExtraSmokerBlockEntity> EXTRA_SMOKER_FURNACE_ENTITY;
 
+    public static final Item flighttest = new FlightItem(new Item.Settings().group(ItemGroup.MISC).maxCount(1).maxDamage(100));
 
     public static final Item fleather = new Item(new FabricItemSettings().group(ItemGroup.MISC));
 

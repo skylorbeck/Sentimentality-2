@@ -16,12 +16,13 @@ import net.minecraft.util.registry.Registry;
 
 public class Registrar {
 
-
     public static void register() {
         regItem("fleather", Declarer.fleather);
         regBlock( "charcoal_block", Declarer.charcoal_block);
         regItem("charcoal_blockitem", Declarer.charcoal_blockitem);
         FuelRegistry.INSTANCE.add(Declarer.charcoal_blockitem, 16000);
+
+        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "flightitem"), Declarer.flighttest);
 
         Declarer.END_FIRE_FLAME = Registry.register(Registry.PARTICLE_TYPE, new Identifier(Ref.MODID, "end_fire_flame"), FabricParticleTypes.simple());
         ParticleFactoryRegistry.getInstance().register(Declarer.END_FIRE_FLAME, FlameParticle.Factory::new);
