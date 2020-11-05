@@ -1,0 +1,60 @@
+package website.skylorbeck.sentimentality2;
+
+import com.sun.org.apache.bcel.internal.generic.SWITCH;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.client.item.TooltipContext;
+import net.minecraft.item.ItemStack;
+import net.minecraft.state.StateManager;
+import net.minecraft.state.property.IntProperty;
+import net.minecraft.state.property.Property;
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
+import net.minecraft.world.BlockView;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
+
+public class CompressedBlock extends Block {
+    private static final IntProperty compression = IntProperty.of("compression",1,9);
+    public CompressedBlock(Settings settings,int level) {
+        super(settings);
+        this.setDefaultState(this.getDefaultState().with(compression,level));
+    }
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
+        switch (this.getDefaultState().get(compression)){
+            case 1:
+                tooltip.add(new TranslatableText("block.sentimentality2.compressed.monuple"));
+                break;
+            case 2:
+                tooltip.add(new TranslatableText("block.sentimentality2.compressed.couple"));
+                break;
+            case 3:
+                tooltip.add(new TranslatableText("block.sentimentality2.compressed.triple"));
+                break;
+            case 4:
+                tooltip.add(new TranslatableText("block.sentimentality2.compressed.quadruple"));
+                break;
+            case 5:
+                tooltip.add(new TranslatableText("block.sentimentality2.compressed.quintuple"));
+                break;
+            case 6:
+                tooltip.add(new TranslatableText("block.sentimentality2.compressed.sextuple"));
+                break;
+            case 7:
+                tooltip.add(new TranslatableText("block.sentimentality2.compressed.septuple"));
+                break;
+            case 8:
+                tooltip.add(new TranslatableText("block.sentimentality2.compressed.octuple"));
+                break;
+            case 9:
+                tooltip.add(new TranslatableText("block.sentimentality2.compressed.nonuple"));
+                break;
+        }
+    }
+    @Override
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(compression);
+    }
+}
