@@ -38,7 +38,25 @@ public class Declarer {
     public static final BlockItem octuple_compressed_cobblestone = new BlockItem(octuple_compressed_cobblestone_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Block nonuple_compressed_cobblestone_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE),9);
     public static final BlockItem nonuple_compressed_cobblestone = new BlockItem(nonuple_compressed_cobblestone_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
-
+    public static final Block monuple_compressed_dirt_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIRT),1);
+    public static final BlockItem monuple_compressed_dirt = new BlockItem(monuple_compressed_dirt_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block couple_compressed_dirt_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIRT),2);
+    public static final BlockItem couple_compressed_dirt = new BlockItem(couple_compressed_dirt_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block triple_compressed_dirt_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIRT),3);
+    public static final BlockItem triple_compressed_dirt = new BlockItem(triple_compressed_dirt_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block quadruple_compressed_dirt_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIRT),4);
+    public static final BlockItem quadruple_compressed_dirt = new BlockItem(quadruple_compressed_dirt_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block quintuple_compressed_dirt_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIRT),5);
+    public static final BlockItem quintuple_compressed_dirt = new BlockItem(quintuple_compressed_dirt_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block sextuple_compressed_dirt_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIRT),6);
+    public static final BlockItem sextuple_compressed_dirt = new BlockItem(sextuple_compressed_dirt_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block septuple_compressed_dirt_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIRT),7);
+    public static final BlockItem septuple_compressed_dirt = new BlockItem(septuple_compressed_dirt_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block octuple_compressed_dirt_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIRT),8);
+    public static final BlockItem octuple_compressed_dirt = new BlockItem(octuple_compressed_dirt_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block nonuple_compressed_dirt_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIRT),9);
+    public static final BlockItem nonuple_compressed_dirt = new BlockItem(nonuple_compressed_dirt_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    
     public static final Block charcoal_block =new Block(FabricBlockSettings.copyOf(Blocks.COAL_BLOCK));
     public static final BlockItem charcoal_blockitem = new BlockItem(charcoal_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
 

@@ -22,6 +22,16 @@
   "block.sentimentality2.octuple_compressed_cobblestone_block": "Octuple Compressed Cobblestone",
   "block.sentimentality2.nonuple_compressed_cobblestone_block": "Nonuple Compressed Cobblestone",
 
+  "block.sentimentality2.monuple_compressed_dirt_block": "Monuple Compressed Dirt",
+  "block.sentimentality2.couple_compressed_dirt_block": "Couple Compressed Dirt",
+  "block.sentimentality2.triple_compressed_dirt_block": "Triple Compressed Dirt",
+  "block.sentimentality2.quadruple_compressed_dirt_block": "Quadruple Compressed Dirt",
+  "block.sentimentality2.quintuple_compressed_dirt_block": "Quintuple Compressed Dirt",
+  "block.sentimentality2.sextuple_compressed_dirt_block": "Sextuple Compressed Dirt",
+  "block.sentimentality2.septuple_compressed_dirt_block": "Septuple Compressed Dirt",
+  "block.sentimentality2.octuple_compressed_dirt_block": "Octuple Compressed Dirt",
+  "block.sentimentality2.nonuple_compressed_dirt_block": "Nonuple Compressed Dirt",
+  
   "block.sentimentality2.sandstone_furnace": "Sandstone Furnace",
   "block.sentimentality2.red_sandstone_furnace": "Red Sandstone Furnace",
   "block.sentimentality2.andesite_furnace": "Andesite Furnace",

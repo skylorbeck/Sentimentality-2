@@ -236,7 +236,24 @@ public class Registrar {
         regBlock("octuple_compressed_cobblestone_block",Declarer.octuple_compressed_cobblestone_block);
         regItem("nonuple_compressed_cobblestone",Declarer.nonuple_compressed_cobblestone);
         regBlock("nonuple_compressed_cobblestone_block",Declarer.nonuple_compressed_cobblestone_block);
-
+        regItem("monuple_compressed_dirt",Declarer.monuple_compressed_dirt);
+        regBlock("monuple_compressed_dirt_block",Declarer.monuple_compressed_dirt_block);
+        regItem("couple_compressed_dirt",Declarer.couple_compressed_dirt);
+        regBlock("couple_compressed_dirt_block",Declarer.couple_compressed_dirt_block);
+        regItem("triple_compressed_dirt",Declarer.triple_compressed_dirt);
+        regBlock("triple_compressed_dirt_block",Declarer.triple_compressed_dirt_block);
+        regItem("quadruple_compressed_dirt",Declarer.quadruple_compressed_dirt);
+        regBlock("quadruple_compressed_dirt_block",Declarer.quadruple_compressed_dirt_block);
+        regItem("quintuple_compressed_dirt",Declarer.quintuple_compressed_dirt);
+        regBlock("quintuple_compressed_dirt_block",Declarer.quintuple_compressed_dirt_block);
+        regItem("sextuple_compressed_dirt",Declarer.sextuple_compressed_dirt);
+        regBlock("sextuple_compressed_dirt_block",Declarer.sextuple_compressed_dirt_block);
+        regItem("septuple_compressed_dirt",Declarer.septuple_compressed_dirt);
+        regBlock("septuple_compressed_dirt_block",Declarer.septuple_compressed_dirt_block);
+        regItem("octuple_compressed_dirt",Declarer.octuple_compressed_dirt);
+        regBlock("octuple_compressed_dirt_block",Declarer.octuple_compressed_dirt_block);
+        regItem("nonuple_compressed_dirt",Declarer.nonuple_compressed_dirt);
+        regBlock("nonuple_compressed_dirt_block",Declarer.nonuple_compressed_dirt_block);
     }
 
 
