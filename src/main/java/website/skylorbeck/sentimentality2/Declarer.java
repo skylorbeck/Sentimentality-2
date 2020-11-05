@@ -10,13 +10,14 @@ import net.minecraft.item.*;
 import net.minecraft.particle.DefaultParticleType;
 
 //todo tooltips
+
 public class Declarer {
     public static DefaultParticleType END_FIRE_FLAME;
     public static BlockEntityType<ExtraFurnaceBlockEntity> EXTRA_FURNACE_ENTITY;
     public static BlockEntityType<ExtraBlastFurnaceBlockEntity> EXTRA_BLAST_FURNACE_ENTITY;
     public static BlockEntityType<ExtraSmokerBlockEntity> EXTRA_SMOKER_FURNACE_ENTITY;
 
-    public static final Item flighttest = new FlightItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(1).maxDamage(100));
+    public static final Item flighttest = new FlightItem(new FabricItemSettings().group(ItemGroup.TRANSPORTATION).maxCount(1).maxDamage(100));
 
     public static final Item fleather = new Item(new FabricItemSettings().group(ItemGroup.MISC));
 
@@ -38,6 +39,7 @@ public class Declarer {
     public static final BlockItem octuple_compressed_cobblestone = new BlockItem(octuple_compressed_cobblestone_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Block nonuple_compressed_cobblestone_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE),9);
     public static final BlockItem nonuple_compressed_cobblestone = new BlockItem(nonuple_compressed_cobblestone_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    
     public static final Block monuple_compressed_dirt_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIRT),1);
     public static final BlockItem monuple_compressed_dirt = new BlockItem(monuple_compressed_dirt_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Block couple_compressed_dirt_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIRT),2);
@@ -56,6 +58,82 @@ public class Declarer {
     public static final BlockItem octuple_compressed_dirt = new BlockItem(octuple_compressed_dirt_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Block nonuple_compressed_dirt_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIRT),9);
     public static final BlockItem nonuple_compressed_dirt = new BlockItem(nonuple_compressed_dirt_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    
+    public static final Block monuple_compressed_granite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.GRANITE),1);
+    public static final BlockItem monuple_compressed_granite = new BlockItem(monuple_compressed_granite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block couple_compressed_granite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.GRANITE),2);
+    public static final BlockItem couple_compressed_granite = new BlockItem(couple_compressed_granite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block triple_compressed_granite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.GRANITE),3);
+    public static final BlockItem triple_compressed_granite = new BlockItem(triple_compressed_granite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block quadruple_compressed_granite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.GRANITE),4);
+    public static final BlockItem quadruple_compressed_granite = new BlockItem(quadruple_compressed_granite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block quintuple_compressed_granite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.GRANITE),5);
+    public static final BlockItem quintuple_compressed_granite = new BlockItem(quintuple_compressed_granite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block sextuple_compressed_granite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.GRANITE),6);
+    public static final BlockItem sextuple_compressed_granite = new BlockItem(sextuple_compressed_granite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block septuple_compressed_granite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.GRANITE),7);
+    public static final BlockItem septuple_compressed_granite = new BlockItem(septuple_compressed_granite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block octuple_compressed_granite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.GRANITE),8);
+    public static final BlockItem octuple_compressed_granite = new BlockItem(octuple_compressed_granite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block nonuple_compressed_granite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.GRANITE),9);
+    public static final BlockItem nonuple_compressed_granite = new BlockItem(nonuple_compressed_granite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    
+    public static final Block monuple_compressed_diorite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIORITE),1);
+    public static final BlockItem monuple_compressed_diorite = new BlockItem(monuple_compressed_diorite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block couple_compressed_diorite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIORITE),2);
+    public static final BlockItem couple_compressed_diorite = new BlockItem(couple_compressed_diorite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block triple_compressed_diorite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIORITE),3);
+    public static final BlockItem triple_compressed_diorite = new BlockItem(triple_compressed_diorite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block quadruple_compressed_diorite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIORITE),4);
+    public static final BlockItem quadruple_compressed_diorite = new BlockItem(quadruple_compressed_diorite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block quintuple_compressed_diorite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIORITE),5);
+    public static final BlockItem quintuple_compressed_diorite = new BlockItem(quintuple_compressed_diorite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block sextuple_compressed_diorite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIORITE),6);
+    public static final BlockItem sextuple_compressed_diorite = new BlockItem(sextuple_compressed_diorite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block septuple_compressed_diorite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIORITE),7);
+    public static final BlockItem septuple_compressed_diorite = new BlockItem(septuple_compressed_diorite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block octuple_compressed_diorite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIORITE),8);
+    public static final BlockItem octuple_compressed_diorite = new BlockItem(octuple_compressed_diorite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block nonuple_compressed_diorite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIORITE),9);
+    public static final BlockItem nonuple_compressed_diorite = new BlockItem(nonuple_compressed_diorite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    
+    public static final Block monuple_compressed_andesite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE),1);
+    public static final BlockItem monuple_compressed_andesite = new BlockItem(monuple_compressed_andesite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block couple_compressed_andesite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE),2);
+    public static final BlockItem couple_compressed_andesite = new BlockItem(couple_compressed_andesite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block triple_compressed_andesite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE),3);
+    public static final BlockItem triple_compressed_andesite = new BlockItem(triple_compressed_andesite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block quadruple_compressed_andesite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE),4);
+    public static final BlockItem quadruple_compressed_andesite = new BlockItem(quadruple_compressed_andesite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block quintuple_compressed_andesite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE),5);
+    public static final BlockItem quintuple_compressed_andesite = new BlockItem(quintuple_compressed_andesite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block sextuple_compressed_andesite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE),6);
+    public static final BlockItem sextuple_compressed_andesite = new BlockItem(sextuple_compressed_andesite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block septuple_compressed_andesite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE),7);
+    public static final BlockItem septuple_compressed_andesite = new BlockItem(septuple_compressed_andesite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block octuple_compressed_andesite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE),8);
+    public static final BlockItem octuple_compressed_andesite = new BlockItem(octuple_compressed_andesite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block nonuple_compressed_andesite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE),9);
+    public static final BlockItem nonuple_compressed_andesite = new BlockItem(nonuple_compressed_andesite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+
+    public static final Block monuple_compressed_netherrack_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.NETHERRACK),1);
+    public static final BlockItem monuple_compressed_netherrack = new BlockItem(monuple_compressed_netherrack_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block couple_compressed_netherrack_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.NETHERRACK),2);
+    public static final BlockItem couple_compressed_netherrack = new BlockItem(couple_compressed_netherrack_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block triple_compressed_netherrack_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.NETHERRACK),3);
+    public static final BlockItem triple_compressed_netherrack = new BlockItem(triple_compressed_netherrack_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block quadruple_compressed_netherrack_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.NETHERRACK),4);
+    public static final BlockItem quadruple_compressed_netherrack = new BlockItem(quadruple_compressed_netherrack_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block quintuple_compressed_netherrack_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.NETHERRACK),5);
+    public static final BlockItem quintuple_compressed_netherrack = new BlockItem(quintuple_compressed_netherrack_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block sextuple_compressed_netherrack_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.NETHERRACK),6);
+    public static final BlockItem sextuple_compressed_netherrack = new BlockItem(sextuple_compressed_netherrack_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block septuple_compressed_netherrack_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.NETHERRACK),7);
+    public static final BlockItem septuple_compressed_netherrack = new BlockItem(septuple_compressed_netherrack_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block octuple_compressed_netherrack_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.NETHERRACK),8);
+    public static final BlockItem octuple_compressed_netherrack = new BlockItem(octuple_compressed_netherrack_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block nonuple_compressed_netherrack_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.NETHERRACK),9);
+    public static final BlockItem nonuple_compressed_netherrack = new BlockItem(nonuple_compressed_netherrack_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     
     public static final Block charcoal_block =new Block(FabricBlockSettings.copyOf(Blocks.COAL_BLOCK));
     public static final BlockItem charcoal_blockitem = new BlockItem(charcoal_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
@@ -117,7 +195,7 @@ public class Declarer {
     public static final Block endstone_smokerblock = new ExtraSmokerBlock(FabricBlockSettings.copyOf(Blocks.SMOKER));
     public static final BlockItem endstone_smoker = new BlockItem(endstone_smokerblock,new FabricItemSettings().group(ItemGroup.DECORATIONS));
 
-    public static final Item wool_helmet = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.HEAD,new FabricItemSettings().group(ItemGroup.COMBAT));//todo figure out how to change default color to white from brown
+    public static final Item wool_helmet = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.HEAD,new FabricItemSettings().group(ItemGroup.COMBAT));
     public static final Item wool_chestplate = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.CHEST,new FabricItemSettings().group(ItemGroup.COMBAT));//todo make better textures
     public static final Item wool_leggings = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.LEGS,new FabricItemSettings().group(ItemGroup.COMBAT));
     public static final Item wool_boots = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.FEET,new FabricItemSettings().group(ItemGroup.COMBAT));

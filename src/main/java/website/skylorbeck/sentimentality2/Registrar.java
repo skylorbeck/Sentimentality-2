@@ -236,6 +236,7 @@ public class Registrar {
         regBlock("octuple_compressed_cobblestone_block",Declarer.octuple_compressed_cobblestone_block);
         regItem("nonuple_compressed_cobblestone",Declarer.nonuple_compressed_cobblestone);
         regBlock("nonuple_compressed_cobblestone_block",Declarer.nonuple_compressed_cobblestone_block);
+
         regItem("monuple_compressed_dirt",Declarer.monuple_compressed_dirt);
         regBlock("monuple_compressed_dirt_block",Declarer.monuple_compressed_dirt_block);
         regItem("couple_compressed_dirt",Declarer.couple_compressed_dirt);
@@ -254,6 +255,82 @@ public class Registrar {
         regBlock("octuple_compressed_dirt_block",Declarer.octuple_compressed_dirt_block);
         regItem("nonuple_compressed_dirt",Declarer.nonuple_compressed_dirt);
         regBlock("nonuple_compressed_dirt_block",Declarer.nonuple_compressed_dirt_block);
+
+        regItem("monuple_compressed_diorite",Declarer.monuple_compressed_diorite);
+        regBlock("monuple_compressed_diorite_block",Declarer.monuple_compressed_diorite_block);
+        regItem("couple_compressed_diorite",Declarer.couple_compressed_diorite);
+        regBlock("couple_compressed_diorite_block",Declarer.couple_compressed_diorite_block);
+        regItem("triple_compressed_diorite",Declarer.triple_compressed_diorite);
+        regBlock("triple_compressed_diorite_block",Declarer.triple_compressed_diorite_block);
+        regItem("quadruple_compressed_diorite",Declarer.quadruple_compressed_diorite);
+        regBlock("quadruple_compressed_diorite_block",Declarer.quadruple_compressed_diorite_block);
+        regItem("quintuple_compressed_diorite",Declarer.quintuple_compressed_diorite);
+        regBlock("quintuple_compressed_diorite_block",Declarer.quintuple_compressed_diorite_block);
+        regItem("sextuple_compressed_diorite",Declarer.sextuple_compressed_diorite);
+        regBlock("sextuple_compressed_diorite_block",Declarer.sextuple_compressed_diorite_block);
+        regItem("septuple_compressed_diorite",Declarer.septuple_compressed_diorite);
+        regBlock("septuple_compressed_diorite_block",Declarer.septuple_compressed_diorite_block);
+        regItem("octuple_compressed_diorite",Declarer.octuple_compressed_diorite);
+        regBlock("octuple_compressed_diorite_block",Declarer.octuple_compressed_diorite_block);
+        regItem("nonuple_compressed_diorite",Declarer.nonuple_compressed_diorite);
+        regBlock("nonuple_compressed_diorite_block",Declarer.nonuple_compressed_diorite_block);
+
+        regItem("monuple_compressed_granite",Declarer.monuple_compressed_granite);
+        regBlock("monuple_compressed_granite_block",Declarer.monuple_compressed_granite_block);
+        regItem("couple_compressed_granite",Declarer.couple_compressed_granite);
+        regBlock("couple_compressed_granite_block",Declarer.couple_compressed_granite_block);
+        regItem("triple_compressed_granite",Declarer.triple_compressed_granite);
+        regBlock("triple_compressed_granite_block",Declarer.triple_compressed_granite_block);
+        regItem("quadruple_compressed_granite",Declarer.quadruple_compressed_granite);
+        regBlock("quadruple_compressed_granite_block",Declarer.quadruple_compressed_granite_block);
+        regItem("quintuple_compressed_granite",Declarer.quintuple_compressed_granite);
+        regBlock("quintuple_compressed_granite_block",Declarer.quintuple_compressed_granite_block);
+        regItem("sextuple_compressed_granite",Declarer.sextuple_compressed_granite);
+        regBlock("sextuple_compressed_granite_block",Declarer.sextuple_compressed_granite_block);
+        regItem("septuple_compressed_granite",Declarer.septuple_compressed_granite);
+        regBlock("septuple_compressed_granite_block",Declarer.septuple_compressed_granite_block);
+        regItem("octuple_compressed_granite",Declarer.octuple_compressed_granite);
+        regBlock("octuple_compressed_granite_block",Declarer.octuple_compressed_granite_block);
+        regItem("nonuple_compressed_granite",Declarer.nonuple_compressed_granite);
+        regBlock("nonuple_compressed_granite_block",Declarer.nonuple_compressed_granite_block);
+
+        regItem("monuple_compressed_andesite",Declarer.monuple_compressed_andesite);
+        regBlock("monuple_compressed_andesite_block",Declarer.monuple_compressed_andesite_block);
+        regItem("couple_compressed_andesite",Declarer.couple_compressed_andesite);
+        regBlock("couple_compressed_andesite_block",Declarer.couple_compressed_andesite_block);
+        regItem("triple_compressed_andesite",Declarer.triple_compressed_andesite);
+        regBlock("triple_compressed_andesite_block",Declarer.triple_compressed_andesite_block);
+        regItem("quadruple_compressed_andesite",Declarer.quadruple_compressed_andesite);
+        regBlock("quadruple_compressed_andesite_block",Declarer.quadruple_compressed_andesite_block);
+        regItem("quintuple_compressed_andesite",Declarer.quintuple_compressed_andesite);
+        regBlock("quintuple_compressed_andesite_block",Declarer.quintuple_compressed_andesite_block);
+        regItem("sextuple_compressed_andesite",Declarer.sextuple_compressed_andesite);
+        regBlock("sextuple_compressed_andesite_block",Declarer.sextuple_compressed_andesite_block);
+        regItem("septuple_compressed_andesite",Declarer.septuple_compressed_andesite);
+        regBlock("septuple_compressed_andesite_block",Declarer.septuple_compressed_andesite_block);
+        regItem("octuple_compressed_andesite",Declarer.octuple_compressed_andesite);
+        regBlock("octuple_compressed_andesite_block",Declarer.octuple_compressed_andesite_block);
+        regItem("nonuple_compressed_andesite",Declarer.nonuple_compressed_andesite);
+        regBlock("nonuple_compressed_andesite_block",Declarer.nonuple_compressed_andesite_block);
+
+        regItem("monuple_compressed_netherrack",Declarer.monuple_compressed_netherrack);
+        regBlock("monuple_compressed_netherrack_block",Declarer.monuple_compressed_netherrack_block);
+        regItem("couple_compressed_netherrack",Declarer.couple_compressed_netherrack);
+        regBlock("couple_compressed_netherrack_block",Declarer.couple_compressed_netherrack_block);
+        regItem("triple_compressed_netherrack",Declarer.triple_compressed_netherrack);
+        regBlock("triple_compressed_netherrack_block",Declarer.triple_compressed_netherrack_block);
+        regItem("quadruple_compressed_netherrack",Declarer.quadruple_compressed_netherrack);
+        regBlock("quadruple_compressed_netherrack_block",Declarer.quadruple_compressed_netherrack_block);
+        regItem("quintuple_compressed_netherrack",Declarer.quintuple_compressed_netherrack);
+        regBlock("quintuple_compressed_netherrack_block",Declarer.quintuple_compressed_netherrack_block);
+        regItem("sextuple_compressed_netherrack",Declarer.sextuple_compressed_netherrack);
+        regBlock("sextuple_compressed_netherrack_block",Declarer.sextuple_compressed_netherrack_block);
+        regItem("septuple_compressed_netherrack",Declarer.septuple_compressed_netherrack);
+        regBlock("septuple_compressed_netherrack_block",Declarer.septuple_compressed_netherrack_block);
+        regItem("octuple_compressed_netherrack",Declarer.octuple_compressed_netherrack);
+        regBlock("octuple_compressed_netherrack_block",Declarer.octuple_compressed_netherrack_block);
+        regItem("nonuple_compressed_netherrack",Declarer.nonuple_compressed_netherrack);
+        regBlock("nonuple_compressed_netherrack_block",Declarer.nonuple_compressed_netherrack_block);
     }
 
 
