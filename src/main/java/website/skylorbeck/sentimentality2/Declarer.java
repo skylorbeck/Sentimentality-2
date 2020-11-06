@@ -10,6 +10,15 @@ import net.minecraft.item.*;
 import net.minecraft.particle.DefaultParticleType;
 
 //todo tooltips
+//todo compass on ui
+//todo clock on ui
+//todo lightlevel item and on ui
+//todo shapeless arrows
+//todo craft gravel into flint
+//todo bundle of sticks
+//todo chickens drop feathers
+//todo items fall flat
+//todo infinity fix
 
 public class Declarer {
     public static DefaultParticleType END_FIRE_FLAME;

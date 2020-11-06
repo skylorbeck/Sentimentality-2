@@ -3,7 +3,8 @@
   "package": "website.skylorbeck.sentimentality2.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "XPFixMixin"
+    "XPFixMixin",
+    "GrassSwingFix"
   ],
   "injectors": {
     "defaultRequire": 1
