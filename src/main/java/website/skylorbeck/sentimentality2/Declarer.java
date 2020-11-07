@@ -13,7 +13,6 @@ import net.minecraft.particle.DefaultParticleType;
 //todo compass on ui
 //todo clock on ui
 //todo lightlevel item and on ui
-//todo shapeless arrows
 //todo craft gravel into flint
 //todo bundle of sticks
 //todo chickens drop feathers
