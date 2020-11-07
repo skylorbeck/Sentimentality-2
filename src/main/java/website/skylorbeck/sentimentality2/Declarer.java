@@ -17,11 +17,9 @@ import net.minecraft.world.World;
 //todo compass on ui
 //todo clock on ui
 //todo lightlevel item and on ui world.getlightlevel
-//todo craft gravel into flint
-//todo bundle of sticks
 //todo chickens drop feathers
 //todo bows
-//todo
+//todo remake compression textures
 
 public class Declarer {
     public static DefaultParticleType END_FIRE_FLAME;
