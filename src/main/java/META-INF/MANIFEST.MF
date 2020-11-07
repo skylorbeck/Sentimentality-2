@@ -1,0 +1,74 @@
+Manifest-Version: 1.0
+Main-Class: 
+Class-Path: fabric-crash-report-info-v1-0.1.2+b7f9825d95@net.fabricmc.ya
+ rn.1_16_3.1.16.3+build.47-v2.jar fabric-networking-blockentity-v0-0.2.5
+ +b50ffc7b95@net.fabricmc.yarn.1_16_3.1.16.3+build.47-v2.jar lwjgl-glfw-
+ 3.2.2.jar log4j-core-2.8.1.jar fabric-keybindings-v0-0.2.0+3fa9f7c595@n
+ et.fabricmc.yarn.1_16_3.1.16.3+build.47-v2.jar icu4j-66.1.jar fabric-ap
+ i-base-0.2.0+9f0fb4b895@net.fabricmc.yarn.1_16_3.1.16.3+build.47-v2.jar
+  fabric-events-lifecycle-v0-0.2.0+16acbe5b95@net.fabricmc.yarn.1_16_3.1
+ .16.3+build.47-v2.jar fabric-renderer-indigo-0.4.2+2b46237995@net.fabri
+ cmc.yarn.1_16_3.1.16.3+build.47-v2.jar minecraft-1.16.3-mapped-net.fabr
+ icmc.yarn-1.16.3+build.47-v2.jar fabric-tool-attribute-api-v1-1.2.4+2b4
+ 6237995@net.fabricmc.yarn.1_16_3.1.16.3+build.47-v2.jar lwjgl-3.2.2.jar
+  jimfs-1.2-fabric.jar fabric-renderer-registries-v1-2.2.0+f8ac1db295@ne
+ t.fabricmc.yarn.1_16_3.1.16.3+build.47-v2.jar terminalconsoleappender-1
+ .2.0.jar fabric-registry-sync-v0-0.6.0+9f0fb4b895@net.fabricmc.yarn.1_1
+ 6_3.1.16.3+build.47-v2.jar datafixerupper-4.0.26.jar fastutil-8.2.1.jar
+  fabric-resource-loader-v0-0.3.1+facf3bbf95@net.fabricmc.yarn.1_16_3.1.
+ 16.3+build.47-v2.jar fabric-loader-0.10.3+build.211@net.fabricmc.yarn.1
+ _16_3.1.16.3+build.47-v2.jar lwjgl-openal-3.2.2.jar patchy-1.1.jar fabr
+ ic-item-groups-v0-0.2.0+438f963695@net.fabricmc.yarn.1_16_3.1.16.3+buil
+ d.47-v2.jar fabric-mining-levels-v0-0.1.2+b764ce9995@net.fabricmc.yarn.
+ 1_16_3.1.16.3+build.47-v2.jar fabric-commands-v0-0.2.0+52d3083695@net.f
+ abricmc.yarn.1_16_3.1.16.3+build.47-v2.jar fabric-particles-v1-0.2.2+fb
+ 0d9b0e95@net.fabricmc.yarn.1_16_3.1.16.3+build.47-v2.jar fabric-loot-ta
+ bles-v1-1.0.1+432ea18895@net.fabricmc.yarn.1_16_3.1.16.3+build.47-v2.ja
+ r fabric-key-binding-api-v1-1.0.1+730711c695@net.fabricmc.yarn.1_16_3.1
+ .16.3+build.47-v2.jar fabric-tag-extensions-v0-1.0.3+ac8e8c5995@net.fab
+ ricmc.yarn.1_16_3.1.16.3+build.47-v2.jar lwjgl-stb-3.2.2.jar asm-tree-9
+ .0.jar lwjgl-jemalloc-3.2.2.jar commons-codec-1.10.jar fabric-loader-sa
+ t4j-2.3.5.4.jar caelus-fabric-0.0.10-1.16.3@net.fabricmc.yarn.1_16_3.1.
+ 16.3+build.47-v2.jar fabric-textures-v0-1.0.4+eae12eb895@net.fabricmc.y
+ arn.1_16_3.1.16.3+build.47-v2.jar platform-3.4.0.jar fabric-models-v0-0
+ .1.1+f8ac1db295@net.fabricmc.yarn.1_16_3.1.16.3+build.47-v2.jar fabric-
+ screen-handler-api-v1-1.1.0+8724984195@net.fabricmc.yarn.1_16_3.1.16.3+
+ build.47-v2.jar jline-reader-3.12.1.jar tiny-remapper-0.3.0.70.jar fabr
+ ic-biome-api-v1-2.0.0+c29459ab95@net.fabricmc.yarn.1_16_3.1.16.3+build.
+ 47-v2.jar yarn-1.16.3+build.47-v2-final.jar fabric-rendering-v0-1.1.1+f
+ 8ac1db295@net.fabricmc.yarn.1_16_3.1.16.3+build.47-v2.jar asm-analysis-
+ 9.0.jar authlib-1.6.25.jar fabric-game-rule-api-v1-1.0.2+f8ac1db295@net
+ .fabricmc.yarn.1_16_3.1.16.3+build.47-v2.jar fabric-rendering-v1-1.3.1+
+ f8ac1db295@net.fabricmc.yarn.1_16_3.1.16.3+build.47-v2.jar jinput-2.0.5
+ .jar fabric-object-builders-v0-0.7.0+432ea18895@net.fabricmc.yarn.1_16_
+ 3.1.16.3+build.47-v2.jar asm-9.0.jar commons-logging-1.1.3.jar httpclie
+ nt-4.3.3.jar fabric-command-api-v1-1.0.8+5ce5339895@net.fabricmc.yarn.1
+ _16_3.1.16.3+build.47-v2.jar fabric-rendering-data-attachment-v1-0.1.4+
+ f8ac1db295@net.fabricmc.yarn.1_16_3.1.16.3+build.47-v2.jar guava-21.0.j
+ ar cardinal-components-base-2.5.0@net.fabricmc.yarn.1_16_3.1.16.3+build
+ .47-v2.jar javabridge-1.0.22.jar fabric-blockrenderlayer-v1-1.1.4+c6a8e
+ a8995@net.fabricmc.yarn.1_16_3.1.16.3+build.47-v2.jar fabric-structure-
+ api-v1-1.1.0+f8ac1db295@net.fabricmc.yarn.1_16_3.1.16.3+build.47-v2.jar
+  fabric-rendering-fluids-v1-0.1.12+f8ac1db295@net.fabricmc.yarn.1_16_3.
+ 1.16.3+build.47-v2.jar jline-terminal-3.12.1.jar text2speech-1.11.3.jar
+  cardinal-components-entity-2.5.0@net.fabricmc.yarn.1_16_3.1.16.3+build
+ .47-v2.jar commons-lang3-3.5.jar httpcore-4.3.2.jar oshi-core-1.1.jar f
+ abric-object-builder-api-v1-1.9.0+c270b09895@net.fabricmc.yarn.1_16_3.1
+ .16.3+build.47-v2.jar jna-4.4.0.jar fabric-events-interaction-v0-0.4.1+
+ f8ac1db295@net.fabricmc.yarn.1_16_3.1.16.3+build.47-v2.jar fabric-api-0
+ .24.1+build.412-1.16@net.fabricmc.yarn.1_16_3.1.16.3+build.47-v2.jar fa
+ bric-lifecycle-events-v1-1.2.0+74cc3b2095@net.fabricmc.yarn.1_16_3.1.16
+ .3+build.47-v2.jar netty-all-4.1.25.Final.jar trinkets-2.6.7@net.fabric
+ mc.yarn.1_16_3.1.16.3+build.47-v2.jar tiny-mappings-parser-0.2.2.14.jar
+  commons-compress-1.8.1.jar fabric-item-api-v1-1.2.0+f8ac1db295@net.fab
+ ricmc.yarn.1_16_3.1.16.3+build.47-v2.jar commons-io-2.5.jar fabric-netw
+ orking-v0-0.1.10+e00ecb5f95@net.fabricmc.yarn.1_16_3.1.16.3+build.47-v2
+ .jar lwjgl-tinyfd-3.2.2.jar asm-commons-9.0.jar fabric-containers-v0-0.
+ 1.8+045df74f95@net.fabricmc.yarn.1_16_3.1.16.3+build.47-v2.jar fabric-r
+ enderer-api-v1-0.3.2+2b46237995@net.fabricmc.yarn.1_16_3.1.16.3+build.4
+ 7-v2.jar jutils-1.0.0.jar brigadier-1.0.17.jar sponge-mixin-0.8.2+build
+ .23.jar log4j-api-2.8.1.jar gson-2.8.0.jar dev-launch-injector-0.2.1+bu
+ ild.8.jar jopt-simple-5.0.3.jar fabric-content-registries-v0-0.1.9+059e
+ a86695@net.fabricmc.yarn.1_16_3.1.16.3+build.47-v2.jar asm-util-9.0.jar
+  lwjgl-opengl-3.2.2.jar
+

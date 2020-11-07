@@ -4,7 +4,10 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "XPFixMixin",
-    "GrassSwingFix"
+    "GrassSwingFix",
+    "InfinityFix",
+    "ItemEntityMixin",
+    "ItemEntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

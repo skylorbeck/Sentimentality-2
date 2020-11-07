@@ -19,6 +19,8 @@ import net.minecraft.particle.DefaultParticleType;
 //todo chickens drop feathers
 //todo items fall flat
 //todo infinity fix
+//todo bows
+//todo
 
 public class Declarer {
     public static DefaultParticleType END_FIRE_FLAME;
