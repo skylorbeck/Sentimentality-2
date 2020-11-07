@@ -6,7 +6,7 @@
       "conditions": {
         "items": [
           {
-            "item": "minecraft:flint"
+            "item": "minecraft:gravel"
           }
         ]
       }
@@ -17,12 +17,7 @@
   ],
   "rewards": {
     "recipes": [
-      "sentimentality2:extratool/flint_axe",
-      "sentimentality2:extratool/flint_hoe",
-      "sentimentality2:extratool/flint_pickaxe",
-      "sentimentality2:extratool/flint_shovel",
-      "sentimentality2:extratool/flint_sword",
-      "sentimentality2:arrow"
+      "sentimentality2:flint_from_gravel"
     ]
   }
 }
