@@ -17,8 +17,6 @@ import net.minecraft.particle.DefaultParticleType;
 //todo craft gravel into flint
 //todo bundle of sticks
 //todo chickens drop feathers
-//todo items fall flat
-//todo infinity fix
 //todo bows
 //todo
 
