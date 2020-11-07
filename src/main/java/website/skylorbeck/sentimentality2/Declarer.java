@@ -5,14 +5,18 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.MinecraftClientGame;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.particle.DefaultParticleType;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.world.World;
 
 //todo tooltips
 //todo compass on ui
 //todo clock on ui
-//todo lightlevel item and on ui
+//todo lightlevel item and on ui world.getlightlevel
 //todo craft gravel into flint
 //todo bundle of sticks
 //todo chickens drop feathers
@@ -28,6 +32,8 @@ public class Declarer {
     public static final Item flighttest = new FlightItem(new FabricItemSettings().group(ItemGroup.TRANSPORTATION).maxCount(1).maxDamage(100));
 
     public static final Item fleather = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    public static final Item small_stick_bundle = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    public static final Item large_stick_bundle = new Item(new FabricItemSettings().group(ItemGroup.MISC));
 
     public static final Block monuple_compressed_cobblestone_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE),1);
     public static final BlockItem monuple_compressed_cobblestone = new BlockItem(monuple_compressed_cobblestone_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));

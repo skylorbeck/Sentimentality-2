@@ -19,6 +19,10 @@ public class Registrar {
         regBlock( "charcoal_block", Declarer.charcoal_block);
         regItem("charcoal_blockitem", Declarer.charcoal_blockitem);
         FuelRegistry.INSTANCE.add(Declarer.charcoal_blockitem, 16000);
+        regItem("small_stick_bundle",Declarer.small_stick_bundle);
+        FuelRegistry.INSTANCE.add(Declarer.small_stick_bundle,400);
+        regItem("large_stick_bundle",Declarer.large_stick_bundle);
+        FuelRegistry.INSTANCE.add(Declarer.large_stick_bundle,1600);
 
         Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "flightitem"), Declarer.flighttest);
 
