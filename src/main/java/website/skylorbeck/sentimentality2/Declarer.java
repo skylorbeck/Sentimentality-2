@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 //todo tooltips
 //todo compass on ui
 //todo clock on ui
-//todo lightlevel item and on ui world.getlightlevel
+//todo lightlevel item and on ui - world.getlightlevel
 //todo chickens drop feathers
 //todo bows
 //todo remake compression textures

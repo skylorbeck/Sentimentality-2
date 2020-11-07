@@ -4,6 +4,7 @@ import java.sql.Time;
 import java.time.LocalTime;
 import java.util.Random;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Final;
@@ -102,9 +103,13 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
         }
 
         matrixStack.translate(0, 0, 0f);
+
         if(itemEntity.getStack().getItem() instanceof AliasedBlockItem) {
         } else if(itemEntity.getStack().getItem() instanceof BlockItem) {
             matrixStack.translate(0, 0, -0.12f);
+        }
+        if(itemEntity.world.getBlockState(itemEntity.getBlockPos()).getBlock().equals(Blocks.SOUL_SAND)) {
+            matrixStack.translate(0, 0, -.1);
         }
         float scaleX = bakedModel.getTransformation().ground.scale.getX();
         float scaleY = bakedModel.getTransformation().ground.scale.getY();
