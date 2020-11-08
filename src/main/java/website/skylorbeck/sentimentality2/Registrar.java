@@ -16,6 +16,7 @@ public class Registrar {
 
     public static void register() {
         regItem("fleather", Declarer.fleather);
+        regItem("personal_daylight_detector",Declarer.personal_daylight_detector);
         regBlock( "charcoal_block", Declarer.charcoal_block);
         regItem("charcoal_blockitem", Declarer.charcoal_blockitem);
         FuelRegistry.INSTANCE.add(Declarer.charcoal_blockitem, 16000);
