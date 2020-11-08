@@ -6,17 +6,12 @@ import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.options.GameOptions;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
-import org.w3c.dom.ranges.Range;
-
-import java.util.concurrent.TimeUnit;
 
 public class ExtraHUD {
     private MinecraftClient client;
@@ -66,7 +61,7 @@ public class ExtraHUD {
         if ((time<23460)&&(time>12377)){
             lightLevel=blockLightLevel;
         }
-        String lightText= String.format("%02d",lightLevel);//this is old but if I remove it, the JDE throws a fit about not initializing variables
+        String lightText= String.format("%02d",lightLevel);
         if(lightLevel>=12&&lightLevel<=15){
             color = 43520;
             //lightText = "✔";
