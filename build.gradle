@@ -30,7 +30,7 @@ repositories {
 
 dependencies {
 	minecraft "com.mojang:minecraft:1.16.3"
-	mappings "net.fabricmc:yarn:1.16.3+build.47:v2"
+	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:0.10.3+build.211"
 
 
@@ -41,17 +41,19 @@ dependencies {
 	//trinkets
 	modImplementation "com.github.emilyploszaj:trinkets:2.6.6"
 	//config
-	//modApi("me.shedaniel.cloth:config-2:4.8.3") {
-	//	exclude(group: "net.fabricmc.fabric-api")
-	//}
-	//include "me.shedaniel.cloth:config-2:4.8.3"
+	implementation "me.shedaniel.cloth:config-2:4.8.3"
+	modApi("me.shedaniel.cloth:config-2:4.8.3") {
+	exclude(group: "net.fabricmc.fabric-api")
+	}
+	include "me.shedaniel.cloth:config-2:4.8.3"
 	//modmenu
-	//modImplementation "io.github.prospector:modmenu:1.14.6+build.31"
+	modImplementation "io.github.prospector:modmenu:1.14.6+build.31"
 	//autoconfig
-	//modApi("me.sargunvohra.mcmods:autoconfig1u:3.3.1") {
-	//	exclude(group: "net.fabricmc.fabric-api")
-	//}
-	//include "me.sargunvohra.mcmods:autoconfig1u:3.3.1"
+	implementation 'me.sargunvohra.mcmods:autoconfig1u:3.3.1'
+	modApi("me.sargunvohra.mcmods:autoconfig1u:3.3.1") {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
+	include "me.sargunvohra.mcmods:autoconfig1u:3.3.1"
 }
 
 processResources {
