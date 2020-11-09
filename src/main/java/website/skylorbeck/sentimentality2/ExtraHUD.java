@@ -5,19 +5,17 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.options.GameOptions;
-import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.item.ItemRenderer;
-import net.minecraft.client.render.model.json.ModelTransformation;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.screen.slot.Slot;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
+
+import java.util.List;
 
 public class ExtraHUD {
     private MinecraftClient client;
@@ -25,6 +23,8 @@ public class ExtraHUD {
     private boolean compassIcon = true;
     private boolean PDDIcon = true;
     private boolean lightCheck = true;
+
+    private boolean isNight = false;
 
     public ExtraHUD() {
         client = MinecraftClient.getInstance();
@@ -85,7 +85,10 @@ public class ExtraHUD {
         }
 
         if ((time < 23460) && (time > 12377)) {
+            isNight = true;
             lightLevel = blockLightLevel;
+        } else {
+            isNight = false;
         }
         String lightText;
         if (!lightCheck) {
@@ -114,6 +117,23 @@ public class ExtraHUD {
             } else {
                 itemRenderer.renderInGuiWithOverrides(new ItemStack(Declarer.personal_daylight_detector), scaledWidth / 2 + 121, scaledHeight - 19);
             }
+        }
+        int sleeping = 0;
+        List playerEntities = world.getPlayers();
+        for (int i = 0; i < playerEntities.size(); i++) {
+            if (world.getPlayers().get(i).isSleeping()) {
+                sleeping++;
+            }
+        }
+        if (sleeping >= 1) {
+            itemRenderer.renderInGui(new ItemStack(Items.RED_BED), 0, scaledHeight - 18);
+            if (sleeping * 100 / playerEntities.size() >= SleepEventManager.percent) {
+                color = 43520;
+            } else {
+                color = 16733525;
+            }
+            int total = playerEntities.size();
+            textRenderer.drawWithShadow(matrixStack, sleeping + "/" + total, 20, scaledHeight - 10, color);
         }
     }
 }
