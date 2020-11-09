@@ -10,11 +10,13 @@ import net.minecraft.item.*;
 import net.minecraft.particle.DefaultParticleType;
 
 //todo tooltips
-//todo lightlevel item and on ui - world.getlightlevel
+//todo lightlevel item textures
+//todo show clock on ui instead of text
 //todo chickens drop feathers
 //todo bows
 //todo remake compression textures
 //todo options
+//todo sleep count on UI. Based on time?
 
 public class Declarer {
     public static DefaultParticleType END_FIRE_FLAME;
