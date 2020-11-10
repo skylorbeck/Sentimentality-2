@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "sentimentality2:charcoal_block"
+      "item": "sentimentality2:feather_block"
     }
   ],
   "result": {
-    "item": "minecraft:charcoal",
+    "item": "minecraft:feather",
     "count": 9
   }
 }

@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.HayBlock;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
@@ -29,6 +30,11 @@ public class Declarer {
     public static final Item fleather = new Item(new FabricItemSettings().group(ItemGroup.MISC));
     public static final Item small_stick_bundle = new Item(new FabricItemSettings().group(ItemGroup.MISC));
     public static final Item large_stick_bundle = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    public static final Block feather_block_block = new HayBlock(FabricBlockSettings.copyOf(Blocks.HAY_BLOCK));
+    public static final BlockItem feather_block = new BlockItem(feather_block_block,new FabricItemSettings().group(ItemGroup.DECORATIONS));
+    public static final Block charcoal_block_block =new Block(FabricBlockSettings.copyOf(Blocks.COAL_BLOCK));
+    public static final BlockItem charcoal_block = new BlockItem(charcoal_block_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+
 
     public static final Block monuple_compressed_cobblestone_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE),1);
     public static final BlockItem monuple_compressed_cobblestone = new BlockItem(monuple_compressed_cobblestone_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
@@ -143,9 +149,6 @@ public class Declarer {
     public static final BlockItem octuple_compressed_netherrack = new BlockItem(octuple_compressed_netherrack_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Block nonuple_compressed_netherrack_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.NETHERRACK),9);
     public static final BlockItem nonuple_compressed_netherrack = new BlockItem(nonuple_compressed_netherrack_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
-    
-    public static final Block charcoal_block =new Block(FabricBlockSettings.copyOf(Blocks.COAL_BLOCK));
-    public static final BlockItem charcoal_blockitem = new BlockItem(charcoal_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
 
     public static final Block sandstone_furnaceblock = new ExtraFurnaceBlock(FabricBlockSettings.copyOf(Blocks.FURNACE),0);
     public static final BlockItem sandstone_furnace = new BlockItem(sandstone_furnaceblock,new FabricItemSettings().group(ItemGroup.DECORATIONS));

@@ -6,7 +6,7 @@
             "conditions": {
                 "items": [
                     {
-                        "item": "minecraft:wheat"
+                        "item": "minecraft:feather"
                     }
                 ]
             }
@@ -17,7 +17,8 @@
     ],
     "rewards": {
         "recipes": [
-            "sentimentality2:bread"
+            "sentimentality2:feather_block",
+            "sentimentality2:feather_from_block"
         ]
     }
 }

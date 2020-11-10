@@ -1,5 +1,6 @@
 package website.skylorbeck.sentimentality2;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
@@ -48,7 +49,8 @@ public class PDDItem extends Item {
             light = world.getLightLevel(LightType.BLOCK,entity.getBlockPos());
             stack.setCustomName(new TranslatableText("item.sentimentality2.pdd_block"));
         }
-        compoundTag.putInt("CustomModelData", light);
+        int bool = mode ? 2 : 1;
+        compoundTag.putInt("CustomModelData",Integer.parseInt(bool+""+light));
 
     }
 

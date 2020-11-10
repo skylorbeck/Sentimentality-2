@@ -1,8 +1,9 @@
 {
-  "block.sentimentality2.charcoal_block": "Charcoal Block",
+  "block.sentimentality2.charcoal_block_block": "Charcoal Block",
   "item.sentimentality2.fleather": "Fleather",
   "item.sentimentality2.small_stick_bundle": "Small Stick Bundle",
   "item.sentimentality2.large_stick_bundle": "Large Stick Bundle",
+  "block.sentimentality2.feather_block_blockr": "Feather Block",
 
   "item.sentimentality2.personal_daylight_detector": "Personal Daylight Detector",
   "item.sentimentality2.pdd_day": "Personal Daylight Detector - Daylight",

@@ -2,6 +2,6 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "sentimentality2:item/pdd_4",
-    "layer1": "sentimentality2:item/pdd_1xx"
+    "layer1": "sentimentality2:item/pdd_2xx"
   }
 }

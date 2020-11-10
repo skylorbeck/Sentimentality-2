@@ -7,11 +7,11 @@
   ],
   "key": {
     "0": {
-      "item": "minecraft:charcoal"
+      "item": "minecraft:feather"
     }
   },
   "result": {
-    "item": "sentimentality2:charcoal_block",
+    "item": "sentimentality2:feather_block",
     "count": 1
   }
 }
