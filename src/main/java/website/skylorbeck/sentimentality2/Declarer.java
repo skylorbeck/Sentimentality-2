@@ -26,7 +26,7 @@ public class Declarer {
     public static BlockEntityType<ExtraSmokerBlockEntity> EXTRA_SMOKER_FURNACE_ENTITY;
 
     public static final Item flighttest = new FlightItem(new FabricItemSettings().group(ItemGroup.TRANSPORTATION).maxCount(1).maxDamage(100));
-    public static final Item personal_daylight_detector = new Item(new FabricItemSettings().group(ItemGroup.TOOLS));
+    public static final Item personal_daylight_detector = new PDDItem(new FabricItemSettings().group(ItemGroup.TOOLS));
 
     public static final Item fleather = new Item(new FabricItemSettings().group(ItemGroup.MISC));
     public static final Item small_stick_bundle = new Item(new FabricItemSettings().group(ItemGroup.MISC));

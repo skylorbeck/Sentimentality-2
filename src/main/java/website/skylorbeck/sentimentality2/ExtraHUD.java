@@ -66,7 +66,7 @@ public class ExtraHUD {
                 String clockText = String.format("%02d", hour) + ":" + String.format("%02d", minute);
                 textRenderer.drawWithShadow(matrixStack, clockText, scaledWidth / 2 + 95, scaledHeight - 20, 16777215);
             } else {
-                itemRenderer.renderInGuiWithOverrides(new ItemStack(Items.CLOCK), scaledWidth / 2 + 91, scaledHeight - 19);
+                itemRenderer.renderInGuiWithOverrides(new ItemStack(Items.CLOCK), scaledWidth / 2 + 92, scaledHeight - 19);
             }
         }
 
@@ -78,7 +78,7 @@ public class ExtraHUD {
                 for (int i = 0; i < inventory.size(); i++) {
                     ItemStack stack = inventory.getStack(i);
                     if (stack.getItem() == Items.COMPASS) {
-                        itemRenderer.renderInGuiWithOverrides(inventory.getStack(i), scaledWidth / 2 + 106, scaledHeight - 19);
+                        itemRenderer.renderInGuiWithOverrides(inventory.getStack(i), scaledWidth / 2 + 107, scaledHeight - 19);
                     }
                 }
             }
@@ -86,7 +86,7 @@ public class ExtraHUD {
 
         if ((time < 23460) && (time > 12377)) {
             isNight = true;
-            lightLevel = blockLightLevel;
+            //lightLevel = blockLightLevel;
         } else {
             isNight = false;
         }
@@ -115,7 +115,12 @@ public class ExtraHUD {
                 textRenderer.drawWithShadow(matrixStack, lightText, scaledWidth / 2 + 155, scaledHeight - 20, color);
                 textRenderer.drawWithShadow(matrixStack, "Light:", scaledWidth / 2 + 125, scaledHeight - 20, 16777215);
             } else {
-                itemRenderer.renderInGuiWithOverrides(new ItemStack(Declarer.personal_daylight_detector), scaledWidth / 2 + 121, scaledHeight - 19);
+                for (int i = 0; i < inventory.size(); i++) {
+                    ItemStack stack = inventory.getStack(i);
+                    if (stack.getItem() == Declarer.personal_daylight_detector) {
+                        itemRenderer.renderInGuiWithOverrides(inventory.getStack(i), scaledWidth / 2 + 122, scaledHeight - 19);
+                    }
+                }
             }
         }
         int sleeping = 0;

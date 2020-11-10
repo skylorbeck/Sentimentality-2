@@ -3,7 +3,11 @@
   "item.sentimentality2.fleather": "Fleather",
   "item.sentimentality2.small_stick_bundle": "Small Stick Bundle",
   "item.sentimentality2.large_stick_bundle": "Large Stick Bundle",
+
   "item.sentimentality2.personal_daylight_detector": "Personal Daylight Detector",
+  "item.sentimentality2.pdd_day": "Personal Daylight Detector - Daylight",
+  "item.sentimentality2.pdd_block": "Personal Daylight Detector - Blocklight",
+  "item.sentimentality2.pdd_tip": "Use in hand to change mode",
 
   "block.sentimentality2.compressed.monuple":"Nine Blocks",
   "block.sentimentality2.compressed.couple":"81 Blocks",
