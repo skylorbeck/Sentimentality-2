@@ -25,6 +25,7 @@ public class Registrar {
         FuelRegistry.INSTANCE.add(Declarer.small_stick_bundle,400);
         regItem("large_stick_bundle",Declarer.large_stick_bundle);
         FuelRegistry.INSTANCE.add(Declarer.large_stick_bundle,1600);
+        //regItem("iron_bow",Declarer.iron_bow);
 
         Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "flightitem"), Declarer.flighttest);
 

@@ -10,8 +10,6 @@ import net.minecraft.item.*;
 import net.minecraft.particle.DefaultParticleType;
 
 //todo tooltips
-//todo lightlevel item textures and right click toggle
-//todo chickens drop feathers
 //todo bows
 //todo remake compression textures
 //todo options
@@ -210,6 +208,8 @@ public class Declarer {
     public static final Item wool_chestplate = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.CHEST,new FabricItemSettings().group(ItemGroup.COMBAT));//todo make better textures
     public static final Item wool_leggings = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.LEGS,new FabricItemSettings().group(ItemGroup.COMBAT));
     public static final Item wool_boots = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.FEET,new FabricItemSettings().group(ItemGroup.COMBAT));
+
+    //public static final Item iron_bow = new ExtraBowItem(new FabricItemSettings().group(ItemGroup.COMBAT).maxDamage(576));
 
     public static final Item granite_sword = new SwordItem(ExtraToolMaterials.GRANITE, 3, -2.4F, (new FabricItemSettings()).group(ItemGroup.COMBAT));
     public static final Item granite_shovel = new ShovelItem(ExtraToolMaterials.GRANITE, 1.5F, -3.0F, (new FabricItemSettings()).group(ItemGroup.TOOLS));
