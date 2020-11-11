@@ -11,12 +11,10 @@ import net.minecraft.item.*;
 import net.minecraft.particle.DefaultParticleType;
 
 //todo tooltips
-//todo bows
 //todo remake compression textures
 //todo options
 //todo slime chunk item on UI
 //todo update to 1.16.4
-//todo feather block
 
 public class Declarer {
     public static DefaultParticleType END_FIRE_FLAME;
