@@ -15,6 +15,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.GeneratorOptions;
 import org.apache.logging.log4j.core.jmx.Server;
 
@@ -56,7 +57,7 @@ public class SlimeChunkLocator extends Item {
             }
             if(hasSeed){
                 CompoundTag compoundTag = stack.getOrCreateTag();
-                //compoundTag.putLong("seed",seed);
+                //compoundTag.putLong("seed",seed);//if the user has an NBT viewing mod, they could get the seed too easily with this
                 int bool = findChunk(seed,entity.chunkX,entity.chunkZ) ? 1: 0;
                 compoundTag.putInt("CustomModelData", bool);
             }

@@ -11,7 +11,6 @@ import java.util.List;
 public class SleepEventManager {
     public static int percent = 50;
     public static void onTick(MinecraftServer server) {
-
         server.getWorlds().forEach((world) -> {
             List<ServerPlayerEntity> players = world.getPlayers();
             int sleeping = 0;

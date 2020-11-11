@@ -14,7 +14,9 @@ import net.minecraft.particle.DefaultParticleType;
 //todo remake compression textures
 //todo options
 //todo slime chunk item on UI
+//todo shields
 //todo update to 1.16.4
+//todo trinkets - luck
 
 public class Declarer {
     public static DefaultParticleType END_FIRE_FLAME;

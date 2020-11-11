@@ -18,6 +18,8 @@ public class Registrar {
 
         regItem("fleather", Declarer.fleather);
         regItem("personal_daylight_detector",Declarer.personal_daylight_detector);
+        regItem("slime_chunk_locator",Declarer.slime_chunk_locater);
+
         regBlock( "charcoal_block_block", Declarer.charcoal_block_block);
         regItem("charcoal_block", Declarer.charcoal_block);
         FuelRegistry.INSTANCE.add(Declarer.charcoal_block, 16000);
@@ -27,7 +29,6 @@ public class Registrar {
         FuelRegistry.INSTANCE.add(Declarer.large_stick_bundle,1600);
         regBlock("feather_block_block",Declarer.feather_block_block);
         regItem("feather_block",Declarer.feather_block);
-        regItem("slime_chunk_locator",Declarer.slime_chunk_locater);
 
         Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "flightitem"), Declarer.flighttest);
 
