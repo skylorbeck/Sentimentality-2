@@ -28,6 +28,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import website.skylorbeck.sentimentality2.ItemEntityRotator;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 @Mixin(ItemEntityRenderer.class)
@@ -48,28 +50,41 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
 
     @Inject(at = @At("RETURN"), method = "<init>")
     private void onConstructor(EntityRenderDispatcher dispatcher, ItemRenderer renderer, CallbackInfo callback) {
-        this.shadowRadius = 0;
+        this.shadowRadius = 0.15f;
     }
 
     @Inject(at = @At("HEAD"), method = "render", cancellable = true)
     private void render(ItemEntity itemEntity, float f, float partialTicks, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, CallbackInfo callback) {
         ItemStack itemStack = itemEntity.getStack();
-
-        int seed = itemStack.isEmpty() ? 187 : Item.getRawId(itemStack.getItem()) + itemStack.getDamage();
+        Item item = itemStack.getItem();
+        int seed = itemStack.isEmpty() ? 187 : Item.getRawId(item) + itemStack.getDamage();
         this.random.setSeed(seed);
-
         matrixStack.push();
         BakedModel bakedModel = this.itemRenderer.getHeldItemModel(itemStack, itemEntity.world, null);
         boolean hasDepthInGui = bakedModel.hasDepth();
-
         int renderCount = this.getRenderedAmount(itemStack);
         boolean flat = false;
         boolean skull = false;
-        if(itemEntity.getStack().getItem() instanceof BlockItem && !(itemEntity.getStack().getItem() instanceof AliasedBlockItem)) {
-            Block b = ((BlockItem) itemEntity.getStack().getItem()).getBlock();
+        if(item instanceof BlockItem && !(item instanceof AliasedBlockItem)) {
+            Block b = ((BlockItem) item).getBlock();
             VoxelShape shape = b.getOutlineShape(b.getDefaultState(), itemEntity.world, itemEntity.getBlockPos(), ShapeContext.absent());
-            if ( b instanceof PlantBlock||b instanceof CobwebBlock||shape.getMax(Direction.Axis.Y) <= .25){
+            if (b instanceof TorchBlock
+                    || b instanceof WallMountedBlock
+                    || b instanceof AbstractPlantPartBlock
+                    || b instanceof HopperBlock
+                    || b instanceof LadderBlock
+                    || b instanceof DoorBlock
+                    || b instanceof TripwireHookBlock
+                    || b instanceof PlantBlock
+                    || b instanceof CobwebBlock
+                    || shape.getMax(Direction.Axis.X) <= .25
+                    || shape.getMax(Direction.Axis.Y) <= .25
+                    || shape.getMax(Direction.Axis.Z) <= .25
+            ){
                 flat = true;
+            }
+            if(b instanceof TrapdoorBlock||b instanceof AbstractPressurePlateBlock||b instanceof SnowBlock){
+                flat = false;
             }
             if(b instanceof SkullBlock){
                 skull = true;
@@ -81,7 +96,6 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
         ItemEntityRotator rotator = (ItemEntityRotator) itemEntity;
         float rotation = ((float) itemEntity.getAge() + partialTicks) / 10.0F + itemEntity.hoverHeight;
         boolean isAboveWater1 = itemEntity.world.getBlockState(itemEntity.getBlockPos()).getFluidState().getFluid().isIn(FluidTags.WATER);
-        boolean isAboveWater2 = itemEntity.world.getBlockState(itemEntity.getBlockPos().add(0,-1,0)).getFluidState().getFluid().isIn(FluidTags.WATER);
         if(itemEntity.isSubmergedInWater()||isAboveWater1){
             rotation = rotation/4;
             if (rotation / 2 == 0) {
@@ -117,7 +131,7 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
             matrixStack.multiply(Vector3f.POSITIVE_Z.getRadialQuaternion((float) rotator.getRotation().z));
         }
 
-        if(itemEntity.getStack().getItem() instanceof AliasedBlockItem || flat) {
+        if(item instanceof AliasedBlockItem || flat) {
 
         }else if (skull){
             matrixStack.translate(0,0.06,0);
