@@ -1,6 +1,6 @@
 package website.skylorbeck.sentimentality2.mixins;
 
-import net.minecraft.block.Blocks;
+import net.minecraft.block.*;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRenderDispatcher;
@@ -16,7 +16,10 @@ import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tag.FluidTags;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.shape.VoxelShape;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -60,37 +63,53 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
         boolean hasDepthInGui = bakedModel.hasDepth();
 
         int renderCount = this.getRenderedAmount(itemStack);
+        boolean flat = false;
+        boolean skull = false;
+        if(itemEntity.getStack().getItem() instanceof BlockItem && !(itemEntity.getStack().getItem() instanceof AliasedBlockItem)) {
+            Block b = ((BlockItem) itemEntity.getStack().getItem()).getBlock();
+            VoxelShape shape = b.getOutlineShape(b.getDefaultState(), itemEntity.world, itemEntity.getBlockPos(), ShapeContext.absent());
+            if ( b instanceof PlantBlock||b instanceof CobwebBlock||shape.getMax(Direction.Axis.Y) <= .25){
+                flat = true;
+            }
+            if(b instanceof SkullBlock){
+                skull = true;
+            }
+        }
 
-        matrixStack.multiply(Vector3f.POSITIVE_X.getRadialQuaternion(1.571F));
+         matrixStack.multiply(Vector3f.POSITIVE_X.getRadialQuaternion(1.571F));
 
         ItemEntityRotator rotator = (ItemEntityRotator) itemEntity;
-        if (!itemEntity.isOnGround() && !itemEntity.isSubmergedInWater()) {
-            float rotation = ((float) itemEntity.getAge() + partialTicks) / 10.0F + itemEntity.hoverHeight;
+        float rotation = ((float) itemEntity.getAge() + partialTicks) / 10.0F + itemEntity.hoverHeight;
+        boolean isAboveWater1 = itemEntity.world.getBlockState(itemEntity.getBlockPos()).getFluidState().getFluid().isIn(FluidTags.WATER);
+        boolean isAboveWater2 = itemEntity.world.getBlockState(itemEntity.getBlockPos().add(0,-1,0)).getFluidState().getFluid().isIn(FluidTags.WATER);
+        if(itemEntity.isSubmergedInWater()||isAboveWater1){
+            rotation = rotation/4;
             if (rotation / 2 == 0) {
                 matrixStack.multiply(Vector3f.POSITIVE_X.getRadialQuaternion(rotation));
                 matrixStack.multiply(Vector3f.POSITIVE_Y.getRadialQuaternion(rotation));
                 matrixStack.multiply(Vector3f.POSITIVE_Z.getRadialQuaternion(rotation));
+                rotator.setRotation(new Vec3d(0, 0, rotation));
             } else {
                 matrixStack.multiply(Vector3f.NEGATIVE_X.getRadialQuaternion(rotation));
                 matrixStack.multiply(Vector3f.NEGATIVE_Y.getRadialQuaternion(rotation));
                 matrixStack.multiply(Vector3f.NEGATIVE_Z.getRadialQuaternion(rotation));
+                rotator.setRotation(new Vec3d(0, 0, rotation));
             }
+        }else if (!itemEntity.isOnGround() && !itemEntity.isSubmergedInWater()) {
+        if (rotation / 2 == 0) {
+            matrixStack.multiply(Vector3f.POSITIVE_X.getRadialQuaternion(rotation));
+            matrixStack.multiply(Vector3f.POSITIVE_Y.getRadialQuaternion(rotation));
+            matrixStack.multiply(Vector3f.POSITIVE_Z.getRadialQuaternion(rotation));
             rotator.setRotation(new Vec3d(0, 0, rotation));
-        }else if(itemEntity.isSubmergedInWater()){
-            float rotation = ((float) itemEntity.getAge() + partialTicks) / 40.0F + itemEntity.hoverHeight;
-            if (rotation / 2 == 0) {
-                matrixStack.multiply(Vector3f.POSITIVE_X.getRadialQuaternion(rotation));
-                matrixStack.multiply(Vector3f.POSITIVE_Y.getRadialQuaternion(rotation));
-                matrixStack.multiply(Vector3f.POSITIVE_Z.getRadialQuaternion(rotation));
-            } else {
-                matrixStack.multiply(Vector3f.NEGATIVE_X.getRadialQuaternion(rotation));
-                matrixStack.multiply(Vector3f.NEGATIVE_Y.getRadialQuaternion(rotation));
-                matrixStack.multiply(Vector3f.NEGATIVE_Z.getRadialQuaternion(rotation));
-            }
+        } else {
+            matrixStack.multiply(Vector3f.NEGATIVE_X.getRadialQuaternion(rotation));
+            matrixStack.multiply(Vector3f.NEGATIVE_Y.getRadialQuaternion(rotation));
+            matrixStack.multiply(Vector3f.NEGATIVE_Z.getRadialQuaternion(rotation));
             rotator.setRotation(new Vec3d(0, 0, rotation));
+        }
         }else if(itemEntity.getStack().getItem() instanceof AliasedBlockItem){
             matrixStack.multiply(Vector3f.POSITIVE_Z.getRadialQuaternion((float) rotator.getRotation().z));
-        } else if(itemEntity.getStack().getItem() instanceof BlockItem) {
+        } else if(itemEntity.getStack().getItem() instanceof BlockItem && !flat) {
             matrixStack.multiply(Vector3f.POSITIVE_X.getRadialQuaternion(300));
             matrixStack.multiply(Vector3f.POSITIVE_Y.getRadialQuaternion((float) rotator.getRotation().z));
             matrixStack.multiply(Vector3f.POSITIVE_Z.getRadialQuaternion(0));
@@ -98,11 +117,12 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
             matrixStack.multiply(Vector3f.POSITIVE_Z.getRadialQuaternion((float) rotator.getRotation().z));
         }
 
-        matrixStack.translate(0, 0, 0f);
+        if(itemEntity.getStack().getItem() instanceof AliasedBlockItem || flat) {
 
-        if(itemEntity.getStack().getItem() instanceof AliasedBlockItem) {
-        } else if(itemEntity.getStack().getItem() instanceof BlockItem) {
-            matrixStack.translate(0, 0, -0.12f);
+        }else if (skull){
+            matrixStack.translate(0,0.06,0);
+        }else if(itemEntity.getStack().getItem() instanceof BlockItem ) {
+            matrixStack.translate(0, -0.06f, 0);
         }
         if(itemEntity.world.getBlockState(itemEntity.getBlockPos()).getBlock().equals(Blocks.SOUL_SAND)) {
             matrixStack.translate(0, 0, -.1);
@@ -140,6 +160,7 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
                 matrixStack.translate(0.0F * scaleX, 0.0F * scaleY, 0.0625F * scaleZ);
             }
         }
+
         matrixStack.pop();
         super.render(itemEntity, f, partialTicks, matrixStack, vertexConsumerProvider, i);
         callback.cancel();
