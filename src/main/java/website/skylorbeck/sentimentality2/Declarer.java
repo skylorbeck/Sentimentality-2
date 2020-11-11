@@ -33,6 +33,7 @@ public class Declarer {
     public static final Block charcoal_block_block =new Block(FabricBlockSettings.copyOf(Blocks.COAL_BLOCK));
     public static final BlockItem charcoal_block = new BlockItem(charcoal_block_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
 
+    public static final Item slime_chunk_locater = new SlimeChunkLocator(new FabricItemSettings().group(ItemGroup.TOOLS));
 
     public static final Block monuple_compressed_cobblestone_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE),1);
     public static final BlockItem monuple_compressed_cobblestone = new BlockItem(monuple_compressed_cobblestone_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));

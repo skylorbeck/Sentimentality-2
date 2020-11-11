@@ -27,6 +27,7 @@ public class Registrar {
         FuelRegistry.INSTANCE.add(Declarer.large_stick_bundle,1600);
         regBlock("feather_block_block",Declarer.feather_block_block);
         regItem("feather_block",Declarer.feather_block);
+        regItem("slime_chunk_locator",Declarer.slime_chunk_locater);
 
         Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "flightitem"), Declarer.flighttest);
 
