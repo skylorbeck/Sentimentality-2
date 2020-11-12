@@ -13,10 +13,11 @@ import net.minecraft.particle.DefaultParticleType;
 //todo tooltips
 //todo remake compression textures
 //todo options
-//todo slime chunk item on UI
 //todo shields
 //todo update to 1.16.4
 //todo trinkets - luck
+//todo flight item
+
 
 public class Declarer {
     public static DefaultParticleType END_FIRE_FLAME;
@@ -209,7 +210,7 @@ public class Declarer {
     public static final BlockItem endstone_smoker = new BlockItem(endstone_smokerblock,new FabricItemSettings().group(ItemGroup.DECORATIONS));
 
     public static final Item wool_helmet = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.HEAD,new FabricItemSettings().group(ItemGroup.COMBAT));
-    public static final Item wool_chestplate = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.CHEST,new FabricItemSettings().group(ItemGroup.COMBAT));//todo make better textures
+    public static final Item wool_chestplate = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.CHEST,new FabricItemSettings().group(ItemGroup.COMBAT));
     public static final Item wool_leggings = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.LEGS,new FabricItemSettings().group(ItemGroup.COMBAT));
     public static final Item wool_boots = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.FEET,new FabricItemSettings().group(ItemGroup.COMBAT));
 

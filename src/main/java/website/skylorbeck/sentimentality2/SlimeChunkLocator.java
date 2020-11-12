@@ -12,11 +12,9 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-//todo ui implementation, models, textures, the works.
 public class SlimeChunkLocator extends Item {
     private static long seed;
     private static boolean hasSeed = false;
-
 
     public SlimeChunkLocator(Settings settings) {
         super(settings);
