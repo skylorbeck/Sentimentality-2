@@ -12,16 +12,19 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.world.World;
 
+import java.sql.Time;
+import java.time.LocalTime;
+import java.time.temporal.TemporalUnit;
 import java.util.List;
 
 public class ExtraHUD {
     private MinecraftClient client;
-    private boolean clockIcon = true;
-    private boolean compassIcon = true;
-    private boolean PDDIcon = true;
-    private boolean lightCheck = true;
-
+    //settings
     private boolean isNight = false;
+    private boolean military = false;
+    private boolean doAmPm = true;
+
+
 
     public ExtraHUD() {
         client = MinecraftClient.getInstance();
@@ -43,6 +46,9 @@ public class ExtraHUD {
         int scaledHeight = this.client.getWindow().getScaledHeight();
         int color;
         int slotsUsed = 0;
+        int localHour = LocalTime.now().getHour();
+        int localMinute = LocalTime.now().getMinute();
+        String amPm = "AM";
 
 
         if (time >= 24000) {
@@ -79,6 +85,17 @@ public class ExtraHUD {
             }
             int total = playerEntities.size();
             textRenderer.drawWithShadow(matrixStack, sleeping + "/" + total, 20, scaledHeight - 10, color);
+        }
+        if (localHour >=13){
+             amPm = "PM";
+        }
+        if (!military && localHour >= 13) {
+            localHour = localHour - 12;
+        }
+        if (doAmPm) {
+            textRenderer.drawWithShadow(matrixStack, String.format("%02d", localHour) + ":" + String.format("%02d", localMinute)+amPm, scaledWidth - 39, 1, 16777215);
+        } else {
+            textRenderer.drawWithShadow(matrixStack, String.format("%02d", localHour) + ":" + String.format("%02d", localMinute), scaledWidth - 27, 1, 16777215);
         }
     }
 }

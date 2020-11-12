@@ -19,6 +19,8 @@ import net.minecraft.particle.DefaultParticleType;
 //todo flight item
 //todo beehive level
 //todo lava fishing, bone fish
+//todo look into treechopping
+//todo repair cost
 
 
 public class Declarer {
