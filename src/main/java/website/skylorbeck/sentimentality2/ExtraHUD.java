@@ -56,7 +56,7 @@ public class ExtraHUD {
             if (item == Items.CLOCK
                     || item == Items.COMPASS
                     || item == Declarer.personal_daylight_detector
-                    || item == Declarer.slime_chunk_locater
+                    || item == Declarer.slime_chunk_locator
             ) {
                 itemRenderer.renderInGuiWithOverrides(inventory.getStack(i), scaledWidth / 2 + 92 + (15 * slotsUsed), scaledHeight - 19);
                 slotsUsed++;

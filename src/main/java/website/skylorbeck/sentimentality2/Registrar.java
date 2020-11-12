@@ -18,7 +18,7 @@ public class Registrar {
 
         regItem("fleather", Declarer.fleather);
         regItem("personal_daylight_detector",Declarer.personal_daylight_detector);
-        regItem("slime_chunk_locator",Declarer.slime_chunk_locater);
+        regItem("slime_chunk_locator",Declarer.slime_chunk_locator);
 
         regBlock( "charcoal_block_block", Declarer.charcoal_block_block);
         regItem("charcoal_block", Declarer.charcoal_block);
@@ -30,7 +30,8 @@ public class Registrar {
         regBlock("feather_block_block",Declarer.feather_block_block);
         regItem("feather_block",Declarer.feather_block);
 
-        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, "flightitem"), Declarer.flighttest);
+        regItem("glider_leather",Declarer.glider_leather);
+        regItem("glider_iron",Declarer.glider_iron);
 
         Declarer.END_FIRE_FLAME = Registry.register(Registry.PARTICLE_TYPE, new Identifier(Ref.MODID, "end_fire_flame"), FabricParticleTypes.simple());
         ParticleFactoryRegistry.getInstance().register(Declarer.END_FIRE_FLAME, FlameParticle.Factory::new);
@@ -78,7 +79,7 @@ public class Registrar {
                 ).build(null));
 
         ColorProviderRegistry.ITEM.register((stack, tintIndex) ->
-        stack.getSubTag(Ref.display) != null && stack.getSubTag(Ref.display).contains(Ref.color, 99) ? stack.getSubTag(Ref.display).getInt(Ref.color) :/*16777215*/ 10511680,
+        stack.getSubTag(Ref.display) != null && stack.getSubTag(Ref.display).contains(Ref.color, 99) ? stack.getSubTag(Ref.display).getInt(Ref.color) :16777215,
                 Declarer.wool_helmet,
                 Declarer.wool_chestplate,
                 Declarer.wool_leggings,

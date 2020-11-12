@@ -17,6 +17,8 @@ import net.minecraft.particle.DefaultParticleType;
 //todo update to 1.16.4
 //todo trinkets - luck
 //todo flight item
+//todo beehive level
+//todo lava fishing, bone fish
 
 
 public class Declarer {
@@ -25,8 +27,8 @@ public class Declarer {
     public static BlockEntityType<ExtraBlastFurnaceBlockEntity> EXTRA_BLAST_FURNACE_ENTITY;
     public static BlockEntityType<ExtraSmokerBlockEntity> EXTRA_SMOKER_FURNACE_ENTITY;
 
-    public static final Item flighttest = new FlightItem(new FabricItemSettings().group(ItemGroup.TRANSPORTATION).maxCount(1).maxDamage(100));
-    public static final Item personal_daylight_detector = new PDDItem(new FabricItemSettings().group(ItemGroup.TOOLS));
+    public static final Item glider_leather = new FlightItem(new FabricItemSettings().group(ItemGroup.TRANSPORTATION).maxCount(1).maxDamage(50));
+    public static final Item glider_iron = new FlightItem(new FabricItemSettings().group(ItemGroup.TRANSPORTATION).maxCount(1).maxDamage(100));
 
     public static final Item fleather = new Item(new FabricItemSettings().group(ItemGroup.MISC));
     public static final Item small_stick_bundle = new Item(new FabricItemSettings().group(ItemGroup.MISC));
@@ -36,7 +38,8 @@ public class Declarer {
     public static final Block charcoal_block_block =new Block(FabricBlockSettings.copyOf(Blocks.COAL_BLOCK));
     public static final BlockItem charcoal_block = new BlockItem(charcoal_block_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
 
-    public static final Item slime_chunk_locater = new SlimeChunkLocator(new FabricItemSettings().group(ItemGroup.TOOLS));
+    public static final Item personal_daylight_detector = new PDDItem(new FabricItemSettings().group(ItemGroup.TOOLS));
+    public static final Item slime_chunk_locator = new SlimeChunkLocator(new FabricItemSettings().group(ItemGroup.TOOLS));
 
     public static final Block monuple_compressed_cobblestone_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE),1);
     public static final BlockItem monuple_compressed_cobblestone = new BlockItem(monuple_compressed_cobblestone_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
@@ -209,10 +212,10 @@ public class Declarer {
     public static final Block endstone_smokerblock = new ExtraSmokerBlock(FabricBlockSettings.copyOf(Blocks.SMOKER));
     public static final BlockItem endstone_smoker = new BlockItem(endstone_smokerblock,new FabricItemSettings().group(ItemGroup.DECORATIONS));
 
-    public static final Item wool_helmet = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.HEAD,new FabricItemSettings().group(ItemGroup.COMBAT));
-    public static final Item wool_chestplate = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.CHEST,new FabricItemSettings().group(ItemGroup.COMBAT));
-    public static final Item wool_leggings = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.LEGS,new FabricItemSettings().group(ItemGroup.COMBAT));
-    public static final Item wool_boots = new DyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.FEET,new FabricItemSettings().group(ItemGroup.COMBAT));
+    public static final Item wool_helmet = new ExtraDyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.HEAD,new FabricItemSettings().group(ItemGroup.COMBAT));
+    public static final Item wool_chestplate = new ExtraDyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.CHEST,new FabricItemSettings().group(ItemGroup.COMBAT));
+    public static final Item wool_leggings = new ExtraDyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.LEGS,new FabricItemSettings().group(ItemGroup.COMBAT));
+    public static final Item wool_boots = new ExtraDyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.FEET,new FabricItemSettings().group(ItemGroup.COMBAT));
 
     public static final Item granite_sword = new SwordItem(ExtraToolMaterials.GRANITE, 3, -2.4F, (new FabricItemSettings()).group(ItemGroup.COMBAT));
     public static final Item granite_shovel = new ShovelItem(ExtraToolMaterials.GRANITE, 1.5F, -3.0F, (new FabricItemSettings()).group(ItemGroup.TOOLS));
