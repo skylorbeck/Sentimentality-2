@@ -40,6 +40,8 @@ public class Declarer {
     public static final BlockItem feather_block = new BlockItem(feather_block_block,new FabricItemSettings().group(ItemGroup.DECORATIONS));
     public static final Block charcoal_block_block =new Block(FabricBlockSettings.copyOf(Blocks.COAL_BLOCK));
     public static final BlockItem charcoal_block = new BlockItem(charcoal_block_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item charcoal_nugget = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    public static final Item coal_nugget = new Item(new FabricItemSettings().group(ItemGroup.MISC));
 
     public static final Item personal_daylight_detector = new PDDItem(new FabricItemSettings().group(ItemGroup.TOOLS));
     public static final Item slime_chunk_locator = new SlimeChunkLocator(new FabricItemSettings().group(ItemGroup.TOOLS));

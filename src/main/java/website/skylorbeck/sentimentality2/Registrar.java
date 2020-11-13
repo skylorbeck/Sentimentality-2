@@ -29,6 +29,10 @@ public class Registrar {
         FuelRegistry.INSTANCE.add(Declarer.large_stick_bundle,1600);
         regBlock("feather_block_block",Declarer.feather_block_block);
         regItem("feather_block",Declarer.feather_block);
+        regItem("charcoal_nugget",Declarer.charcoal_nugget);
+        FuelRegistry.INSTANCE.add(Declarer.charcoal_nugget,200);
+        regItem("coal_nugget",Declarer.coal_nugget);
+        FuelRegistry.INSTANCE.add(Declarer.coal_nugget,200);
 
         regItem("glider_leather",Declarer.glider_leather);
         regItem("glider_iron",Declarer.glider_iron);
