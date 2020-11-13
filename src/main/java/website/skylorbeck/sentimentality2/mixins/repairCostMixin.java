@@ -12,7 +12,7 @@ public abstract class repairCostMixin {
     @Shadow public abstract CompoundTag getOrCreateTag();
     /**
      * @author SkylorBeck
-     * @reason remove repair cost increase
+     * @reason remove repair cost
      */
     @Overwrite
     public void setRepairCost(int repairCost) {

@@ -33,6 +33,7 @@ public class ExtraHUD {
         });
     }
 
+
     private void render() {
         final PlayerEntity player = client.player;
         if (player == null) return;
