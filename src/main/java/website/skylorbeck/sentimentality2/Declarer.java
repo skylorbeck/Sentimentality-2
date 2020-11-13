@@ -20,7 +20,7 @@ import net.minecraft.particle.DefaultParticleType;
 //todo beehive level
 //todo lava fishing, bone fish
 //todo look into treechopping
-//todo coal nuggets
+//todo uppers
 
 
 

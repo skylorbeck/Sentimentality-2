@@ -52,7 +52,7 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
     }
 
     @Inject(at = @At("HEAD"), method = "render", cancellable = true)
-    private void render(ItemEntity itemEntity, float f, float partialTicks, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, CallbackInfo callback) {
+    private void render(ItemEntity itemEntity, float f, float partialTicks, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, CallbackInfo ci) {
         ItemStack itemStack = itemEntity.getStack();
         Item item = itemStack.getItem();
         int seed = itemStack.isEmpty() ? 187 : Item.getRawId(item) + itemStack.getDamage();
@@ -175,6 +175,6 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
 
         matrixStack.pop();
         super.render(itemEntity, f, partialTicks, matrixStack, vertexConsumerProvider, i);
-        callback.cancel();
+        ci.cancel();
     }
 }

@@ -8,15 +8,15 @@ import net.minecraft.client.network.PlayerListEntry;
 import net.minecraft.client.util.math.MatrixStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin({PlayerListHud.class})
 public abstract class PingIndicator extends DrawableHelper {
-    /**
-     * @author SkylorBeck
-     * @reason I wanted to clarify user ping
-     */
-    @Overwrite
-    public void renderLatencyIcon(MatrixStack matrixStack, int i, int j, int k, PlayerListEntry playerListEntry) {
+
+    @Inject(method = "renderLatencyIcon",at = @At("HEAD"),cancellable = true)
+    public void sentimentalRenderLatencyIcon(MatrixStack matrixStack, int i, int j, int k, PlayerListEntry playerListEntry, CallbackInfo ci) {
         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         int ping = playerListEntry.getLatency();
         int rgb;
@@ -38,6 +38,7 @@ public abstract class PingIndicator extends DrawableHelper {
         this.setZOffset(this.getZOffset() + 100);
         DrawableHelper.drawCenteredString(matrixStack, MinecraftClient.getInstance().textRenderer, pingString, j + i - 11, k - 1, rgb);
         this.setZOffset(this.getZOffset() - 100);
+        ci.cancel();
     }
 
     private String toSubscriptNumbers(String string) {
