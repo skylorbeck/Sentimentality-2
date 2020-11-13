@@ -3,12 +3,13 @@
   "package": "website.skylorbeck.sentimentality2.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "XPFixMixin",
     "GrassSwingFix",
     "InfinityFix",
     "ItemEntityMixin",
     "ItemEntityRendererMixin",
-    "PingIndicator"
+    "PingIndicator",
+    "repairCostMixin",
+    "XPFixMixin"
   ],
   "injectors": {
     "defaultRequire": 1
