@@ -2,12 +2,12 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "charcoal_block",
+      "name": "feather_block_block",
       "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "sentimentality2:charcoal_block"
+          "name": "sentimentality2:feather_block"
         }
       ],
       "conditions": [

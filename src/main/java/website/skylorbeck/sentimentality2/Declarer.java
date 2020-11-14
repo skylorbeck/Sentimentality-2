@@ -14,13 +14,17 @@ import net.minecraft.particle.DefaultParticleType;
 //todo remake compression textures
 //todo options
 //todo shields
-//todo update to 1.16.4
 //todo trinkets - luck
 //todo flight item
 //todo beehive level
 //todo lava fishing, bone fish
 //todo look into treechopping
 //todo uppers
+//todo item degridation
+//todo wolf armor
+
+//todo new wood tools
+//todo glowstone tools
 
 
 
