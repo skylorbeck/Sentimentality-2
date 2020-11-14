@@ -87,7 +87,7 @@ public class ExtraHUD {
             int total = playerEntities.size();
             textRenderer.drawWithShadow(matrixStack, sleeping + "/" + total, 20, scaledHeight - 10, color);
         }
-        if (localHour >=13){
+        if (localHour >=12){
              amPm = "PM";
         }
         if (!military && localHour >= 13) {
