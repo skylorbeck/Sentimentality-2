@@ -1,12 +1,12 @@
-package website.skylorbeck.sentimentality2.mixins;
+package website.skylorbeck.sentimentality2.mixins.durability;
 
 import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.MiningToolItem;
 import net.minecraft.item.SwordItem;
-import net.minecraft.item.TridentItem;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.packet.s2c.play.TitleS2CPacket;
 import net.minecraft.sound.SoundCategory;
@@ -19,16 +19,16 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(TridentItem.class)
-public abstract class DurabilityWarningMixinSpear {
-    @Inject(at = @At("HEAD"), method = "postMine")
+@Mixin(SwordItem.class)
+public abstract class DurabilityWarningMixinSword {
+    @Inject(at = @At("RETURN"), method = "postMine")
     public void checkDur(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity attacker, CallbackInfoReturnable<Boolean> cir) {
         if (!world.isClient && attacker instanceof PlayerEntity && state.getHardness(world, pos) != 0.0F) {
             int curDam = stack.getMaxDamage() - stack.getDamage();
             CompoundTag tag = stack.getOrCreateTag();
             if (curDam>=11){
-                tag.putBoolean("hasPlayedSound1",false);
-                tag.putBoolean("hasPlayedSound2",false);
+                tag.remove("hasPlayedSound1");
+                tag.remove("hasPlayedSound2");
             }
             switch (curDam) {
                 case 10:
@@ -51,7 +51,7 @@ public abstract class DurabilityWarningMixinSpear {
         }
     }
 
-    @Inject(at = @At("HEAD"), method = "postHit")
+    @Inject(at = @At("RETURN"), method = "postHit")
     public void checkDur2(ItemStack stack, LivingEntity target, LivingEntity attacker, CallbackInfoReturnable<Boolean> cir) {
         int curDam = stack.getMaxDamage() - stack.getDamage();
         CompoundTag tag = stack.getOrCreateTag();

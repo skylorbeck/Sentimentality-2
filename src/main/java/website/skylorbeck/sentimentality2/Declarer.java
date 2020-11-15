@@ -22,6 +22,7 @@ import net.minecraft.particle.DefaultParticleType;
 //todo uppers
 //todo item degradation
 //todo wolf armor
+//todo firstperson
 
 
 public class Declarer {
