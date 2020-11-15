@@ -20,12 +20,8 @@ import net.minecraft.particle.DefaultParticleType;
 //todo lava fishing, bone fish
 //todo look into treechopping
 //todo uppers
-//todo item degridation
+//todo item degradation
 //todo wolf armor
-
-//todo new wood tools
-//todo glowstone tools
-
 
 
 public class Declarer {
