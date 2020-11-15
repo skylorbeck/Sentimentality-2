@@ -28,7 +28,6 @@ public class PDDItem extends Item {
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         CompoundTag compoundTag = stack.getOrCreateTag();
         mode = compoundTag.getBoolean("mode");
-        List<Text> tooltip = null;
         if(mode){
             light = world.getLightLevel(entity.getBlockPos());
             stack.setCustomName(new TranslatableText("item.sentimentality2.pdd_day"));

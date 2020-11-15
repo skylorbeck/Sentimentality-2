@@ -1,13 +1,10 @@
 package website.skylorbeck.sentimentality2.mixins.durability;
 
 import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.FlintAndSteelItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
-import net.minecraft.item.MiningToolItem;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.packet.s2c.play.TitleS2CPacket;
 import net.minecraft.sound.SoundCategory;
@@ -39,7 +36,6 @@ public abstract class DurabilityWarningMixinFlintAndSteel {
             }
             switch (curDam) {
                 case 10:
-                case 9:
                     if (!tag.getBoolean("hasPlayedSound1")) {
                         world.playSound(null, pos, SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.BLOCKS, 0.4f, 0.8F + world.random.nextFloat() * 0.4F);
                         ServerSidePacketRegistry.INSTANCE.sendToPlayer((PlayerEntity) player, (new TitleS2CPacket(TitleS2CPacket.Action.ACTIONBAR, new TranslatableText(stack.getItem().getTranslationKey()).append(" is close to breaking!"))));
@@ -47,7 +43,6 @@ public abstract class DurabilityWarningMixinFlintAndSteel {
                     }
                         break;
                 case 5:
-                case 4:
                     if (!tag.getBoolean("hasPlayedSound2")) {
                         world.playSound(null, pos, SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.BLOCKS, 0.6f, 0.8F + world.random.nextFloat() * 0.4F);
                         ServerSidePacketRegistry.INSTANCE.sendToPlayer((PlayerEntity) player, (new TitleS2CPacket(TitleS2CPacket.Action.ACTIONBAR, new TranslatableText(stack.getItem().getTranslationKey()).append(" is VERY close to breaking!!"))));

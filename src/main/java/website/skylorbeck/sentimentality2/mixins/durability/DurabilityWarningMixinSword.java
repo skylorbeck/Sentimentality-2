@@ -5,7 +5,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.MiningToolItem;
 import net.minecraft.item.SwordItem;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.packet.s2c.play.TitleS2CPacket;

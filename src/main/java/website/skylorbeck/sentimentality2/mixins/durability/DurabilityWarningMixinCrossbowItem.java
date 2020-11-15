@@ -1,9 +1,7 @@
 package website.skylorbeck.sentimentality2.mixins.durability;
 
 import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.BowItem;
 import net.minecraft.item.CrossbowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
@@ -19,7 +17,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(CrossbowItem.class)
@@ -37,13 +34,12 @@ public abstract class DurabilityWarningMixinCrossbowItem {
                 BlockPos pos = user.getBlockPos();
                 int curDam = itemStack.getMaxDamage() - itemStack.getDamage();
                 CompoundTag tag = itemStack.getOrCreateTag();
-                if (curDam >= 11) {
+                if (curDam >= 12) {
                     tag.remove("hasPlayedSound1");
                     tag.remove("hasPlayedSound2");
                 }
                 switch (curDam) {
                     case 11:
-                    case 10:
                         if (!tag.getBoolean("hasPlayedSound1")) {
                             world.playSound(null, pos, SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.BLOCKS, 0.4f, 0.8F + world.random.nextFloat() * 0.4F);
                             ServerSidePacketRegistry.INSTANCE.sendToPlayer((PlayerEntity) user, (new TitleS2CPacket(TitleS2CPacket.Action.ACTIONBAR, new TranslatableText(itemStack.getItem().getTranslationKey()).append(" is close to breaking!"))));
@@ -51,7 +47,6 @@ public abstract class DurabilityWarningMixinCrossbowItem {
                         }
                         break;
                     case 6:
-                    case 5:
                         if (!tag.getBoolean("hasPlayedSound2")) {
                             world.playSound(null, pos, SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.BLOCKS, 0.6f, 0.8F + world.random.nextFloat() * 0.4F);
                             ServerSidePacketRegistry.INSTANCE.sendToPlayer((PlayerEntity) user, (new TitleS2CPacket(TitleS2CPacket.Action.ACTIONBAR, new TranslatableText(itemStack.getItem().getTranslationKey()).append(" is VERY close to breaking!!"))));
