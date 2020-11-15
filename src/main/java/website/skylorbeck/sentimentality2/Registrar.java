@@ -232,6 +232,17 @@ public class Registrar {
         regItem("endstone_shovel",Declarer.endstone_shovel);
         regItem("endstone_sword",Declarer.endstone_sword);
         regItem("endstone_hoe",Declarer.endstone_hoe);
+        regItem("warped_pick",Declarer.warped_pick);
+        regItem("warped_axe",Declarer.warped_axe);
+        regItem("warped_shovel",Declarer.warped_shovel);
+        regItem("warped_sword",Declarer.warped_sword);
+        regItem("warped_hoe",Declarer.warped_hoe);
+        regItem("crimson_pick",Declarer.crimson_pick);
+        regItem("crimson_axe",Declarer.crimson_axe);
+        regItem("crimson_shovel",Declarer.crimson_shovel);
+        regItem("crimson_sword",Declarer.crimson_sword);
+        regItem("crimson_hoe",Declarer.crimson_hoe);
+        
 
         regItem("monuple_compressed_cobblestone",Declarer.monuple_compressed_cobblestone);
         regBlock("monuple_compressed_cobblestone_block",Declarer.monuple_compressed_cobblestone_block);

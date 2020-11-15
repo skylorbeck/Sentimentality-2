@@ -20,11 +20,11 @@
             "sentimentality2:blackstone_furnace",
             "sentimentality2:blackstone_blast_furnace",
             "sentimentality2:blackstone_smoker",
-            "sentimentality2:blackstone_axe",
-            "sentimentality2:blackstone_hoe",
-            "sentimentality2:blackstone_pickaxe",
-            "sentimentality2:blackstone_shovel",
-            "sentimentality2:blackstone_sword"
+            "sentimentality2:extratool/blackstone_axe",
+            "sentimentality2:extratool/blackstone_hoe",
+            "sentimentality2:extratool/blackstone_pickaxe",
+            "sentimentality2:extratool/blackstone_shovel",
+            "sentimentality2:extratool/blackstone_sword"
 
         ]
     }

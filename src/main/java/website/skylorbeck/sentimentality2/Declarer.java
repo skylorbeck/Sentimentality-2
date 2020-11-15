@@ -305,4 +305,14 @@ public class Declarer {
     public static final Item endstone_pick = new ExtraPickaxeItem(ExtraToolMaterials.ENDSTONE,1,-2.8F,(new FabricItemSettings().group(ItemGroup.TOOLS)));
     public static final Item endstone_axe = new ExtraAxeItem(ExtraToolMaterials.ENDSTONE, 7.0F, -3.2F, (new FabricItemSettings()).group(ItemGroup.TOOLS));
     public static final Item endstone_hoe = new ExtraHoeItem(ExtraToolMaterials.ENDSTONE, -1,-2.0F, (new FabricItemSettings()).group(ItemGroup.TOOLS));
+    public static final Item crimson_sword = new SwordItem(ExtraToolMaterials.CRIMSON, 3, -2.4F, (new FabricItemSettings()).group(ItemGroup.COMBAT));
+    public static final Item crimson_shovel = new ShovelItem(ExtraToolMaterials.CRIMSON, 1.5F, -3.0F, (new FabricItemSettings()).group(ItemGroup.TOOLS));
+    public static final Item crimson_pick = new ExtraPickaxeItem(ExtraToolMaterials.CRIMSON,1,-2.8F,(new FabricItemSettings().group(ItemGroup.TOOLS)));
+    public static final Item crimson_axe = new ExtraAxeItem(ExtraToolMaterials.CRIMSON, 7.0F, -3.2F, (new FabricItemSettings()).group(ItemGroup.TOOLS));
+    public static final Item crimson_hoe = new ExtraHoeItem(ExtraToolMaterials.CRIMSON, -1,-2.0F, (new FabricItemSettings()).group(ItemGroup.TOOLS));
+    public static final Item warped_sword = new SwordItem(ExtraToolMaterials.WARPED, 3, -2.4F, (new FabricItemSettings()).group(ItemGroup.COMBAT));
+    public static final Item warped_shovel = new ShovelItem(ExtraToolMaterials.WARPED, 1.5F, -3.0F, (new FabricItemSettings()).group(ItemGroup.TOOLS));
+    public static final Item warped_pick = new ExtraPickaxeItem(ExtraToolMaterials.WARPED,1,-2.8F,(new FabricItemSettings().group(ItemGroup.TOOLS)));
+    public static final Item warped_axe = new ExtraAxeItem(ExtraToolMaterials.WARPED, 7.0F, -3.2F, (new FabricItemSettings()).group(ItemGroup.TOOLS));
+    public static final Item warped_hoe = new ExtraHoeItem(ExtraToolMaterials.WARPED, -1,-2.0F, (new FabricItemSettings()).group(ItemGroup.TOOLS));
 }

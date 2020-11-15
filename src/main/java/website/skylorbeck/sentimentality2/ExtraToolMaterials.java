@@ -57,6 +57,12 @@ public enum ExtraToolMaterials implements ToolMaterial {
     ENDSTONE(1, 131, 4.0F, 1.0F, 5, () -> {//stone
         return Ingredient.ofItems(Blocks.END_STONE,Blocks.END_STONE_BRICKS);
     }),
+    CRIMSON(0,59,2.0F,0.0F,15, () -> {//wood
+        return Ingredient.ofItems(Blocks.CRIMSON_PLANKS);
+    }),
+    WARPED(0,59,2.0F,0.0F,15, () -> {//wood
+        return Ingredient.ofItems(Blocks.WARPED_PLANKS);
+    })
 
     ;
     private final int miningLevel;
