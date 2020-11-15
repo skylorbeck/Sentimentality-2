@@ -3,6 +3,10 @@
   "package": "website.skylorbeck.sentimentality2.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "DurabilityWarningMixinShear",
+    "DurabilityWarningMixinSpear",
+    "DurabilityWarningMixinSword",
+    "DurabilityWarningMixinTool",
     "GrassSwingFix",
     "InfinityFix",
     "ItemEntityMixin",

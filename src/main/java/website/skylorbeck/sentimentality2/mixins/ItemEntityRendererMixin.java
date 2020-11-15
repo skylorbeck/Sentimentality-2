@@ -63,7 +63,8 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
         int renderCount = this.getRenderedAmount(itemStack);
         boolean flat = false;
         boolean skull = false;
-        if(item instanceof BlockItem && !(item instanceof AliasedBlockItem)) {
+        boolean lantern = false;
+        if (item instanceof BlockItem && !(item instanceof AliasedBlockItem)) {
             Block b = ((BlockItem) item).getBlock();
             VoxelShape shape = b.getOutlineShape(b.getDefaultState(), itemEntity.world, itemEntity.getBlockPos(), ShapeContext.absent());
             if (b instanceof TorchBlock
@@ -78,24 +79,27 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
                     || shape.getMax(Direction.Axis.X) <= .25
                     || shape.getMax(Direction.Axis.Y) <= .25
                     || shape.getMax(Direction.Axis.Z) <= .25
-            ){
+            ) {
                 flat = true;
             }
-            if(b instanceof TrapdoorBlock||b instanceof AbstractPressurePlateBlock||b instanceof SnowBlock){
+            if (b instanceof TrapdoorBlock || b instanceof AbstractPressurePlateBlock || b instanceof SnowBlock) {
                 flat = false;
             }
-            if(b instanceof SkullBlock){
+            if (b instanceof SkullBlock) {
                 skull = true;
+            }
+            if (b instanceof LanternBlock) {
+                lantern = true;
             }
         }
 
-         matrixStack.multiply(Vector3f.POSITIVE_X.getRadialQuaternion(1.571F));
+        matrixStack.multiply(Vector3f.POSITIVE_X.getRadialQuaternion(1.571F));
 
         ItemEntityRotator rotator = (ItemEntityRotator) itemEntity;
         float rotation = ((float) itemEntity.getAge() + partialTicks) / 10.0F + itemEntity.hoverHeight;
         boolean isAboveWater1 = itemEntity.world.getBlockState(itemEntity.getBlockPos()).getFluidState().getFluid().isIn(FluidTags.WATER);
-        if(itemEntity.isSubmergedInWater()||isAboveWater1){
-            rotation = rotation/4;
+        if (itemEntity.isSubmergedInWater() || isAboveWater1) {
+            rotation = rotation / 4;
             if (rotation / 2 == 0) {
                 matrixStack.multiply(Vector3f.POSITIVE_X.getRadialQuaternion(rotation));
                 matrixStack.multiply(Vector3f.POSITIVE_Y.getRadialQuaternion(rotation));
@@ -107,21 +111,21 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
                 matrixStack.multiply(Vector3f.NEGATIVE_Z.getRadialQuaternion(rotation));
                 rotator.setRotation(new Vec3d(0, 0, rotation));
             }
-        }else if (!itemEntity.isOnGround() && !itemEntity.isSubmergedInWater()) {
-        if (rotation / 2 == 0) {
-            matrixStack.multiply(Vector3f.POSITIVE_X.getRadialQuaternion(rotation));
-            matrixStack.multiply(Vector3f.POSITIVE_Y.getRadialQuaternion(rotation));
-            matrixStack.multiply(Vector3f.POSITIVE_Z.getRadialQuaternion(rotation));
-            rotator.setRotation(new Vec3d(0, 0, rotation));
-        } else {
-            matrixStack.multiply(Vector3f.NEGATIVE_X.getRadialQuaternion(rotation));
-            matrixStack.multiply(Vector3f.NEGATIVE_Y.getRadialQuaternion(rotation));
-            matrixStack.multiply(Vector3f.NEGATIVE_Z.getRadialQuaternion(rotation));
-            rotator.setRotation(new Vec3d(0, 0, rotation));
-        }
-        }else if(itemEntity.getStack().getItem() instanceof AliasedBlockItem){
+        } else if (!itemEntity.isOnGround() && !itemEntity.isSubmergedInWater()) {
+            if (rotation / 2 == 0) {
+                matrixStack.multiply(Vector3f.POSITIVE_X.getRadialQuaternion(rotation));
+                matrixStack.multiply(Vector3f.POSITIVE_Y.getRadialQuaternion(rotation));
+                matrixStack.multiply(Vector3f.POSITIVE_Z.getRadialQuaternion(rotation));
+                rotator.setRotation(new Vec3d(0, 0, rotation));
+            } else {
+                matrixStack.multiply(Vector3f.NEGATIVE_X.getRadialQuaternion(rotation));
+                matrixStack.multiply(Vector3f.NEGATIVE_Y.getRadialQuaternion(rotation));
+                matrixStack.multiply(Vector3f.NEGATIVE_Z.getRadialQuaternion(rotation));
+                rotator.setRotation(new Vec3d(0, 0, rotation));
+            }
+        } else if (itemEntity.getStack().getItem() instanceof AliasedBlockItem) {
             matrixStack.multiply(Vector3f.POSITIVE_Z.getRadialQuaternion((float) rotator.getRotation().z));
-        } else if(itemEntity.getStack().getItem() instanceof BlockItem && !flat) {
+        } else if (itemEntity.getStack().getItem() instanceof BlockItem && !flat) {
             matrixStack.multiply(Vector3f.POSITIVE_X.getRadialQuaternion(300));
             matrixStack.multiply(Vector3f.POSITIVE_Y.getRadialQuaternion((float) rotator.getRotation().z));
             matrixStack.multiply(Vector3f.POSITIVE_Z.getRadialQuaternion(0));
@@ -129,10 +133,10 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
             matrixStack.multiply(Vector3f.POSITIVE_Z.getRadialQuaternion((float) rotator.getRotation().z));
         }
 
-        if(item instanceof AliasedBlockItem || flat) {
+        if (item instanceof AliasedBlockItem || flat) {
 
-        }else if (skull){
-            matrixStack.translate(0,0.06,0);
+        } else if (skull||lantern) {
+            matrixStack.translate(0, 0.06, 0);
         }else if(itemEntity.getStack().getItem() instanceof BlockItem ) {
             matrixStack.translate(0, -0.06f, 0);
         }
