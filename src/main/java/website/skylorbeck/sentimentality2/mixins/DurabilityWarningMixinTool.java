@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
+//todo damage warning on bows, armor, flint and steel, shield,
 @Mixin(MiningToolItem.class)
 public abstract class DurabilityWarningMixinTool {
     @Inject(at = @At("HEAD"), method = "postMine")
