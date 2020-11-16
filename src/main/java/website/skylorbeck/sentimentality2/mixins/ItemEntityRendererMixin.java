@@ -134,7 +134,6 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
         }
 
         if (item instanceof AliasedBlockItem || flat) {
-
         } else if (skull||lantern) {
             matrixStack.translate(0, 0.06, 0);
         }else if(itemEntity.getStack().getItem() instanceof BlockItem ) {
@@ -147,6 +146,7 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
         if (itemEntity.isOnGround() && itemEntity.world.getBlockState(itemEntity.getBlockPos()).getBlock().equals(Blocks.SNOW)){
             matrixStack.translate(0, 0, -0.12);
         }
+
         float scaleX = bakedModel.getTransformation().ground.scale.getX();
         float scaleY = bakedModel.getTransformation().ground.scale.getY();
         float scaleZ = bakedModel.getTransformation().ground.scale.getZ();
