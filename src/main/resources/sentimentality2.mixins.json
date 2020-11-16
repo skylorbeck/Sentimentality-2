@@ -3,6 +3,7 @@
   "package": "website.skylorbeck.sentimentality2.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "BeehiveMixin",
     "GrassSwingFix",
     "InfinityFix",
     "ItemEntityMixin",
