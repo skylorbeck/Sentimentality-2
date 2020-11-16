@@ -131,10 +131,8 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
             matrixStack.multiply(Vector3f.POSITIVE_Z.getRadialQuaternion(0));
         } else {
             matrixStack.multiply(Vector3f.POSITIVE_Z.getRadialQuaternion((float) rotator.getRotation().z));
-            if (itemEntity.world.getBlockState(itemEntity.getBlockPos()).getBlock().equals(Blocks.SNOW)){
-                matrixStack.translate(0, 0, -0.12);
-            }
         }
+
         if (item instanceof AliasedBlockItem || flat) {
 
         } else if (skull||lantern) {
@@ -142,8 +140,12 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
         }else if(itemEntity.getStack().getItem() instanceof BlockItem ) {
             matrixStack.translate(0, -0.06f, 0);
         }
+
         if(itemEntity.world.getBlockState(itemEntity.getBlockPos()).getBlock().equals(Blocks.SOUL_SAND)) {
             matrixStack.translate(0, 0, -.1);
+        }
+        if (itemEntity.isOnGround() && itemEntity.world.getBlockState(itemEntity.getBlockPos()).getBlock().equals(Blocks.SNOW)){
+            matrixStack.translate(0, 0, -0.12);
         }
         float scaleX = bakedModel.getTransformation().ground.scale.getX();
         float scaleY = bakedModel.getTransformation().ground.scale.getY();
