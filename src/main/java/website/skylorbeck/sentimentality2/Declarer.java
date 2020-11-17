@@ -24,6 +24,7 @@ import net.minecraft.particle.DefaultParticleType;
 //todo wolf armor
 //todo firstperson
 
+//todo hud left handed mode
 
 public class Declarer {
     public static DefaultParticleType END_FIRE_FLAME;

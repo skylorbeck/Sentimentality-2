@@ -10,6 +10,7 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.util.Arm;
 import net.minecraft.world.World;
 
 import java.time.LocalTime;
@@ -48,6 +49,8 @@ public class ExtraHUD {
         int localHour = LocalTime.now().getHour();
         int localMinute = LocalTime.now().getMinute();
         String amPm = "AM";
+        boolean left = false;
+        if (client.options.mainArm == Arm.LEFT){left = true;}
 
 
         if (time >= 24000) {
@@ -63,7 +66,11 @@ public class ExtraHUD {
                     || item == Declarer.personal_daylight_detector
                     || item == Declarer.slime_chunk_locator
             ) {
-                itemRenderer.renderInGuiWithOverrides(inventory.getStack(i), scaledWidth / 2 + 92 + (15 * slotsUsed), scaledHeight - 19);
+                if(left){
+                    itemRenderer.renderInGuiWithOverrides(inventory.getStack(i), scaledWidth / 2 - (109 + (15 * slotsUsed)), scaledHeight - 19);
+                }else{
+                    itemRenderer.renderInGuiWithOverrides(inventory.getStack(i), scaledWidth / 2 + (92 + (15 * slotsUsed)), scaledHeight - 19);
+                }
                 slotsUsed++;
             }
         }
