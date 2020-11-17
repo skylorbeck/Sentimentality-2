@@ -16,15 +16,12 @@ import net.minecraft.particle.DefaultParticleType;
 //todo shields
 //todo trinkets - luck
 //todo flight item
-//todo beehive level
 //todo lava fishing, bone fish
 //todo look into treechopping
 //todo uppers
 //todo item degradation
 //todo wolf armor
 //todo firstperson
-
-//todo hud left handed mode
 
 public class Declarer {
     public static DefaultParticleType END_FIRE_FLAME;
