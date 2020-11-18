@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "Sentimentality 2",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "A collection of changes that look to improve the vanilla experience without being overpowered",
   "authors": [
     "Skylor Beck"
   ],
@@ -25,6 +25,7 @@
   "mixins": [
     "sentimentality2.mixins.json"
   ],
+  "accessWidener" : "sentimentality2.accesswidener",
 
   "depends": {
     "fabricloader": ">=0.7.4",

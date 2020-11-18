@@ -16,6 +16,7 @@ public class Registrar {
 
     public static void register() {
 
+
         regItem("fleather", Declarer.fleather);
         regItem("personal_daylight_detector",Declarer.personal_daylight_detector);
         regItem("slime_chunk_locator",Declarer.slime_chunk_locator);
