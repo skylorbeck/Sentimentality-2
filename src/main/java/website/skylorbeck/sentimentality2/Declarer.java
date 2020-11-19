@@ -23,6 +23,8 @@ import net.minecraft.particle.DefaultParticleType;
 //todo wolf armor
 //todo firstperson
 
+//3d mushroom
+
 public class Declarer {
     public static DefaultParticleType END_FIRE_FLAME;
     public static BlockEntityType<ExtraFurnaceBlockEntity> EXTRA_FURNACE_ENTITY;
