@@ -76,6 +76,7 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
                     || b instanceof TripwireHookBlock
                     || b instanceof PlantBlock
                     || b instanceof CobwebBlock
+                    || b instanceof SugarCaneBlock
                     || shape.getMax(Direction.Axis.X) <= .25
                     || shape.getMax(Direction.Axis.Y) <= .25
                     || shape.getMax(Direction.Axis.Z) <= .25

@@ -15,11 +15,11 @@ import net.minecraft.util.registry.Registry;
 public class Registrar {
 
     public static void register() {
-
-
         regItem("fleather", Declarer.fleather);
         regItem("personal_daylight_detector",Declarer.personal_daylight_detector);
         regItem("slime_chunk_locator",Declarer.slime_chunk_locator);
+
+        regItem("chunkloader",Declarer.chunk_loader);
 
         regBlock( "charcoal_block_block", Declarer.charcoal_block_block);
         regItem("charcoal_block", Declarer.charcoal_block);
@@ -40,6 +40,15 @@ public class Registrar {
 
         Declarer.END_FIRE_FLAME = Registry.register(Registry.PARTICLE_TYPE, new Identifier(Ref.MODID, "end_fire_flame"), FabricParticleTypes.simple());
         ParticleFactoryRegistry.getInstance().register(Declarer.END_FIRE_FLAME, FlameParticle.Factory::new);
+
+        regBlock("extra_crafting_table_block",Declarer.extra_crafting_table_block);
+        regItem("extra_crafting_table",Declarer.extra_crafting_table);
+
+        Declarer.CRAFTING_TABLE_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
+                "sentimentality2:crafting",
+                BlockEntityType.Builder.create(ExtraCraftingTableEntity::new,
+                        Declarer.extra_crafting_table_block
+                ).build(null));
 
         Declarer.EXTRA_FURNACE_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
                 "sentimentality2:furnace",

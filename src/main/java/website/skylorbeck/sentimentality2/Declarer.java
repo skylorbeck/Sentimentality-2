@@ -12,24 +12,28 @@ import net.minecraft.particle.DefaultParticleType;
 
 //todo tooltips
 //todo remake compression textures
-//todo options
+//todo config
 //todo shields
-//todo trinkets - luck
 //todo flight item
 //todo lava fishing, bone fish
-//todo look into treechopping
+//todo treechopping
 //todo uppers
-//todo item degradation
 //todo wolf armor
 //todo firstperson
+//todo 3d objects on crafting tables
+//todo lapis in enchanter
+//todo armor visibility
 
 public class Declarer {
     public static DefaultParticleType END_FIRE_FLAME;
     public static BlockEntityType<ExtraFurnaceBlockEntity> EXTRA_FURNACE_ENTITY;
     public static BlockEntityType<ExtraBlastFurnaceBlockEntity> EXTRA_BLAST_FURNACE_ENTITY;
     public static BlockEntityType<ExtraSmokerBlockEntity> EXTRA_SMOKER_FURNACE_ENTITY;
+    public static BlockEntityType<ExtraCraftingTableEntity> CRAFTING_TABLE_ENTITY;
     public static final Item glider_leather = new FlightItem(new FabricItemSettings().group(ItemGroup.TRANSPORTATION).maxCount(1).maxDamage(50));
     public static final Item glider_iron = new FlightItem(new FabricItemSettings().group(ItemGroup.TRANSPORTATION).maxCount(1).maxDamage(100));
+
+    public static final Item chunk_loader = new Chunkloader(new FabricItemSettings().group(ItemGroup.TOOLS));
 
     public static final Item fleather = new Item(new FabricItemSettings().group(ItemGroup.MISC));
     public static final Item small_stick_bundle = new Item(new FabricItemSettings().group(ItemGroup.MISC));
@@ -43,6 +47,9 @@ public class Declarer {
 
     public static final Item personal_daylight_detector = new PDDItem(new FabricItemSettings().group(ItemGroup.TOOLS));
     public static final Item slime_chunk_locator = new SlimeChunkLocator(new FabricItemSettings().group(ItemGroup.TOOLS));
+
+    public static final Block extra_crafting_table_block = new ExtraCraftingTable(FabricBlockSettings.copyOf(Blocks.CRAFTING_TABLE));
+    public static final Item extra_crafting_table = new BlockItem(extra_crafting_table_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
 
     public static final Block monuple_compressed_cobblestone_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE),1);
     public static final BlockItem monuple_compressed_cobblestone = new BlockItem(monuple_compressed_cobblestone_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
