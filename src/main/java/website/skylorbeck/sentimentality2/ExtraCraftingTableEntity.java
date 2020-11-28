@@ -22,12 +22,11 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Iterator;
 
 
-public class ExtraCraftingTableEntity extends BlockEntity implements Inventory, NamedScreenHandlerFactory {
-    protected CraftingInventory inventory;
+public class ExtraCraftingTableEntity extends BlockEntity implements ExtraInventory, NamedScreenHandlerFactory {
+    private final DefaultedList<ItemStack> items = DefaultedList.ofSize(9,ItemStack.EMPTY);
 
     public ExtraCraftingTableEntity() {
         super(Declarer.CRAFTING_TABLE_ENTITY);
-        inventory = new CraftingInventory(this, 3, 3);
     }
     @Override
     public Text getDisplayName() {
@@ -36,90 +35,28 @@ public class ExtraCraftingTableEntity extends BlockEntity implements Inventory, 
 
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory pInv, PlayerEntity player) {
-        return new ExtraCraftingScreenHandler(syncId, pInv, inventory, ScreenHandlerContext.create(world, pos),this);
+        return new ExtraCraftingScreenHandler(syncId, pInv, ScreenHandlerContext.create(world, pos),this);
     }
     @Override
     public CompoundTag toTag(CompoundTag tag){
-        Inventories.toTag(tag,this.inventory);
+        Inventories.toTag(tag,items);
         return super.toTag(tag);
     }
     @Override
     public void fromTag(BlockState state, CompoundTag tag){
         super.fromTag(state,tag);
-        //this.inventory = DefaultedList.ofSize(this.size(),ItemStack.EMPTY);
-        Inventories.fromTag(tag,this.inventory);
+        Inventories.fromTag(tag,items);
     }
 
     @Override
-    public int size() {
-        return this.inventory.size();
+    public DefaultedList<ItemStack> getItems() {
+        return items;
     }
 
-    @Override
-    public boolean isEmpty() {
-        Iterator var1 = this.inventory.iterator();
-
-        ItemStack itemStack;
-        do {
-            if (!var1.hasNext()) {
-                return true;
-            }
-
-            itemStack = (ItemStack)var1.next();
-        } while(itemStack.isEmpty());
-
-        return false;
-    }
-
-    @Override
-    public ItemStack getStack(int slot) {
-        return (ItemStack)this.inventory.get(slot);
-    }
-
-    @Override
-    public ItemStack removeStack(int slot, int amount) {
-        return Inventories.splitStack(this.inventory, slot, amount);
-    }
-
-    @Override
-    public ItemStack removeStack(int slot) {
-        return Inventories.removeStack(this.inventory, slot);
-    }
-
-    @Override
-    public void setStack(int slot, ItemStack stack) {
-        ItemStack itemStack = (ItemStack)this.inventory.get(slot);
-        boolean bl = !stack.isEmpty() && stack.isItemEqualIgnoreDamage(itemStack) && ItemStack.areTagsEqual(stack, itemStack);
-        this.inventory.set(slot, stack);
-        if (stack.getCount() > this.getMaxCountPerStack()) {
-            stack.setCount(this.getMaxCountPerStack());
-        }
-        this.markDirty();
-    }
-
-    @Override
-    public boolean canPlayerUse(PlayerEntity player) {
-        return true;
-    }
-
-    @Override
-    public void onOpen(PlayerEntity player) {
-
-    }
-
-    @Override
-    public void onClose(PlayerEntity player) {
-
-    }
 
     @Override
     public boolean isValid(int slot, ItemStack stack) {
         return true;
-    }
-
-    @Override
-    public void clear() {
-        this.inventory.clear();
     }
 
 

@@ -42,6 +42,5 @@ public class ExtraCraftingTable extends BlockWithEntity {
             player.openHandledScreen((NamedScreenHandlerFactory)blockEntity);
             player.incrementStat(Stats.INTERACT_WITH_CRAFTING_TABLE);
         }
-
     }
 }
