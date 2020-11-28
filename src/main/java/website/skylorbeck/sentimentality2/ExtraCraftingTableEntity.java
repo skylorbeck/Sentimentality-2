@@ -2,6 +2,7 @@ package website.skylorbeck.sentimentality2;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.CraftingInventory;
@@ -59,5 +60,12 @@ public class ExtraCraftingTableEntity extends BlockEntity implements ExtraInvent
         return true;
     }
 
-
+    public void dropItems(){
+        double x = this.pos.getX()+0.5;
+        double y = this.pos.getY()+1;
+        double z = this.pos.getZ()+0.5;
+        for (int i = 0; i < items.size(); i++) {
+            world.spawnEntity(new ItemEntity(world,x,y,z,items.get(i)));
+        }
+    }
 }
