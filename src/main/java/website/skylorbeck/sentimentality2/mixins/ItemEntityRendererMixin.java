@@ -99,7 +99,8 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
         ItemEntityRotator rotator = (ItemEntityRotator) itemEntity;
         float rotation = ((float) itemEntity.getAge() + partialTicks) / 10.0F + itemEntity.hoverHeight;
         boolean isAboveWater1 = itemEntity.world.getBlockState(itemEntity.getBlockPos()).getFluidState().getFluid().isIn(FluidTags.WATER);
-        if (itemEntity.isSubmergedInWater() || isAboveWater1) {
+        boolean isInCobweb = itemEntity.world.getBlockState(itemEntity.getBlockPos()).getBlock() == Blocks.COBWEB;
+        if (itemEntity.isSubmergedInWater() || isAboveWater1 || isInCobweb) {
             rotation = rotation / 4;
             if (rotation / 2 == 0) {
                 matrixStack.multiply(Vector3f.POSITIVE_X.getRadialQuaternion(rotation));

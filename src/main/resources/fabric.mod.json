@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "website.skylorbeck.sentimentality2.Main"
+    ],
+    "client": [
+      "website.skylorbeck.sentimentality2.ClientMain"
     ]
   },
   "mixins": [

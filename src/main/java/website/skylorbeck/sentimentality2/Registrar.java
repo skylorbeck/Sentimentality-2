@@ -38,17 +38,9 @@ public class Registrar {
         regItem("glider_leather",Declarer.glider_leather);
         regItem("glider_iron",Declarer.glider_iron);
 
+
         Declarer.END_FIRE_FLAME = Registry.register(Registry.PARTICLE_TYPE, new Identifier(Ref.MODID, "end_fire_flame"), FabricParticleTypes.simple());
         ParticleFactoryRegistry.getInstance().register(Declarer.END_FIRE_FLAME, FlameParticle.Factory::new);
-
-        regBlock("extra_crafting_table_block",Declarer.extra_crafting_table_block);
-        regItem("extra_crafting_table",Declarer.extra_crafting_table);
-
-        Declarer.CRAFTING_TABLE_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
-                "sentimentality2:crafting",
-                BlockEntityType.Builder.create(ExtraCraftingTableEntity::new,
-                        Declarer.extra_crafting_table_block
-                ).build(null));
 
         Declarer.EXTRA_FURNACE_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
                 "sentimentality2:furnace",

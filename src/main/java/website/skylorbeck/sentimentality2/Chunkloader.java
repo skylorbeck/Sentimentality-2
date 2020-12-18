@@ -1,6 +1,5 @@
 package website.skylorbeck.sentimentality2;
 
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -19,8 +18,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
 import org.apache.commons.lang3.ArrayUtils;
-
-import java.util.Objects;
 
 public class Chunkloader extends Item {
     public static long[] chunks = new long[]{};
