@@ -18,12 +18,6 @@ import java.util.List;
 
 public class ExtraHUD {
     private MinecraftClient client;
-    //settings
-    private boolean isNight = false;
-    private boolean military = false;
-    private boolean doAmPm = true;
-
-
 
     public ExtraHUD() {
         client = MinecraftClient.getInstance();
@@ -34,6 +28,12 @@ public class ExtraHUD {
 
 
     private void render() {
+        boolean military = Registrar.getConfig().clockStuff.clockMilitary;
+        boolean doAmPm = Registrar.getConfig().clockStuff.clockAmPm;
+        boolean showSleepCount = Registrar.getConfig().showSleepCount;
+        boolean showItems = Registrar.getConfig().showItems;
+        int clockCorner = Registrar.getConfig().clockStuff.clockCorner;
+
         final PlayerEntity player = client.player;
         if (player == null) return;
         final World world = client.world;
@@ -56,22 +56,25 @@ public class ExtraHUD {
         if (time >= 24000) {
             time = time - (24000 * Math.floorDiv(time, 24000));
         }
-        isNight = (time < 23460) && (time > 12377);
+        //settings
+        boolean isNight = (time < 23460) && (time > 12377);
 
-        for (int i = 9; i < 36; i++) {
-            ItemStack stack = inventory.getStack(i);
-            Item item = stack.getItem();
-            if (item == Items.CLOCK
-                    || item == Items.COMPASS
-                    || item == Declarer.personal_daylight_detector
-                    || item == Declarer.slime_chunk_locator
-            ) {
-                if(left){
-                    itemRenderer.renderInGuiWithOverrides(inventory.getStack(i), scaledWidth / 2 - (109 + (15 * slotsUsed)), scaledHeight - 19);
-                }else{
-                    itemRenderer.renderInGuiWithOverrides(inventory.getStack(i), scaledWidth / 2 + (92 + (15 * slotsUsed)), scaledHeight - 19);
+        if(showItems) {
+            for (int i = 9; i < 36; i++) {
+                ItemStack stack = inventory.getStack(i);
+                Item item = stack.getItem();
+                if (item == Items.CLOCK
+                        || item == Items.COMPASS
+                        || item == Declarer.personal_daylight_detector
+                        || item == Declarer.slime_chunk_locator
+                ) {
+                    if (left) {
+                        itemRenderer.renderInGuiWithOverrides(inventory.getStack(i), scaledWidth / 2 - (109 + (15 * slotsUsed)), scaledHeight - 19);
+                    } else {
+                        itemRenderer.renderInGuiWithOverrides(inventory.getStack(i), scaledWidth / 2 + (92 + (15 * slotsUsed)), scaledHeight - 19);
+                    }
+                    slotsUsed++;
                 }
-                slotsUsed++;
             }
         }
 
@@ -82,15 +85,21 @@ public class ExtraHUD {
                 sleeping++;
             }
         }
-        if (sleeping >= 1) {
-            itemRenderer.renderInGui(new ItemStack(Items.RED_BED), 0, scaledHeight - 18);
+        if (sleeping >= 1 && showSleepCount) {
+            int sleepAdj = 0;
+            if(clockCorner == 2){
+                sleepAdj = 8;
+            } else {
+                sleepAdj = 0;
+            }
+            itemRenderer.renderInGui(new ItemStack(Items.RED_BED), 0, scaledHeight - 18 - sleepAdj);
             if (sleeping * 100 / playerEntities.size() >= SleepEventManager.percent) {
                 color = 43520;
             } else {
                 color = 16733525;
             }
             int total = playerEntities.size();
-            textRenderer.drawWithShadow(matrixStack, sleeping + "/" + total, 20, scaledHeight - 10, color);
+            textRenderer.drawWithShadow(matrixStack, sleeping + "/" + total, 20, scaledHeight - 10 - sleepAdj, color);
         }
         if (localHour >=12){
              amPm = "PM";
@@ -98,10 +107,36 @@ public class ExtraHUD {
         if (!military && localHour >= 13) {
             localHour = localHour - 12;
         }
-        if (doAmPm) {
-            textRenderer.drawWithShadow(matrixStack, String.format("%02d", localHour) + ":" + String.format("%02d", localMinute)+amPm, scaledWidth - 39, 1, 16777215);
+        int clockPosX = 0;
+        int clockPosY = 0;
+        int clockAdj = 0;
+        switch (clockCorner){
+            case 0:
+                clockPosX = 1;
+                clockPosY = 1;
+                clockAdj = 0;
+                break;
+            case 1:
+                clockPosX = scaledWidth - 38;
+                clockPosY = 1;
+                clockAdj = -12;
+                break;
+            case 2:
+                clockPosX = 1;
+                clockPosY = scaledHeight-8;
+                clockAdj = 0;
+                break;
+            case 3:
+                clockPosX = scaledWidth - 38;
+                clockPosY = scaledHeight-8;
+                clockAdj = -12;
+                break;
+        }
+
+        if (doAmPm && !military) {
+            textRenderer.drawWithShadow(matrixStack, String.format("%02d", localHour) + ":" + String.format("%02d", localMinute)+amPm, clockPosX, clockPosY, 16777215);
         } else {
-            textRenderer.drawWithShadow(matrixStack, String.format("%02d", localHour) + ":" + String.format("%02d", localMinute), scaledWidth - 27, 1, 16777215);
+            textRenderer.drawWithShadow(matrixStack, String.format("%02d", localHour) + ":" + String.format("%02d", localMinute), clockPosX-clockAdj, clockPosY, 16777215);
         }
     }
 }

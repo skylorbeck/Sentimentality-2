@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "sentimentality2",
-  "version": "${version}",
+  "version": "1.0.0",
 
   "name": "Sentimentality 2",
   "description": "A collection of changes that look to improve the vanilla experience without being overpowered",
@@ -9,7 +9,7 @@
     "Skylor Beck"
   ],
   "contact": {
-    "homepage": "www.skylorbeck.website",
+    "homepage": "https://www.skylorbeck.website",
     "sources": "https://github.com/Skylortrexler/Sentimentality-2"
   },
 
