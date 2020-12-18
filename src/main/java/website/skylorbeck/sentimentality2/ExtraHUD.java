@@ -56,7 +56,6 @@ public class ExtraHUD {
         if (time >= 24000) {
             time = time - (24000 * Math.floorDiv(time, 24000));
         }
-        //settings
         boolean isNight = (time < 23460) && (time > 12377);
 
         if(showItems) {
