@@ -1,5 +1,7 @@
 package website.skylorbeck.sentimentality2;
 
+import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
+import me.sargunvohra.mcmods.autoconfig1u.serializer.GsonConfigSerializer;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
@@ -13,8 +15,13 @@ import net.minecraft.util.registry.Registry;
 
 
 public class Registrar {
+    private static final ModConfig CONFIG = AutoConfig.register(ModConfig.class, GsonConfigSerializer::new).getConfig();
+    public static ModConfig getConfig() {
+        return CONFIG;
+    }
 
     public static void register() {
+
         regItem("fleather", Declarer.fleather);
         regItem("personal_daylight_detector",Declarer.personal_daylight_detector);
         regItem("slime_chunk_locator",Declarer.slime_chunk_locator);

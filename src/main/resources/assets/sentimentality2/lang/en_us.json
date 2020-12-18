@@ -1,4 +1,10 @@
 {
+  "text.autoconfig.sentimentality2.option.clockCorner": "Real Time Clock Position",
+  "text.autoconfig.sentimentality2.option.clockCorner.@Tooltip[0]": "0 = Top Left",
+  "text.autoconfig.sentimentality2.option.clockCorner.@Tooltip[1]": "1 = Top Right",
+  "text.autoconfig.sentimentality2.option.clockCorner.@Tooltip[2]": "2 = Bottom Left",
+  "text.autoconfig.sentimentality2.option.clockCorner.@Tooltip[3]": "3 = Bottom Right",
+
   "block.sentimentality2.charcoal_block_block": "Charcoal Block",
   "item.sentimentality2.charcoal_nugget": "Charcoal Nugget",
   "item.sentimentality2.coal_nugget": "Coal Nugget",

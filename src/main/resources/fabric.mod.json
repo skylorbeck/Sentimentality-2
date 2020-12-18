@@ -23,6 +23,9 @@
     ],
     "client": [
       "website.skylorbeck.sentimentality2.ClientMain"
+    ],
+    "modmenu": [
+      "website.skylorbeck.sentimentality2.ModMenuIntegration"
     ]
   },
   "mixins": [

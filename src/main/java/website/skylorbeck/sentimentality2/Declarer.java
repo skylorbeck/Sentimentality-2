@@ -10,21 +10,27 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.particle.DefaultParticleType;
 
+//todo config
 //todo tooltips
 //todo remake compression textures
-//todo config
 //todo shields
 //todo flight item
-//todo lava fishing, bone fish
-//todo treechopping
-//todo uppers
-//todo wolf armor
 //todo firstperson
-//todo 3d objects on crafting tables -- way fucking harder than it seems by the way
 //todo lapis in enchanter
 //todo armor visibility
 
+//tried to do these, they are really hard or I just don't know how to do it.
+//todo 3d objects on crafting tables
+//todo lava fishing, bone fish
+
+//probably wont do, because someone else did it better or in almost the same way I want to
+//todo uppers
+//todo wolf armor
+//todo treechopping
+
 public class Declarer {
+
+
     public static DefaultParticleType END_FIRE_FLAME;
     public static BlockEntityType<ExtraFurnaceBlockEntity> EXTRA_FURNACE_ENTITY;
     public static BlockEntityType<ExtraBlastFurnaceBlockEntity> EXTRA_BLAST_FURNACE_ENTITY;
