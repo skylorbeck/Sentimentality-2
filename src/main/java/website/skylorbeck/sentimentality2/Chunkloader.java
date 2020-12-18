@@ -26,6 +26,7 @@ public class Chunkloader extends Item {
         super(settings);
     }
 
+    private boolean canUse = Registrar.getConfig().canUseChunker;
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
@@ -34,6 +35,9 @@ public class Chunkloader extends Item {
         Chunk chunk = world.getChunk(blockPos);
         ChunkPos chunkPos = chunk.getPos();
         MinecraftServer server = world.getServer();
+        if(!canUse){
+            return TypedActionResult.success(itemStack);
+        }
         if (server != null) {
             long chunkLong = chunkPos.toLong();
             chunks = compoundTag.getLongArray("chunks");

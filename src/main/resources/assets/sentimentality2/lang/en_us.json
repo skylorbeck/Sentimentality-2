@@ -6,6 +6,8 @@
   "text.autoconfig.sentimentality2.option.clockStuff.clockAmPm": "Display AM/PM",
   "text.autoconfig.sentimentality2.option.showSleepCount": "Display Sleep Icon",
   "text.autoconfig.sentimentality2.option.showItems": "Display Items on HUD",
+  "text.autoconfig.sentimentality2.option.canUseChunker": "Chunk Loader Enabled",
+  "text.autoconfig.sentimentality2.option.canUseChunker.@Tooltip": "Game Must Be Restarted For Changes To Take Effect",
   "text.autoconfig.sentimentality2.option.showItems.@Tooltip": "Displays the Compass, Clock, PDD, and SCL on the HUD",
   "text.autoconfig.sentimentality2.option.clockStuff.clockCorner.@Tooltip[0]": "0 = Top Left",
   "text.autoconfig.sentimentality2.option.clockStuff.clockCorner.@Tooltip[1]": "1 = Top Right",

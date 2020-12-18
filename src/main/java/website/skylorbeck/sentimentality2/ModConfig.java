@@ -6,6 +6,7 @@ import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
 
 @Config(name = "sentimentality2")
 class ModConfig implements ConfigData {
+
     @ConfigEntry.Gui.CollapsibleObject(startExpanded = true)
     clockStuff clockStuff = new clockStuff();
 
@@ -16,7 +17,8 @@ class ModConfig implements ConfigData {
         boolean clockMilitary = false;
         boolean clockAmPm = true;
     }
-
+    @ConfigEntry.Gui.Tooltip
+    boolean canUseChunker = true;
     boolean showSleepCount = true;
     @ConfigEntry.Gui.Tooltip
     boolean showItems = true;
