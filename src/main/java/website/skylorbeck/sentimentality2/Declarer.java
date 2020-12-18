@@ -10,12 +10,12 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.particle.DefaultParticleType;
 
-//todo config
+//todo durability textures for all tools
 //todo tooltips
 //todo remake compression textures
 //todo shields
 //todo flight item
-//todo firstperson
+//todo firstperson legs
 //todo lapis in enchanter
 //todo armor visibility
 
