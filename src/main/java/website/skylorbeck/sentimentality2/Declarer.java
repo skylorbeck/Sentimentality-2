@@ -18,6 +18,7 @@ import net.minecraft.particle.DefaultParticleType;
 //todo firstperson legs
 //todo lapis in enchanter
 //todo armor visibility
+//todo spears maybe
 
 //tried to do these, they are really hard or I just don't know how to do it.
 //todo 3d objects on crafting tables

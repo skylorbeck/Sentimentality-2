@@ -1,6 +1,0 @@
-{
-  "parent": "item/handheld",
-  "textures": {
-    "layer0": "sentimentality2:item/lapis_shovel"
-  }
-}
