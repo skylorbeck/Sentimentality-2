@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import website.skylorbeck.sentimentality2.AbstractExtraFurnaceBlockEntity;
 
 @Mixin(FurnaceOutputSlot.class)
-public class XPFixMixin extends Slot {
+public class XPFixMixin extends Slot {//this fix is to make custom furnaces drop their xp when you break them and give xp on crafts
     @Shadow
     @Final
     private PlayerEntity player;
@@ -24,7 +24,7 @@ public class XPFixMixin extends Slot {
     @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;onCraft(Lnet/minecraft/world/World;Lnet/minecraft/entity/player/PlayerEntity;I)V"), method = "onCrafted(Lnet/minecraft/item/ItemStack;)V")
     private void craft(ItemStack stack, CallbackInfo ci) {
 
-        if (!this.player.world.isClient && this.inventory instanceof AbstractExtraFurnaceBlockEntity) {
+        if (!this.player.world.isClient && this.inventory instanceof AbstractExtraFurnaceBlockEntity) {//make sure it's the server and it's a custom furnace block
             ((AbstractExtraFurnaceBlockEntity) this.inventory).dropExperience(this.player);
         }
     }

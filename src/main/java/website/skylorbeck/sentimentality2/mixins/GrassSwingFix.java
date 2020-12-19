@@ -28,19 +28,18 @@ public class GrassSwingFix {
     @Redirect(method = "doAttack", at = @At(value = "INVOKE", target = "net/minecraft/client/network/ClientPlayerInteractionManager.attackBlock(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/math/Direction;)Z"))
     private boolean checkForEntity(ClientPlayerInteractionManager manager, BlockPos pos, Direction direction) {
         BlockState clicked = world.getBlockState(pos);
-        if (!clicked.getCollisionShape(world, pos).isEmpty() || clicked.getHardness(world, pos) != 0.0F) {
+        if (!clicked.getCollisionShape(world, pos).isEmpty() || clicked.getHardness(world, pos) != 0.0F) {//make sure the block clicked on was not air
             return manager.attackBlock(pos, direction);
         }
-        Vec3d camera = player.getCameraPosVec(1.0F);
+        Vec3d camera = player.getCameraPosVec(1.0F);//find the players vector, then check if any entity is within reach of the player in a ray through the block hit
         Vec3d rotation = player.getRotationVec(1.0F);
         float reach = manager.getReachDistance();
         Vec3d end = camera.add(rotation.x * reach, rotation.y * reach, rotation.z * reach);
         EntityHitResult result = ProjectileUtil.getEntityCollision(world, player, camera, end, new Box(camera, end), EntityPredicates.EXCEPT_CREATIVE_OR_SPECTATOR.and(e -> e != null && e.collides() && e instanceof LivingEntity));
-        if (result != null) {
+        if (result != null) {//only pass if a livingentity was hit
             manager.attackEntity(player, result.getEntity());
             return true;
         }
         return manager.attackBlock(pos, direction);
     }
-
 }

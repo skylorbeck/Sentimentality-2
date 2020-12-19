@@ -14,7 +14,7 @@ public abstract class repairCostMixin {
     @Shadow public abstract CompoundTag getOrCreateTag();
     @Inject(method = "setRepairCost",at = @At("HEAD"),cancellable = true)
     public void sentimentalSetRepairCost(CallbackInfo ci) {
-        this.getOrCreateTag().putInt("RepairCost", 0);
+        this.getOrCreateTag().putInt("RepairCost", 0);//always set repair cost to 0, then cancel
         ci.cancel();
     }
 }

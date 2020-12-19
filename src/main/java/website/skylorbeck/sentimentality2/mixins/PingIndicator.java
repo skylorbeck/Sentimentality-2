@@ -16,21 +16,21 @@ public abstract class PingIndicator extends DrawableHelper {
 
     @Inject(method = "renderLatencyIcon",at = @At("HEAD"),cancellable = true)
     public void sentimentalRenderLatencyIcon(MatrixStack matrixStack, int i, int j, int k, PlayerListEntry playerListEntry, CallbackInfo ci) {
-        RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+        RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);//white
         int ping = playerListEntry.getLatency();
         int rgb;
         if (ping < 0) {
-            rgb = 255;
+            rgb = 255;//blue
         } else if (ping < 50) {
-            rgb = 65280;
+            rgb = 65280;//green
         } else if (ping < 100) {
-            rgb = 43520;
+            rgb = 43520;//dark green
         } else if (ping < 200) {
-            rgb = 16776960;
+            rgb = 16776960;//yellow
         } else if (ping < 300) {
-            rgb = 16711680;
+            rgb = 16711680;//red
         } else {
-            rgb = 11141120;
+            rgb = 11141120;//dark red
         }
 
         String pingString = this.toSubscriptNumbers(Integer.toString(ping));
@@ -41,7 +41,7 @@ public abstract class PingIndicator extends DrawableHelper {
     }
 
     private String toSubscriptNumbers(String string) {
-        char[] chars = string.toCharArray();
+        char[] chars = string.toCharArray();//convert string into array and return it
 
         for(int i = 0; i < chars.length; ++i) {
             if (chars[i] >= '0' && chars[i] <= '9') {
