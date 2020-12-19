@@ -11,7 +11,6 @@ import net.minecraft.item.*;
 import net.minecraft.particle.DefaultParticleType;
 
 //textures in progress
-//    * Warped - copied but not colored
 //    * Granite
 //    * Diorite
 //    * Netherbrick
