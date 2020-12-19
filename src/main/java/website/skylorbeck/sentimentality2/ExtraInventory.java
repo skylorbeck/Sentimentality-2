@@ -6,8 +6,7 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.collection.DefaultedList;
 
-public interface ExtraInventory extends Inventory {
-
+public interface ExtraInventory extends Inventory {//copy of vanilla with fabric tutorial stuff
     DefaultedList<ItemStack> getItems();
 
     static ExtraInventory of(DefaultedList<ItemStack> items) {

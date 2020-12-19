@@ -37,7 +37,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Iterator;
 import java.util.List;
 
-public abstract class AbstractExtraFurnaceBlockEntity extends LockableContainerBlockEntity implements SidedInventory, RecipeUnlocker, RecipeInputProvider, Tickable {
+public abstract class AbstractExtraFurnaceBlockEntity extends LockableContainerBlockEntity implements SidedInventory, RecipeUnlocker, RecipeInputProvider, Tickable {//this is essentially a copy of minecrafts default furnace code but without the constant rebuilding of the library on every smelt
     private static final int[] TOP_SLOTS = new int[]{0};
     private static final int[] BOTTOM_SLOTS = new int[]{2, 1};
     private static final int[] SIDE_SLOTS = new int[]{1};

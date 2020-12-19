@@ -28,7 +28,6 @@ import net.minecraft.particle.DefaultParticleType;
 
 //todo durability textures for all tools
 //todo tooltips
-//todo comment all my code so it looks more professional and is readable by future me and others
 //todo remake compression textures
 //todo shields
 //todo flight item
@@ -46,18 +45,22 @@ import net.minecraft.particle.DefaultParticleType;
 //todo wolf armor
 //todo treechopping
 
+
+//I used Declarer and Registrar to prevent the problem they have in vanilla code where a single class is a thousand lines long
 public class Declarer {
-
-
+    //entities
     public static DefaultParticleType END_FIRE_FLAME;
     public static BlockEntityType<ExtraFurnaceBlockEntity> EXTRA_FURNACE_ENTITY;
     public static BlockEntityType<ExtraBlastFurnaceBlockEntity> EXTRA_BLAST_FURNACE_ENTITY;
     public static BlockEntityType<ExtraSmokerBlockEntity> EXTRA_SMOKER_FURNACE_ENTITY;
+    //gliders
     public static final Item glider_leather = new FlightItem(new FabricItemSettings().group(ItemGroup.TRANSPORTATION).maxCount(1).maxDamage(50));
     public static final Item glider_iron = new FlightItem(new FabricItemSettings().group(ItemGroup.TRANSPORTATION).maxCount(1).maxDamage(100));
-
+    //custom personal items
     public static final Item chunk_loader = new Chunkloader(new FabricItemSettings().group(ItemGroup.TOOLS));
-
+    public static final Item personal_daylight_detector = new PDDItem(new FabricItemSettings().group(ItemGroup.TOOLS));
+    public static final Item slime_chunk_locator = new SlimeChunkLocator(new FabricItemSettings().group(ItemGroup.TOOLS));
+    //misc items
     public static final Item fleather = new Item(new FabricItemSettings().group(ItemGroup.MISC));
     public static final Item small_stick_bundle = new Item(new FabricItemSettings().group(ItemGroup.MISC));
     public static final Item large_stick_bundle = new Item(new FabricItemSettings().group(ItemGroup.MISC));
@@ -67,10 +70,7 @@ public class Declarer {
     public static final BlockItem charcoal_block = new BlockItem(charcoal_block_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Item charcoal_nugget = new Item(new FabricItemSettings().group(ItemGroup.MISC));
     public static final Item coal_nugget = new Item(new FabricItemSettings().group(ItemGroup.MISC));
-
-    public static final Item personal_daylight_detector = new PDDItem(new FabricItemSettings().group(ItemGroup.TOOLS));
-    public static final Item slime_chunk_locator = new SlimeChunkLocator(new FabricItemSettings().group(ItemGroup.TOOLS));
-
+    //compressed cobble
     public static final Block monuple_compressed_cobblestone_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE),1);
     public static final BlockItem monuple_compressed_cobblestone = new BlockItem(monuple_compressed_cobblestone_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Block couple_compressed_cobblestone_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE),2);
@@ -89,7 +89,7 @@ public class Declarer {
     public static final BlockItem octuple_compressed_cobblestone = new BlockItem(octuple_compressed_cobblestone_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Block nonuple_compressed_cobblestone_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE),9);
     public static final BlockItem nonuple_compressed_cobblestone = new BlockItem(nonuple_compressed_cobblestone_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
-    
+    //compressed dirt
     public static final Block monuple_compressed_dirt_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIRT),1);
     public static final BlockItem monuple_compressed_dirt = new BlockItem(monuple_compressed_dirt_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Block couple_compressed_dirt_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIRT),2);
@@ -108,7 +108,7 @@ public class Declarer {
     public static final BlockItem octuple_compressed_dirt = new BlockItem(octuple_compressed_dirt_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Block nonuple_compressed_dirt_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIRT),9);
     public static final BlockItem nonuple_compressed_dirt = new BlockItem(nonuple_compressed_dirt_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
-    
+    //compressed granite
     public static final Block monuple_compressed_granite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.GRANITE),1);
     public static final BlockItem monuple_compressed_granite = new BlockItem(monuple_compressed_granite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Block couple_compressed_granite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.GRANITE),2);
@@ -127,7 +127,7 @@ public class Declarer {
     public static final BlockItem octuple_compressed_granite = new BlockItem(octuple_compressed_granite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Block nonuple_compressed_granite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.GRANITE),9);
     public static final BlockItem nonuple_compressed_granite = new BlockItem(nonuple_compressed_granite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
-    
+    //compressed diorite
     public static final Block monuple_compressed_diorite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIORITE),1);
     public static final BlockItem monuple_compressed_diorite = new BlockItem(monuple_compressed_diorite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Block couple_compressed_diorite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIORITE),2);
@@ -146,7 +146,7 @@ public class Declarer {
     public static final BlockItem octuple_compressed_diorite = new BlockItem(octuple_compressed_diorite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Block nonuple_compressed_diorite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.DIORITE),9);
     public static final BlockItem nonuple_compressed_diorite = new BlockItem(nonuple_compressed_diorite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
-    
+    //compressed andesite
     public static final Block monuple_compressed_andesite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE),1);
     public static final BlockItem monuple_compressed_andesite = new BlockItem(monuple_compressed_andesite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Block couple_compressed_andesite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE),2);
@@ -165,7 +165,7 @@ public class Declarer {
     public static final BlockItem octuple_compressed_andesite = new BlockItem(octuple_compressed_andesite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Block nonuple_compressed_andesite_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE),9);
     public static final BlockItem nonuple_compressed_andesite = new BlockItem(nonuple_compressed_andesite_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
-
+    //compressed netherrack
     public static final Block monuple_compressed_netherrack_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.NETHERRACK),1);
     public static final BlockItem monuple_compressed_netherrack = new BlockItem(monuple_compressed_netherrack_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Block couple_compressed_netherrack_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.NETHERRACK),2);
@@ -184,7 +184,7 @@ public class Declarer {
     public static final BlockItem octuple_compressed_netherrack = new BlockItem(octuple_compressed_netherrack_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Block nonuple_compressed_netherrack_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.NETHERRACK),9);
     public static final BlockItem nonuple_compressed_netherrack = new BlockItem(nonuple_compressed_netherrack_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
-
+    //furnaces
     public static final Block sandstone_furnaceblock = new ExtraFurnaceBlock(FabricBlockSettings.copyOf(Blocks.FURNACE),0);
     public static final BlockItem sandstone_furnace = new BlockItem(sandstone_furnaceblock,new FabricItemSettings().group(ItemGroup.DECORATIONS));
     public static final Block red_sandstone_furnaceblock = new ExtraFurnaceBlock(FabricBlockSettings.copyOf(Blocks.FURNACE),0);
@@ -203,7 +203,7 @@ public class Declarer {
     public static final BlockItem basalt_furnace = new BlockItem(basalt_furnaceblock,new FabricItemSettings().group(ItemGroup.DECORATIONS));
     public static final Block endstone_furnaceblock = new ExtraFurnaceBlock(FabricBlockSettings.copyOf(Blocks.FURNACE),2);
     public static final BlockItem endstone_furnace = new BlockItem(endstone_furnaceblock,new FabricItemSettings().group(ItemGroup.DECORATIONS));
-
+    //blast furnaces
     public static final Block sandstone_blast_furnaceblock = new ExtraBlastFurnaceBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE));
     public static final BlockItem sandstone_blast_furnace = new BlockItem(sandstone_blast_furnaceblock,new FabricItemSettings().group(ItemGroup.DECORATIONS));
     public static final Block red_sandstone_blast_furnaceblock = new ExtraBlastFurnaceBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE));
@@ -222,7 +222,7 @@ public class Declarer {
     public static final BlockItem basalt_blast_furnace = new BlockItem(basalt_blast_furnaceblock,new FabricItemSettings().group(ItemGroup.DECORATIONS));
     public static final Block endstone_blast_furnaceblock = new ExtraBlastFurnaceBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE));
     public static final BlockItem endstone_blast_furnace = new BlockItem(endstone_blast_furnaceblock,new FabricItemSettings().group(ItemGroup.DECORATIONS));
-
+    //smokers
     public static final Block sandstone_smokerblock = new ExtraSmokerBlock(FabricBlockSettings.copyOf(Blocks.SMOKER));
     public static final BlockItem sandstone_smoker = new BlockItem(sandstone_smokerblock,new FabricItemSettings().group(ItemGroup.DECORATIONS));
     public static final Block red_sandstone_smokerblock = new ExtraSmokerBlock(FabricBlockSettings.copyOf(Blocks.SMOKER));
@@ -241,12 +241,12 @@ public class Declarer {
     public static final BlockItem basalt_smoker = new BlockItem(basalt_smokerblock,new FabricItemSettings().group(ItemGroup.DECORATIONS));
     public static final Block endstone_smokerblock = new ExtraSmokerBlock(FabricBlockSettings.copyOf(Blocks.SMOKER));
     public static final BlockItem endstone_smoker = new BlockItem(endstone_smokerblock,new FabricItemSettings().group(ItemGroup.DECORATIONS));
-
+    //wool armor
     public static final Item wool_helmet = new ExtraDyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.HEAD,new FabricItemSettings().group(ItemGroup.COMBAT));
     public static final Item wool_chestplate = new ExtraDyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.CHEST,new FabricItemSettings().group(ItemGroup.COMBAT));
     public static final Item wool_leggings = new ExtraDyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.LEGS,new FabricItemSettings().group(ItemGroup.COMBAT));
     public static final Item wool_boots = new ExtraDyeableArmorItem(ExtraArmorMaterials.WOOL, EquipmentSlot.FEET,new FabricItemSettings().group(ItemGroup.COMBAT));
-
+    //tools
     public static final Item granite_sword = new SwordItem(ExtraToolMaterials.GRANITE, 3, -2.4F, (new FabricItemSettings()).group(ItemGroup.COMBAT));
     public static final Item granite_shovel = new ShovelItem(ExtraToolMaterials.GRANITE, 1.5F, -3.0F, (new FabricItemSettings()).group(ItemGroup.TOOLS));
     public static final Item granite_pick = new ExtraPickaxeItem(ExtraToolMaterials.GRANITE,1,-2.8F,(new FabricItemSettings().group(ItemGroup.TOOLS)));

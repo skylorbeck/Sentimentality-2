@@ -18,7 +18,7 @@ import java.util.Random;
 
 
 public class ExtraFurnaceBlock extends AbstractExtraFurnaceBlock {
-    private static final IntProperty DIM = IntProperty.of("dim",0,2);
+    private static final IntProperty DIM = IntProperty.of("dim",0,2);//dimension. This determines the color of the flames used on the furnace. Set at registration
 
     protected ExtraFurnaceBlock(Settings settings, int dimension) {
         super(settings);
@@ -44,13 +44,13 @@ public class ExtraFurnaceBlock extends AbstractExtraFurnaceBlock {
 
             switch (state.get(DIM)){
                 case 0:
-                    world.addParticle(ParticleTypes.FLAME, x + double_6, y + double_7, z + double_8, 0.0D, 0.0D, 0.0D);
+                    world.addParticle(ParticleTypes.FLAME, x + double_6, y + double_7, z + double_8, 0.0D, 0.0D, 0.0D);//normal flame
                     break;
                 case 1:
-                    world.addParticle(ParticleTypes.SOUL_FIRE_FLAME, x + double_6, y + double_7, z + double_8, 0.0D, 0.0D, 0.0D);
+                    world.addParticle(ParticleTypes.SOUL_FIRE_FLAME, x + double_6, y + double_7, z + double_8, 0.0D, 0.0D, 0.0D);//soul flame for soul furnaces
                     break;
                 case 2:
-                    world.addParticle(Declarer.END_FIRE_FLAME, x + double_6, y + double_7, z + double_8, 0.0D, 0.0D, 0.0D);
+                    world.addParticle(Declarer.END_FIRE_FLAME, x + double_6, y + double_7, z + double_8, 0.0D, 0.0D, 0.0D);//end themed flame
                     break;
             }
         }

@@ -15,6 +15,8 @@ import java.util.Random;
 public class SlimeChunkLocator extends Item {
     private static long seed;
     private static boolean hasSeed = false;
+    private static boolean waitingForSeed = false;
+    private static int waitTime = 0;
 
     public SlimeChunkLocator(Settings settings) {
         super(settings);
@@ -25,7 +27,7 @@ public class SlimeChunkLocator extends Item {
         seed=worldSeed;
     }
 
-    private boolean findChunk(long worldseed, double x, double y) {
+    private boolean findChunk(long worldseed, double x, double y) {//copied from minecraft wiki
         Random rnd = new Random(
                 worldseed +
                         (int) (x * x * 0x4c1906) +
@@ -39,16 +41,24 @@ public class SlimeChunkLocator extends Item {
 
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        if (entity instanceof PlayerEntity && world.isClient) {
+        if (entity instanceof PlayerEntity && world.isClient) {//only a player on the client
+            if (waitingForSeed){//don't spam the server
+                waitTime++;
+                if (waitTime>=20){//only ask the sever once per second
+                    waitingForSeed = false;
+                }
+                return;
+            }
             if (!hasSeed) {
                 PacketByteBuf data = new PacketByteBuf(Unpooled.buffer());
-                ClientSidePacketRegistry.INSTANCE.sendToServer(Main.sentimentality2_get_seed, data);
+                ClientSidePacketRegistry.INSTANCE.sendToServer(Main.sentimentality2_get_seed, data);//send empty trigger packet to server
+                waitingForSeed = true;
             }
-            if(hasSeed){
+            if(hasSeed){//once you get the seed
                 CompoundTag compoundTag = stack.getOrCreateTag();
-                //compoundTag.putLong("seed",seed);//if the user has an NBT viewing mod, they could get the seed too easily with this
+                compoundTag.putLong("seed",seed);//if the user has an NBT viewing mod, they could get the seed too easily with this
                 int bool = findChunk(seed,entity.chunkX,entity.chunkZ) ? 1: 0;
-                compoundTag.putInt("CustomModelData", bool);
+                compoundTag.putInt("CustomModelData", bool);//save result to NBT for custom model
             }
         }
     }

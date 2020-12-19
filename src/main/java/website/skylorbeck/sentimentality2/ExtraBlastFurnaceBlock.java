@@ -18,7 +18,7 @@ import net.minecraft.world.World;
 import java.util.Random;
 
 
-public class ExtraBlastFurnaceBlock extends AbstractExtraFurnaceBlock {
+public class ExtraBlastFurnaceBlock extends AbstractExtraFurnaceBlock {//copy of vanilla code
     protected ExtraBlastFurnaceBlock(Settings settings) {
         super(settings);
     }
@@ -32,7 +32,6 @@ public class ExtraBlastFurnaceBlock extends AbstractExtraFurnaceBlock {
             player.openHandledScreen((NamedScreenHandlerFactory)blockEntity);
             player.incrementStat(Stats.INTERACT_WITH_BLAST_FURNACE);
         }
-
     }
 
     @Environment(EnvType.CLIENT)

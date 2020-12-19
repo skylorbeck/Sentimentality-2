@@ -14,14 +14,14 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class CompressedBlock extends Block {
-    private static final IntProperty compression = IntProperty.of("compression",1,9);
+    private static final IntProperty compression = IntProperty.of("compression",1,9);//I used blockstates to make generic compressed blocks instead of hardcoding each type
     public CompressedBlock(Settings settings,int level) {
         super(settings);
         this.setDefaultState(this.getDefaultState().with(compression,level));
     }
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
-        switch (this.getDefaultState().get(compression)){
+        switch (this.getDefaultState().get(compression)){//append different tooltips based on the state given at block registration
             case 1:
                 tooltip.add(new TranslatableText("block.sentimentality2.compressed.monuple"));
                 break;

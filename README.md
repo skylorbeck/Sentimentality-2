@@ -83,6 +83,7 @@ So what does this mod do? Strap in, it's a long list.
 * Changed Ping bars to be Ping Numbers.
 * Removed increasing costs for repairs.
 * Changed ItemEntity behaviors. You have to see it.
+* Sleep voting, defaults to 50% but can be changed in the config
 
 Many, many things from VanillaTweaks including:
 * Dark UI

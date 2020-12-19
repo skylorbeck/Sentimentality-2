@@ -13,7 +13,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-
+//I used Declarer and Registrar to prevent the problem they have in vanilla code where a single class is a thousand lines long
 public class Registrar {
     private static final ModConfig CONFIG = AutoConfig.register(ModConfig.class, GsonConfigSerializer::new).getConfig();
     public static ModConfig getConfig() {
@@ -21,13 +21,12 @@ public class Registrar {
     }
 
     public static void register() {
-
-        regItem("fleather", Declarer.fleather);
+        //personal items
         regItem("personal_daylight_detector",Declarer.personal_daylight_detector);
         regItem("slime_chunk_locator",Declarer.slime_chunk_locator);
-
         regItem("chunkloader",Declarer.chunk_loader);
-
+        //misc items
+        regItem("fleather", Declarer.fleather);
         regBlock( "charcoal_block_block", Declarer.charcoal_block_block);
         regItem("charcoal_block", Declarer.charcoal_block);
         FuelRegistry.INSTANCE.add(Declarer.charcoal_block, 16000);
@@ -41,14 +40,15 @@ public class Registrar {
         FuelRegistry.INSTANCE.add(Declarer.charcoal_nugget,200);
         regItem("coal_nugget",Declarer.coal_nugget);
         FuelRegistry.INSTANCE.add(Declarer.coal_nugget,200);
-
+        //gliders
         regItem("glider_leather",Declarer.glider_leather);
         regItem("glider_iron",Declarer.glider_iron);
 
-
+        //particles
         Declarer.END_FIRE_FLAME = Registry.register(Registry.PARTICLE_TYPE, new Identifier(Ref.MODID, "end_fire_flame"), FabricParticleTypes.simple());
         ParticleFactoryRegistry.getInstance().register(Declarer.END_FIRE_FLAME, FlameParticle.Factory::new);
-
+        //block entities
+        //furnace entity
         Declarer.EXTRA_FURNACE_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
                 "sentimentality2:furnace",
                 BlockEntityType.Builder.create(ExtraFurnaceBlockEntity::new,
@@ -62,7 +62,7 @@ public class Registrar {
                         Declarer.netherrack_furnaceblock,
                         Declarer.basalt_furnaceblock
                 ).build(null));
-
+        //blast furnace entity
         Declarer.EXTRA_BLAST_FURNACE_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
                 "sentimentality2:blast_furnace",
                 BlockEntityType.Builder.create(ExtraBlastFurnaceBlockEntity::new,
@@ -76,7 +76,7 @@ public class Registrar {
                         Declarer.netherrack_blast_furnaceblock,
                         Declarer.basalt_blast_furnaceblock
                 ).build(null));
-        
+        //smoker entity
         Declarer.EXTRA_SMOKER_FURNACE_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
                 "sentimentality2:smoker",
                 BlockEntityType.Builder.create(ExtraSmokerBlockEntity::new,
@@ -90,7 +90,7 @@ public class Registrar {
                         Declarer.netherrack_smokerblock,
                         Declarer.basalt_smokerblock
                 ).build(null));
-
+        //tying the color provider to the wool armor
         ColorProviderRegistry.ITEM.register((stack, tintIndex) ->
         stack.getSubTag(Ref.display) != null && stack.getSubTag(Ref.display).contains(Ref.color, 99) ? stack.getSubTag(Ref.display).getInt(Ref.color) :16777215,
                 Declarer.wool_helmet,
@@ -98,7 +98,7 @@ public class Registrar {
                 Declarer.wool_leggings,
                 Declarer.wool_boots
         );
-
+        //furnaces
         regBlock( "sandstone_furnace", Declarer.sandstone_furnaceblock);
         regItem("sandstone_furnaceitem", Declarer.sandstone_furnace);
         regBlock( "red_sandstone_furnace", Declarer.red_sandstone_furnaceblock);
@@ -117,7 +117,7 @@ public class Registrar {
         regItem("netherrack_furnaceitem", Declarer.netherrack_furnace);
         regBlock( "basalt_furnace", Declarer.basalt_furnaceblock);
         regItem("basalt_furnaceitem", Declarer.basalt_furnace);
-
+        //blast furnaces
         regBlock( "sandstone_blast_furnace", Declarer.sandstone_blast_furnaceblock);
         regItem("sandstone_blast_furnaceitem", Declarer.sandstone_blast_furnace);
         regBlock( "red_sandstone_blast_furnace", Declarer.red_sandstone_blast_furnaceblock);
@@ -136,7 +136,7 @@ public class Registrar {
         regItem("netherrack_blast_furnaceitem", Declarer.netherrack_blast_furnace);
         regBlock( "basalt_blast_furnace", Declarer.basalt_blast_furnaceblock);
         regItem("basalt_blast_furnaceitem", Declarer.basalt_blast_furnace);
-
+        //smokers
         regBlock( "sandstone_smoker", Declarer.sandstone_smokerblock);
         regItem("sandstone_smokeritem", Declarer.sandstone_smoker);
         regBlock( "red_sandstone_smoker", Declarer.red_sandstone_smokerblock);
@@ -155,12 +155,12 @@ public class Registrar {
         regItem("netherrack_smokeritem", Declarer.netherrack_smoker);
         regBlock( "basalt_smoker", Declarer.basalt_smokerblock);
         regItem("basalt_smokeritem", Declarer.basalt_smoker);
-
+        //wool armor
         regItem("wool_helmet",Declarer.wool_helmet);
         regItem("wool_chestplate",Declarer.wool_chestplate);
         regItem("wool_leggings",Declarer.wool_leggings);
         regItem("wool_boots",Declarer.wool_boots);
-
+        //tools
         regItem("granite_pick", Declarer.granite_pick);
         regItem("granite_axe", Declarer.granite_axe);
         regItem("granite_shovel", Declarer.granite_shovel);
@@ -251,8 +251,7 @@ public class Registrar {
         regItem("crimson_shovel",Declarer.crimson_shovel);
         regItem("crimson_sword",Declarer.crimson_sword);
         regItem("crimson_hoe",Declarer.crimson_hoe);
-        
-
+        //compressed cobble
         regItem("monuple_compressed_cobblestone",Declarer.monuple_compressed_cobblestone);
         regBlock("monuple_compressed_cobblestone_block",Declarer.monuple_compressed_cobblestone_block);
         regItem("couple_compressed_cobblestone",Declarer.couple_compressed_cobblestone);
@@ -271,7 +270,7 @@ public class Registrar {
         regBlock("octuple_compressed_cobblestone_block",Declarer.octuple_compressed_cobblestone_block);
         regItem("nonuple_compressed_cobblestone",Declarer.nonuple_compressed_cobblestone);
         regBlock("nonuple_compressed_cobblestone_block",Declarer.nonuple_compressed_cobblestone_block);
-
+        //compressed dirt
         regItem("monuple_compressed_dirt",Declarer.monuple_compressed_dirt);
         regBlock("monuple_compressed_dirt_block",Declarer.monuple_compressed_dirt_block);
         regItem("couple_compressed_dirt",Declarer.couple_compressed_dirt);
@@ -290,7 +289,7 @@ public class Registrar {
         regBlock("octuple_compressed_dirt_block",Declarer.octuple_compressed_dirt_block);
         regItem("nonuple_compressed_dirt",Declarer.nonuple_compressed_dirt);
         regBlock("nonuple_compressed_dirt_block",Declarer.nonuple_compressed_dirt_block);
-
+        //compressed diorite
         regItem("monuple_compressed_diorite",Declarer.monuple_compressed_diorite);
         regBlock("monuple_compressed_diorite_block",Declarer.monuple_compressed_diorite_block);
         regItem("couple_compressed_diorite",Declarer.couple_compressed_diorite);
@@ -309,7 +308,7 @@ public class Registrar {
         regBlock("octuple_compressed_diorite_block",Declarer.octuple_compressed_diorite_block);
         regItem("nonuple_compressed_diorite",Declarer.nonuple_compressed_diorite);
         regBlock("nonuple_compressed_diorite_block",Declarer.nonuple_compressed_diorite_block);
-
+        //compressed granite
         regItem("monuple_compressed_granite",Declarer.monuple_compressed_granite);
         regBlock("monuple_compressed_granite_block",Declarer.monuple_compressed_granite_block);
         regItem("couple_compressed_granite",Declarer.couple_compressed_granite);
@@ -328,7 +327,7 @@ public class Registrar {
         regBlock("octuple_compressed_granite_block",Declarer.octuple_compressed_granite_block);
         regItem("nonuple_compressed_granite",Declarer.nonuple_compressed_granite);
         regBlock("nonuple_compressed_granite_block",Declarer.nonuple_compressed_granite_block);
-
+        //compressed andesite
         regItem("monuple_compressed_andesite",Declarer.monuple_compressed_andesite);
         regBlock("monuple_compressed_andesite_block",Declarer.monuple_compressed_andesite_block);
         regItem("couple_compressed_andesite",Declarer.couple_compressed_andesite);
@@ -347,7 +346,7 @@ public class Registrar {
         regBlock("octuple_compressed_andesite_block",Declarer.octuple_compressed_andesite_block);
         regItem("nonuple_compressed_andesite",Declarer.nonuple_compressed_andesite);
         regBlock("nonuple_compressed_andesite_block",Declarer.nonuple_compressed_andesite_block);
-
+        //compressed netherrack
         regItem("monuple_compressed_netherrack",Declarer.monuple_compressed_netherrack);
         regBlock("monuple_compressed_netherrack_block",Declarer.monuple_compressed_netherrack_block);
         regItem("couple_compressed_netherrack",Declarer.couple_compressed_netherrack);
@@ -368,7 +367,7 @@ public class Registrar {
         regBlock("nonuple_compressed_netherrack_block",Declarer.nonuple_compressed_netherrack_block);
     }
 
-
+    //instead of typing out this every single time, I just made it into a function with the hardcoded reference too
     public static void regItem(String name, Item itemid){
        Registry.register(Registry.ITEM, new Identifier(Ref.MODID, name), itemid);
     }

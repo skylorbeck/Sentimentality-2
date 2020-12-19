@@ -8,7 +8,7 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 
-public class ExtraBlastFurnaceBlockEntity extends AbstractExtraFurnaceBlockEntity {
+public class ExtraBlastFurnaceBlockEntity extends AbstractExtraFurnaceBlockEntity {//copy of vanilla code
     public ExtraBlastFurnaceBlockEntity() {
         super(Declarer.EXTRA_BLAST_FURNACE_ENTITY,RecipeType.BLASTING);
     }

@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class ExtraSmokerBlock extends AbstractExtraFurnaceBlock {
+public class ExtraSmokerBlock extends AbstractExtraFurnaceBlock {//copy of vanilla
     protected ExtraSmokerBlock(Settings settings) {
         super(settings);
     }

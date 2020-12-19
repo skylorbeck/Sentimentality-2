@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import website.skylorbeck.sentimentality2.AbstractExtraFurnaceBlockEntity;
 
 @Mixin(FurnaceOutputSlot.class)
-public class XPFixMixin extends Slot {//this fix is to make custom furnaces drop their xp when you break them and give xp on crafts
+public class XPFixMixin extends Slot {//this fix is to make custom furnaces give xp on crafts
     @Shadow
     @Final
     private PlayerEntity player;

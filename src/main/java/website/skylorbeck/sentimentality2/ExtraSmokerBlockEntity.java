@@ -8,7 +8,7 @@ import net.minecraft.screen.SmokerScreenHandler;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 
-public class ExtraSmokerBlockEntity extends AbstractExtraFurnaceBlockEntity {
+public class ExtraSmokerBlockEntity extends AbstractExtraFurnaceBlockEntity {//copy of vanilla
     public ExtraSmokerBlockEntity() {
         super(Declarer.EXTRA_SMOKER_FURNACE_ENTITY, RecipeType.SMOKING);
     }

@@ -14,7 +14,7 @@ import net.minecraft.util.Lazy;
 import java.util.function.Supplier;
 
 public enum ExtraArmorMaterials implements ArmorMaterial {
-    WOOL("wool",3,new int[]{1,2,3,1},25,SoundEvents.ITEM_ARMOR_EQUIP_LEATHER,0.0f,0.0f,()->{
+    WOOL("wool",3,new int[]{1,2,3,1},25,SoundEvents.ITEM_ARMOR_EQUIP_LEATHER,0.0f,0.0f,()->{//low durability to prevent use as alternative to leather
         return Ingredient.ofItems(
                 Items.BLACK_WOOL,
                 Items.WHITE_WOOL,

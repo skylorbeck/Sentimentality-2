@@ -8,23 +8,24 @@ import net.minecraft.world.GameRules;
 
 import java.util.List;
 
-public class SleepEventManager {
-    public static int percent = 50;
+public class SleepEventManager {//this is needed to skip the night without all the players
+
+    public static int percent = Registrar.getConfig().sleepStuff.sleepPercent;
     public static void onTick(MinecraftServer server) {
         server.getWorlds().forEach((world) -> {
-            List<ServerPlayerEntity> players = world.getPlayers();
+            List<ServerPlayerEntity> players = world.getPlayers();//look for sleeping players
             int sleeping = 0;
-            for (PlayerEntity p : players) {
+            for (PlayerEntity p : players) {//for each player, check to see if they are asleep
                 if (p.isSleeping() && p.isSleepingLongEnough())
                     sleeping++;
             }
-            if (sleeping != players.size() && sleeping * 100 / players.size() >= percent) {
+            if (sleeping != players.size() && sleeping * 100 / players.size() >= percent) {//if enough people are sleeping to pass the % threshold, sleep
                 sleep(world, players);
             }
         });
     }
 
-    private static void sleep(ServerWorld world, List<ServerPlayerEntity> players) {
+    private static void sleep(ServerWorld world, List<ServerPlayerEntity> players) {//basically a copy of minecrafts vanilla but way more simple. Probably misses something critical but I don't know.
         if(world.getGameRules().getBoolean(GameRules.DO_DAYLIGHT_CYCLE)){
             long l = world.getLevelProperties().getTimeOfDay() + 24000L;
             world.setTimeOfDay(l - l%24000);

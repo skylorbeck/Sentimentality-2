@@ -22,10 +22,10 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 
-public abstract class AbstractExtraFurnaceBlock extends BlockWithEntity {
+public abstract class AbstractExtraFurnaceBlock extends BlockWithEntity {//this is essentially a copy of minecrafts default furnace code but without the constant rebuilding of the library on every smelt
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     public static final BooleanProperty LIT = Properties.LIT;
-    //private static final IntProperty DIM = IntProperty.of("dim",0,2);
+    //private static final IntProperty DIM = IntProperty.of("dim",0,2); // old code from before abstraction
 
     protected AbstractExtraFurnaceBlock(Settings settings/*, int dimension*/) {
         super(settings);
