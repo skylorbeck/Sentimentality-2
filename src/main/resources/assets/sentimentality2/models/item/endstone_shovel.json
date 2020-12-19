@@ -9,21 +9,21 @@
         "damaged": 1,
         "damage": 0.85
       },
-      "model": "item/tools/endstone/shovel/2"
+      "model": "sentimentality2:item/tools/endstone/shovel/2"
     },
     {
       "predicate": {
         "damaged": 1,
         "damage": 0.9
       },
-      "model": "item/tools/endstone/shovel/3"
+      "model": "sentimentality2:item/tools/endstone/shovel/3"
     },
     {
       "predicate": {
         "damaged": 1,
         "damage": 0.95
       },
-      "model": "item/tools/endstone/shovel/4"
+      "model": "sentimentality2:item/tools/endstone/shovel/4"
     }
   ]
 }
