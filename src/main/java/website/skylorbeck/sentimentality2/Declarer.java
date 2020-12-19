@@ -29,6 +29,7 @@ import net.minecraft.particle.DefaultParticleType;
 
 //todo durability textures for all tools
 //todo tooltips
+//todo comment all my code so it looks more professional and is readable by future me and others
 //todo remake compression textures
 //todo shields
 //todo flight item
