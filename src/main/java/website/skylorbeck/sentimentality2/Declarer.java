@@ -11,7 +11,6 @@ import net.minecraft.item.*;
 import net.minecraft.particle.DefaultParticleType;
 
 //textures in progress
-//    * Blackstone
 //    * Endstone
 //    * Flint (Iron Durability)
 //    * Quartz (Diamond Damage)
