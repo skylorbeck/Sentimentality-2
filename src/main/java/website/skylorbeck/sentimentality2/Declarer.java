@@ -11,7 +11,6 @@ import net.minecraft.item.*;
 import net.minecraft.particle.DefaultParticleType;
 
 //textures in progress
-//    * Netherbrick
 //    * Red Netherbrick
 //    * Sandstone
 //    * Red Sandstone
