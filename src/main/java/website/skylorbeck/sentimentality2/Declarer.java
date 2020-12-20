@@ -11,9 +11,6 @@ import net.minecraft.item.*;
 import net.minecraft.particle.DefaultParticleType;
 
 //textures in progress
-//    * Red Netherbrick
-//    * Sandstone
-//    * Red Sandstone
 //    * Blackstone
 //    * Endstone
 //    * Flint (Iron Durability)

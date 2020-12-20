@@ -1,7 +1,7 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "sentimentality2:item/rednetherbrick_pickaxe"
+    "layer0": "sentimentality2:item/red_netherbrick_pickaxe"
   },
   "overrides": [
     {
