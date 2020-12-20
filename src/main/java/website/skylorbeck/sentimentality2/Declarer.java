@@ -10,16 +10,6 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.particle.DefaultParticleType;
 
-//textures in progress
-//    * Endstone
-//    * Flint (Iron Durability)
-//    * Quartz (Diamond Damage)
-//    * Lapis (Gold Enchantability)
-//    * Emerald (Diamond Durability)
-//    * Redstone (Gold Speed)
-
-
-//todo durability textures for all tools
 //todo tooltips
 //todo remake compression textures
 //todo shields
