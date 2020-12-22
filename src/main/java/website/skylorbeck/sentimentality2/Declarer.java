@@ -10,7 +10,6 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.particle.DefaultParticleType;
 
-//todo tooltips
 //todo remake compression textures
 //todo shields
 //todo flight item
@@ -20,7 +19,7 @@ import net.minecraft.particle.DefaultParticleType;
 //todo spears maybe
 
 //tried to do these, they are really hard or I just don't know how to do it.
-//todo 3d objects on crafting tables
+//todo 3d objects on crafting tables - sucessfully made table but it crashes java without a log
 //todo lava fishing, bone fish
 
 //probably wont do, because someone else did it better or in almost the same way I want to
