@@ -3,7 +3,6 @@
 This is the sequel to Sentimentality for MC1.16.4 on Fabric. There will never be a forge version again, don't bother asking for one.
 
 So what does this mod do? Strap in, it's a long list.
-
 * Fleather, a way to convert rotten flesh into leather. Cook it in a smoker.
 * Charcoal Blocks since minecraft is missing those.
 * Coal and Charcoal nuggets.
@@ -11,16 +10,16 @@ So what does this mod do? Strap in, it's a long list.
 * Feather Block
 * Wool Armor. Stats of Leather. Dyable.
 * 9 new (of each) Furnaces, Blast Furnaces and Smokers made of.
-    * Sandstone
-    * Red Sandstone
-    * Andesite
-    * Granite
-    * Diorite
-    * Endstone
-    * Blackstone
-    * Netherrack/Netherbrick
-    * Basalt
-    
+  * Sandstone
+  * Red Sandstone
+  * Andesite
+  * Granite
+  * Diorite
+  * Endstone
+  * Blackstone
+  * Netherrack/Netherbrick
+  * Basalt
+
 * 18 new tool materials.
   * Wood Level
     * Netherrack (worse than wood)
@@ -38,18 +37,18 @@ So what does this mod do? Strap in, it's a long list.
     * Basalt
     * Endstone
     * Flint (Iron Durability)
-  * Iron Level      
+  * Iron Level
     * Quartz (Diamond Damage)
     * Lapis (Gold Enchantability)
     * Emerald (Diamond Durability)
     * Redstone (Gold Speed)
 * Compressed blocks. Up to 9x compression (387,420,489 blocks)
-    * Cobblestone
-    * Dirt
-    * Granite  
-    * Diorite
-    * Andesite
-    * Netherrack
+  * Cobblestone
+  * Dirt
+  * Granite
+  * Diorite
+  * Andesite
+  * Netherrack
 * Handheld Chunkloader. Uses minecrafts forceload command to load single chunks. _Can be disabled in config._
 * Handheld light level indicator. No more overlays!
 * Handheld Slime Chunk locator. Lights up when standing in a slime chunk.
@@ -99,3 +98,4 @@ Many, many things from VanillaTweaks including:
 * Visual Honey Stages
 * 3D Ladders, Rails, Reeds, Iron Bars, Lillypads, and many miscellaneous items.
 + Many more small changes!
+
