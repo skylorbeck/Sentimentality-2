@@ -3,6 +3,9 @@
 This is the sequel to Sentimentality for MC1.16.4 on Fabric. There will never be a forge version again, don't bother asking for one.
 
 So what does this mod do? Strap in, it's a long list.
+
+* Real Time Clock on UI.
+* Compass, clock, and other handheld visual tools on UI  
 * Fleather, a way to convert rotten flesh into leather. Cook it in a smoker.
 * Charcoal Blocks since minecraft is missing those.
 * Coal and Charcoal nuggets.
