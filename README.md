@@ -98,4 +98,4 @@ Many, many things from VanillaTweaks including:
 * Flowering Kelp
 * Visual Honey Stages
 * 3D Ladders, Rails, Reeds, Iron Bars, Lillypads, and many miscellaneous items.
-+ Many more small chages!
++ Many more small changes!
