@@ -77,6 +77,7 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
                     || b instanceof PlantBlock
                     || b instanceof CobwebBlock
                     || b instanceof SugarCaneBlock
+                    || b instanceof PaneBlock
                     || shape.getMax(Direction.Axis.X) <= .25//any item that is 1/4th a full block in any direction is considered flat
                     || shape.getMax(Direction.Axis.Y) <= .25
                     || shape.getMax(Direction.Axis.Z) <= .25
