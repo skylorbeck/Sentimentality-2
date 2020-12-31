@@ -20,6 +20,21 @@ public class Registrar {
         return CONFIG;
     }
 
+    public static void clientRegister(){//separated because servers don't like when they have this stuff registered on them
+        //particles
+        Declarer.END_FIRE_FLAME = Registry.register(Registry.PARTICLE_TYPE, new Identifier(Ref.MODID, "end_fire_flame"), FabricParticleTypes.simple());
+        ParticleFactoryRegistry.getInstance().register(Declarer.END_FIRE_FLAME, FlameParticle.Factory::new);
+        //tying the color provider to the wool armor
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) ->
+                        stack.getSubTag(Ref.display) != null && stack.getSubTag(Ref.display).contains(Ref.color, 99) ? stack.getSubTag(Ref.display).getInt(Ref.color) :16777215,
+                Declarer.wool_helmet,
+                Declarer.wool_chestplate,
+                Declarer.wool_leggings,
+                Declarer.wool_boots
+        );
+
+    }
+
     public static void register() {
         //personal items
         regItem("personal_daylight_detector",Declarer.personal_daylight_detector);
@@ -44,9 +59,7 @@ public class Registrar {
         regItem("glider_leather",Declarer.glider_leather);
         regItem("glider_iron",Declarer.glider_iron);
 
-        //particles
-        Declarer.END_FIRE_FLAME = Registry.register(Registry.PARTICLE_TYPE, new Identifier(Ref.MODID, "end_fire_flame"), FabricParticleTypes.simple());
-        ParticleFactoryRegistry.getInstance().register(Declarer.END_FIRE_FLAME, FlameParticle.Factory::new);
+
         //block entities
         //furnace entity
         Declarer.EXTRA_FURNACE_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
@@ -90,14 +103,6 @@ public class Registrar {
                         Declarer.netherrack_smokerblock,
                         Declarer.basalt_smokerblock
                 ).build(null));
-        //tying the color provider to the wool armor
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) ->
-        stack.getSubTag(Ref.display) != null && stack.getSubTag(Ref.display).contains(Ref.color, 99) ? stack.getSubTag(Ref.display).getInt(Ref.color) :16777215,
-                Declarer.wool_helmet,
-                Declarer.wool_chestplate,
-                Declarer.wool_leggings,
-                Declarer.wool_boots
-        );
         //furnaces
         regBlock( "sandstone_furnace", Declarer.sandstone_furnaceblock);
         regItem("sandstone_furnaceitem", Declarer.sandstone_furnace);

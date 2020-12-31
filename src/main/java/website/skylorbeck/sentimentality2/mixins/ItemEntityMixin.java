@@ -19,4 +19,14 @@ public class ItemEntityMixin implements ItemEntityRotator {
     public void setRotation(Vec3d rotation) {
         this.rotation = rotation;
     }
+
+    @Override
+    public void addRotation(Vec3d rotation) {
+
+    }
+
+    @Override
+    public void addRotation(double x, double y, double z) {
+
+    }
 }
