@@ -28,8 +28,10 @@ public class FlightItem extends TrinketItem {
             }
         }
         if (stack.getDamage() < stack.getMaxDamage() - 1){
+            assert attribute != null;
             attribute.setBaseValue(1);
         }else{
+            assert attribute != null;
             attribute.setBaseValue(0);
         }
     }
@@ -45,6 +47,7 @@ public class FlightItem extends TrinketItem {
     @Override
     public void onUnequip(PlayerEntity player, ItemStack stack) {
         EntityAttributeInstance attribute = player.getAttributeInstance(CaelusApi.ELYTRA_FLIGHT);
+        assert attribute != null;
         attribute.setBaseValue(0);
     }
 

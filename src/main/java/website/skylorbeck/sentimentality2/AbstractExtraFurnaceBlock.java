@@ -21,6 +21,8 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
+import java.util.Objects;
+
 
 public abstract class AbstractExtraFurnaceBlock extends BlockWithEntity {//this is essentially a copy of minecrafts default furnace code but without the constant rebuilding of the library on every smelt
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
@@ -57,7 +59,7 @@ public abstract class AbstractExtraFurnaceBlock extends BlockWithEntity {//this 
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return (BlockState)this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite());
+        return this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite());
     }
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack) {
@@ -72,7 +74,7 @@ public abstract class AbstractExtraFurnaceBlock extends BlockWithEntity {//this 
     @Override
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         if (world.getBlockEntity(pos) instanceof ExtraFurnaceBlockEntity) {
-            ((ExtraFurnaceBlockEntity) world.getBlockEntity(pos)).dropExperience(player);
+            ((ExtraFurnaceBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).dropExperience(player);
         }
 
         super.onBreak(world, pos, state, player);
@@ -104,11 +106,11 @@ public abstract class AbstractExtraFurnaceBlock extends BlockWithEntity {//this 
     }
 
     public BlockState rotate(BlockState state, BlockRotation rotation) {
-        return (BlockState)state.with(FACING, rotation.rotate((Direction)state.get(FACING)));
+        return state.with(FACING, rotation.rotate(state.get(FACING)));
     }
 
     public BlockState mirror(BlockState state, BlockMirror mirror) {
-        return state.rotate(mirror.getRotation((Direction)state.get(FACING)));
+        return state.rotate(mirror.getRotation(state.get(FACING)));
     }
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {

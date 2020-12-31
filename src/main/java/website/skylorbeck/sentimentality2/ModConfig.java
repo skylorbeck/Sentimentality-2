@@ -20,13 +20,13 @@ public class ModConfig implements ConfigData {
 
     public boolean beehiveTips = true;
 
-    @ConfigEntry.Gui.CollapsibleObject(startExpanded = false)
+    @ConfigEntry.Gui.CollapsibleObject()
     clockStuff clockStuff = new clockStuff();
 
-    @ConfigEntry.Gui.CollapsibleObject(startExpanded = false)
+    @ConfigEntry.Gui.CollapsibleObject()
     sleepStuff sleepStuff = new sleepStuff();
 
-    @ConfigEntry.Gui.CollapsibleObject(startExpanded = false)
+    @ConfigEntry.Gui.CollapsibleObject()
     toggles toggles = new toggles();
     static class toggles {
         @ConfigEntry.Gui.Tooltip
@@ -62,11 +62,11 @@ public class ModConfig implements ConfigData {
 
         @ConfigEntry.Gui.RequiresRestart
         boolean allTools = true;
-        @ConfigEntry.Gui.CollapsibleObject(startExpanded = false)
+        @ConfigEntry.Gui.CollapsibleObject()
         toolToggles toolToggles = new toolToggles();
         @ConfigEntry.Gui.RequiresRestart
         boolean allCompressedBlocks = true;
-        @ConfigEntry.Gui.CollapsibleObject(startExpanded = false)
+        @ConfigEntry.Gui.CollapsibleObject()
         compressedBlocks compressedBlocks = new compressedBlocks();
     }
 

@@ -72,7 +72,7 @@ public enum ExtraToolMaterials implements ToolMaterial {
     private final int enchantability;
     private final Lazy<Ingredient> repairIngredient;
 
-    private ExtraToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
+    ExtraToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
         this.miningLevel = miningLevel;
         this.itemDurability = itemDurability;
         this.miningSpeed = miningSpeed;
@@ -107,6 +107,6 @@ public enum ExtraToolMaterials implements ToolMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return (Ingredient)this.repairIngredient.get();
+        return this.repairIngredient.get();
     }
 }

@@ -17,13 +17,11 @@ import java.time.LocalTime;
 import java.util.List;
 
 public class ExtraHUD {
-    private MinecraftClient client;
+    private final MinecraftClient client;
 
     public ExtraHUD() {
         client = MinecraftClient.getInstance();
-        HudRenderCallback.EVENT.register((__, ___) -> {
-            this.render();
-        });
+        HudRenderCallback.EVENT.register((__, ___) -> this.render());
     }
 
 
@@ -37,6 +35,7 @@ public class ExtraHUD {
         final PlayerEntity player = client.player;
         if (player == null) return;
         final World world = client.world;
+        assert world != null;
         long time = world.getTimeOfDay();//will never nullpointer because we have to be in game to get here
         final Inventory inventory = player.inventory;
         final TextRenderer textRenderer = client.textRenderer;

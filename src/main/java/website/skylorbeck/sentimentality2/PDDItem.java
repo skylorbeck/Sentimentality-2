@@ -16,9 +16,6 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class PDDItem extends Item {
-    //both must be private or all the PDD overwrite each other
-    private boolean mode = false;//daylight or torchlight modes
-    private int light = 0;//current light level
 
     public PDDItem(Settings settings) {
         super(settings);
@@ -27,7 +24,11 @@ public class PDDItem extends Item {
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         CompoundTag compoundTag = stack.getOrCreateTag();
-        mode = compoundTag.getBoolean("mode");
+        //both must be private or all the PDD overwrite each other
+        //daylight or torchlight modes
+        boolean mode = compoundTag.getBoolean("mode");
+        //current light level
+        int light = 0;
         if(mode){//gets the light level for the block the item is in depending on the mode set in the NBT
             light = world.getLightLevel(entity.getBlockPos());
             stack.setCustomName(new TranslatableText("item.sentimentality2.pdd_day"));
@@ -36,7 +37,7 @@ public class PDDItem extends Item {
             stack.setCustomName(new TranslatableText("item.sentimentality2.pdd_block"));
         }
         int bool = mode ? 2 : 1;//must be 2 or 1 as NBT remove all leading zeros
-        compoundTag.putInt("CustomModelData",Integer.parseInt(bool+""+light));//stores the mode and the light level as an int in the NBT for dynamic model calculations
+        compoundTag.putInt("CustomModelData",Integer.parseInt(bool+""+ light));//stores the mode and the light level as an int in the NBT for dynamic model calculations
 
     }
 

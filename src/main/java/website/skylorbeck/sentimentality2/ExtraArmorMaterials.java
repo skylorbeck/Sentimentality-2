@@ -45,7 +45,7 @@ public enum ExtraArmorMaterials implements ArmorMaterial {
     private final float knockbackResistance;
     private final Lazy<Ingredient> repairIngredientSupplier;
 
-    private ExtraArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantability, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredientSupplier) {
+    ExtraArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantability, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredientSupplier) {
         this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.protectionAmounts = protectionAmounts;
@@ -77,7 +77,7 @@ public enum ExtraArmorMaterials implements ArmorMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return (Ingredient)this.repairIngredientSupplier.get();
+        return this.repairIngredientSupplier.get();
     }
     @Environment(EnvType.CLIENT)
     @Override

@@ -3,7 +3,6 @@ package website.skylorbeck.sentimentality2;
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.AbstractFurnaceBlock;
 import net.minecraft.block.BlockState;
@@ -113,12 +112,10 @@ public abstract class AbstractExtraFurnaceBlockEntity extends LockableContainerB
         this.burnTime = tag.getShort("BurnTime");
         this.cookTime = tag.getShort("CookTime");
         this.cookTimeTotal = tag.getShort("CookTimeTotal");
-        this.fuelTime = this.getFuelTime((ItemStack)this.inventory.get(1));
+        this.fuelTime = this.getFuelTime(this.inventory.get(1));
         CompoundTag compoundTag = tag.getCompound("RecipesUsed");
-        Iterator var4 = compoundTag.getKeys().iterator();
 
-        while(var4.hasNext()) {
-            String string = (String)var4.next();
+        for (String string : compoundTag.getKeys()) {
             this.recipesUsed.put(new Identifier(string), compoundTag.getInt(string));
         }
 
@@ -131,9 +128,7 @@ public abstract class AbstractExtraFurnaceBlockEntity extends LockableContainerB
         tag.putShort("CookTimeTotal", (short)this.cookTimeTotal);
         Inventories.toTag(tag, this.inventory);
         CompoundTag compoundTag = new CompoundTag();
-        this.recipesUsed.forEach((identifier, integer) -> {
-            compoundTag.putInt(identifier.toString(), integer);
-        });
+        this.recipesUsed.forEach((identifier, integer) -> compoundTag.putInt(identifier.toString(), integer));
         tag.put("RecipesUsed", compoundTag);
         return tag;
     }
@@ -145,10 +140,11 @@ public abstract class AbstractExtraFurnaceBlockEntity extends LockableContainerB
             --this.burnTime;
         }
 
+        assert this.world != null;
         if (!this.world.isClient) {
-            ItemStack itemStack = (ItemStack)this.inventory.get(1);
-            if (!this.isBurning() && (itemStack.isEmpty() || ((ItemStack)this.inventory.get(0)).isEmpty())) {
-                if (!this.isBurning() && this.cookTime > 0) {
+            ItemStack itemStack = this.inventory.get(1);
+            if (!this.isBurning() && (itemStack.isEmpty() || this.inventory.get(0).isEmpty())) {
+                if (this.cookTime > 0) {
                     this.cookTime = MathHelper.clamp(this.cookTime - 2, 0, this.cookTimeTotal);
                 }
             } else {
@@ -183,7 +179,7 @@ public abstract class AbstractExtraFurnaceBlockEntity extends LockableContainerB
 
             if (bl != this.isBurning()) {
                 bl2 = true;
-                this.world.setBlockState(this.pos, (BlockState)this.world.getBlockState(this.pos).with(AbstractFurnaceBlock.LIT, this.isBurning()), 3);
+                this.world.setBlockState(this.pos, this.world.getBlockState(this.pos).with(AbstractFurnaceBlock.LIT, this.isBurning()), 3);
             }
         }
 
@@ -193,12 +189,12 @@ public abstract class AbstractExtraFurnaceBlockEntity extends LockableContainerB
 
     }
     protected boolean canAcceptRecipeOutput(@Nullable Recipe<?> recipe) {
-        if (!((ItemStack)this.inventory.get(0)).isEmpty() && recipe != null) {
+        if (!this.inventory.get(0).isEmpty() && recipe != null) {
             ItemStack itemStack = recipe.getOutput();
             if (itemStack.isEmpty()) {
                 return false;
             } else {
-                ItemStack itemStack2 = (ItemStack)this.inventory.get(2);
+                ItemStack itemStack2 = this.inventory.get(2);
                 if (itemStack2.isEmpty()) {
                     return true;
                 } else if (!itemStack2.isItemEqualIgnoreDamage(itemStack)) {
@@ -216,20 +212,21 @@ public abstract class AbstractExtraFurnaceBlockEntity extends LockableContainerB
 
     private void craftRecipe(@Nullable Recipe<?> recipe) {
         if (recipe != null && this.canAcceptRecipeOutput(recipe)) {
-            ItemStack itemStack = (ItemStack)this.inventory.get(0);
+            ItemStack itemStack = this.inventory.get(0);
             ItemStack itemStack2 = recipe.getOutput();
-            ItemStack itemStack3 = (ItemStack)this.inventory.get(2);
+            ItemStack itemStack3 = this.inventory.get(2);
             if (itemStack3.isEmpty()) {
                 this.inventory.set(2, itemStack2.copy());
             } else if (itemStack3.getItem() == itemStack2.getItem()) {
                 itemStack3.increment(1);
             }
 
+            assert this.world != null;
             if (!this.world.isClient) {
                 this.setLastRecipe(recipe);
             }
 
-            if (itemStack.getItem() == Blocks.WET_SPONGE.asItem() && !((ItemStack)this.inventory.get(1)).isEmpty() && ((ItemStack)this.inventory.get(1)).getItem() == Items.BUCKET) {
+            if (itemStack.getItem() == Blocks.WET_SPONGE.asItem() && !this.inventory.get(1).isEmpty() && this.inventory.get(1).getItem() == Items.BUCKET) {
                 this.inventory.set(1, new ItemStack(Items.WATER_BUCKET));
             }
 
@@ -241,13 +238,14 @@ public abstract class AbstractExtraFurnaceBlockEntity extends LockableContainerB
         if (fuel.isEmpty()) {
             return 0;
         } else {
-            return (Integer)FuelRegistry.INSTANCE.get(fuel.getItem());
+            return FuelRegistry.INSTANCE.get(fuel.getItem());
         }
 
     }
 
     protected int getCookTime() {
-        return (Integer)this.world.getRecipeManager().getFirstMatch(this.recipeType, this, this.world).map(AbstractCookingRecipe::getCookTime).orElse(200);
+        assert this.world != null;
+        return this.world.getRecipeManager().getFirstMatch(this.recipeType, this, this.world).map(AbstractCookingRecipe::getCookTime).orElse(200);
     }
 
 
@@ -271,9 +269,7 @@ public abstract class AbstractExtraFurnaceBlockEntity extends LockableContainerB
     public boolean canExtract(int slot, ItemStack stack, Direction dir) {
         if (dir == Direction.DOWN && slot == 1) {
             Item item = stack.getItem();
-            if (item != Items.WATER_BUCKET && item != Items.BUCKET) {
-                return false;
-            }
+            return item == Items.WATER_BUCKET || item == Items.BUCKET;
         }
 
         return true;
@@ -299,7 +295,7 @@ public abstract class AbstractExtraFurnaceBlockEntity extends LockableContainerB
     }
     @Override
     public ItemStack getStack(int slot) {
-        return (ItemStack)this.inventory.get(slot);
+        return this.inventory.get(slot);
     }
     @Override
     public ItemStack removeStack(int slot, int amount) {
@@ -311,7 +307,7 @@ public abstract class AbstractExtraFurnaceBlockEntity extends LockableContainerB
     }
     @Override
     public void setStack(int slot, ItemStack stack) {
-        ItemStack itemStack = (ItemStack)this.inventory.get(slot);
+        ItemStack itemStack = this.inventory.get(slot);
         boolean bl = !stack.isEmpty() && stack.isItemEqualIgnoreDamage(itemStack) && ItemStack.areTagsEqual(stack, itemStack);
         this.inventory.set(slot, stack);
         if (stack.getCount() > this.getMaxCountPerStack()) {
@@ -327,6 +323,7 @@ public abstract class AbstractExtraFurnaceBlockEntity extends LockableContainerB
     }
     @Override
     public boolean canPlayerUse(PlayerEntity player) {
+        assert this.world != null;
         if (this.world.getBlockEntity(this.pos) != this) {
             return false;
         } else {
@@ -340,7 +337,7 @@ public abstract class AbstractExtraFurnaceBlockEntity extends LockableContainerB
         } else if (slot != 1) {
             return true;
         } else {
-            ItemStack itemStack = (ItemStack)this.inventory.get(1);
+            ItemStack itemStack = this.inventory.get(1);
             return canUseAsFuel(stack) || stack.getItem() == Items.BUCKET && itemStack.getItem() != Items.BUCKET;
         }
     }
@@ -373,13 +370,11 @@ public abstract class AbstractExtraFurnaceBlockEntity extends LockableContainerB
 
     public List<Recipe<?>> dropExperience(World world, Vec3d vec3d) {
         List<Recipe<?>> list = Lists.newArrayList();
-        ObjectIterator var4 = this.recipesUsed.object2IntEntrySet().iterator();
 
-        while(var4.hasNext()) {
-            Object2IntMap.Entry<Identifier> entry = (Object2IntMap.Entry)var4.next();
-            world.getRecipeManager().get((Identifier)entry.getKey()).ifPresent((recipe) -> {
+        for (Object2IntMap.Entry<Identifier> identifierEntry : this.recipesUsed.object2IntEntrySet()) {
+            world.getRecipeManager().get(identifierEntry.getKey()).ifPresent((recipe) -> {
                 list.add(recipe);
-                dropExperience(world, vec3d, entry.getIntValue(), ((AbstractCookingRecipe)recipe).getExperience());
+                dropExperience(world, vec3d, identifierEntry.getIntValue(), ((AbstractCookingRecipe) recipe).getExperience());
             });
         }
 
@@ -405,10 +400,8 @@ public abstract class AbstractExtraFurnaceBlockEntity extends LockableContainerB
 
     @Override
     public void provideRecipeInputs(RecipeFinder finder) {
-        Iterator var2 = this.inventory.iterator();
 
-        while(var2.hasNext()) {
-            ItemStack itemStack = (ItemStack)var2.next();
+        for (ItemStack itemStack : this.inventory) {
             finder.addItem(itemStack);
         }
 

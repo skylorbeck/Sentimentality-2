@@ -13,6 +13,8 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+import java.util.Objects;
+
 //I used Declarer and Registrar to prevent the problem they have in vanilla code where a single class is a thousand lines long
 public class Registrar {
     private static final ModConfig CONFIG = AutoConfig.register(ModConfig.class, GsonConfigSerializer::new).getConfig();
@@ -26,7 +28,7 @@ public class Registrar {
         ParticleFactoryRegistry.getInstance().register(Declarer.END_FIRE_FLAME, FlameParticle.Factory::new);
         //tying the color provider to the wool armor
         ColorProviderRegistry.ITEM.register((stack, tintIndex) ->
-                        stack.getSubTag(Ref.display) != null && stack.getSubTag(Ref.display).contains(Ref.color, 99) ? stack.getSubTag(Ref.display).getInt(Ref.color) :16777215,
+                        stack.getSubTag(Ref.display) != null && Objects.requireNonNull(stack.getSubTag(Ref.display)).contains(Ref.color, 99) ? Objects.requireNonNull(stack.getSubTag(Ref.display)).getInt(Ref.color) :16777215,
                 Declarer.wool_helmet,
                 Declarer.wool_chestplate,
                 Declarer.wool_leggings,

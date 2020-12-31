@@ -29,7 +29,7 @@ public class ExtraFurnaceBlock extends AbstractExtraFurnaceBlock {
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
         if (state.get(LIT)) {
             double x = (double) pos.getX() + 0.5D;
-            double y = (double) pos.getY();
+            double y = pos.getY();
             double z = (double) pos.getZ() + 0.5D;
             if (random.nextDouble() < 0.1D) {
                 world.playSound(x, y, z, SoundEvents.BLOCK_FURNACE_FIRE_CRACKLE, SoundCategory.BLOCKS, 1.0F, 1.0F, false);

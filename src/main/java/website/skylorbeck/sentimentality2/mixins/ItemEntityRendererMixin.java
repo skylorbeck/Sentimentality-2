@@ -109,25 +109,23 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
                     matrixStack.multiply(Vector3f.POSITIVE_X.getRadialQuaternion(rotation));
                     matrixStack.multiply(Vector3f.POSITIVE_Y.getRadialQuaternion(rotation));
                     matrixStack.multiply(Vector3f.POSITIVE_Z.getRadialQuaternion(rotation));
-                    rotator.setRotation(new Vec3d(0, 0, rotation));
                 } else {
                     matrixStack.multiply(Vector3f.NEGATIVE_X.getRadialQuaternion(rotation));
                     matrixStack.multiply(Vector3f.NEGATIVE_Y.getRadialQuaternion(rotation));
                     matrixStack.multiply(Vector3f.NEGATIVE_Z.getRadialQuaternion(rotation));
-                    rotator.setRotation(new Vec3d(0, 0, rotation));
                 }
+                rotator.setRotation(new Vec3d(0, 0, rotation));
             } else if (!itemEntity.isOnGround() && !itemEntity.isSubmergedInWater()) {//if the item  isn't on the ground and isn't in water, spin at full speed
                 if (rotation % 2 == 0) {
                     matrixStack.multiply(Vector3f.POSITIVE_X.getRadialQuaternion(rotation));
                     matrixStack.multiply(Vector3f.POSITIVE_Y.getRadialQuaternion(rotation));
                     matrixStack.multiply(Vector3f.POSITIVE_Z.getRadialQuaternion(rotation));
-                    rotator.setRotation(new Vec3d(0, 0, rotation));
                 } else {
                     matrixStack.multiply(Vector3f.NEGATIVE_X.getRadialQuaternion(rotation));
                     matrixStack.multiply(Vector3f.NEGATIVE_Y.getRadialQuaternion(rotation));
                     matrixStack.multiply(Vector3f.NEGATIVE_Z.getRadialQuaternion(rotation));
-                    rotator.setRotation(new Vec3d(0, 0, rotation));
                 }
+                rotator.setRotation(new Vec3d(0, 0, rotation));
             } else if (itemEntity.getStack().getItem() instanceof AliasedBlockItem) {//if it's on the ground, but redstone (or a similar item), special case to lay flat
                 matrixStack.multiply(Vector3f.POSITIVE_Z.getRadialQuaternion((float) rotator.getRotation().z));
             } else if (itemEntity.getStack().getItem() instanceof BlockItem && !flat) {//special case to make full cube blocks lay on their correct bottom instead of side

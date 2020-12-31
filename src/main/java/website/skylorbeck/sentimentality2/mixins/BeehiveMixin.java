@@ -26,7 +26,10 @@ public class BeehiveMixin {
         if (Registrar.getConfig().beehiveTips) {
             if (!world.isClient && player.getStackInHand(hand).isEmpty()) {//want to make sure the hand is empty
                 BeehiveBlockEntity beehiveBlockEntity = (BeehiveBlockEntity) world.getBlockEntity(pos);
-                int beeCount = beehiveBlockEntity.getBeeCount();//will not produce exception, since the only time we can get here is if there is something to get
+                int beeCount = 0;//will not produce exception, since the only time we can get here is if there is something to get
+                if (beehiveBlockEntity != null) {
+                    beeCount = beehiveBlockEntity.getBeeCount();
+                }
                 String text;
                 if (beeCount == 1) {//if statement to determine grammar
                     text = "This hive contains " + beeCount + " bee";

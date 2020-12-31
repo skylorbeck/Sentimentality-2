@@ -26,7 +26,7 @@ public class Chunkloader extends Item {
         super(settings);
     }
 
-    private boolean canUse = Registrar.getConfig().toggles.chunker;//check config to see if enabled at launch to prevent possible spam
+    private final boolean canUse = Registrar.getConfig().toggles.chunker;//check config to see if enabled at launch to prevent possible spam
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
