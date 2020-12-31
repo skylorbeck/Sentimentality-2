@@ -16,22 +16,25 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import website.skylorbeck.sentimentality2.Registrar;
 
 @Mixin(BeehiveBlock.class)
 public class BeehiveMixin {
     @Inject(at = @At("HEAD"), method = "onUse")
     public void showBees(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<ActionResult> cir) {
         //we don't want the client to do this since we are sending packets to the client
-        if (!world.isClient && player.getStackInHand(hand).isEmpty()) {//want to make sure the hand is empty
-            BeehiveBlockEntity beehiveBlockEntity = (BeehiveBlockEntity) world.getBlockEntity(pos);
-            int beeCount = beehiveBlockEntity.getBeeCount();//will not produce exception, since the only time we can get here is if there is something to get
-            String text;
-            if (beeCount == 1){//if statement to determine grammar
-                text = "This hive contains " + beeCount + " bee";
-            }else{
-                text = "This hive contains " + beeCount + " bees";
+        if (Registrar.getConfig().beehiveTips) {
+            if (!world.isClient && player.getStackInHand(hand).isEmpty()) {//want to make sure the hand is empty
+                BeehiveBlockEntity beehiveBlockEntity = (BeehiveBlockEntity) world.getBlockEntity(pos);
+                int beeCount = beehiveBlockEntity.getBeeCount();//will not produce exception, since the only time we can get here is if there is something to get
+                String text;
+                if (beeCount == 1) {//if statement to determine grammar
+                    text = "This hive contains " + beeCount + " bee";
+                } else {
+                    text = "This hive contains " + beeCount + " bees";
+                }
+                ServerSidePacketRegistry.INSTANCE.sendToPlayer(player, (new TitleS2CPacket(TitleS2CPacket.Action.ACTIONBAR, Text.of(text))));//send packet to client to display bee count as brief message on action bar
             }
-            ServerSidePacketRegistry.INSTANCE.sendToPlayer(player, (new TitleS2CPacket(TitleS2CPacket.Action.ACTIONBAR, Text.of(text))));//send packet to client to display bee count as brief message on action bar
         }
     }
 }
