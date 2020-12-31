@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "sentimentality2",
-  "version": "1.0.0",
+  "version": "1.0.1",
 
   "name": "Sentimentality 2",
   "description": "A collection of changes that look to improve the vanilla experience without being overpowered",
@@ -36,7 +36,8 @@
   "depends": {
     "fabricloader": ">=0.7.4",
     "fabric": "*",
-    "minecraft": "1.16.4"
+    "minecraft": "1.16.4",
+    "trinkets": "*"
   },
   "suggests": {
     "flamingo": "*"
