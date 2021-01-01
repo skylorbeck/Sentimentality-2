@@ -17,15 +17,16 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import website.skylorbeck.sentimentality2.Registrar;
 
 @Mixin(MiningToolItem.class)
 public abstract class DurabilityWarningMixinTool {
     @Inject(at = @At("RETURN"), method = "postMine")
     public void checkDur(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner, CallbackInfoReturnable<Boolean> cir) {
-        if (!world.isClient && miner instanceof PlayerEntity && state.getHardness(world, pos) != 0.0F) {
+        if (Registrar.getConfig().durabilityWarn && !world.isClient && miner instanceof PlayerEntity && state.getHardness(world, pos) != 0.0F) {
             int curDam = stack.getMaxDamage() - stack.getDamage();
             CompoundTag tag = stack.getOrCreateTag();
-            if (curDam>=11){
+            if (curDam >= 11) {
                 tag.remove("hasPlayedSound1");
                 tag.remove("hasPlayedSound2");
             }
@@ -37,7 +38,7 @@ public abstract class DurabilityWarningMixinTool {
                         ServerSidePacketRegistry.INSTANCE.sendToPlayer((PlayerEntity) miner, (new TitleS2CPacket(TitleS2CPacket.Action.ACTIONBAR, new TranslatableText(stack.getItem().getTranslationKey()).append(" is close to breaking!"))));
                         tag.putBoolean("hasPlayedSound1", true);
                     }
-                        break;
+                    break;
                 case 5:
                 case 4:
                     if (!tag.getBoolean("hasPlayedSound2")) {

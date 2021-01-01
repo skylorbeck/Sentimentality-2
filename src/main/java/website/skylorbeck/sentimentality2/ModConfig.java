@@ -21,6 +21,10 @@ public class ModConfig implements ConfigData {
 
     public boolean beehiveTips = true;
 
+    public boolean durabilityWarn = true;
+    /*@ConfigEntry.Gui.CollapsibleObject()
+    public durabilityStuff durabilityStuff = new durabilityStuff();*/
+
     @ConfigEntry.Gui.CollapsibleObject()
     public cropStuff cropStuff = new cropStuff();
 
@@ -89,7 +93,15 @@ public class ModConfig implements ConfigData {
         @ConfigEntry.Gui.CollapsibleObject()
         compressedBlocks compressedBlocks = new compressedBlocks();
     }
-
+    /*public static class durabilityStuff {
+        public boolean durabilityWarn = true;
+        @ConfigEntry.Gui.Excluded
+        @ConfigEntry.BoundedDiscrete(min=10,max = 30)
+        public int durabilityThreshold1 = 10;
+        @ConfigEntry.Gui.Excluded
+        @ConfigEntry.BoundedDiscrete(min=1,max = 15)
+        public int durabilityThreshold2 = 5;
+    }*/
 
     public static class cropStuff {
         public boolean cropSparkle = true;

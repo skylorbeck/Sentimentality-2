@@ -32,20 +32,25 @@ public abstract class Cropmixin {
 
     @Inject(at = @At("HEAD"),cancellable = true,method = "hasRandomTicks")
     private boolean randomTicks(BlockState state, CallbackInfoReturnable<Boolean> cir) {
-        cir.setReturnValue(true);
-        return cir.getReturnValue();
+        if (Registrar.getConfig().cropStuff.cropSparkle) {
+            cir.setReturnValue(true);
+            return cir.getReturnValue();
+        }else{
+            return !this.isMature(state);}
     }
 
     @Inject(at = @At("HEAD"),cancellable = true,method = "randomTick")
     private void sparkleTick(BlockState state, ServerWorld world, BlockPos pos, Random random, CallbackInfo ci) {
-        ClientWorld clientWorld = MinecraftClient.getInstance().world;
-        if (isMature(state)) {
-            int count = Registrar.getConfig().cropStuff.sparkleCount;
-            createParticles(clientWorld, pos, count);
-            Timer timer = new Timer(2000, e ->
-                    createParticles(clientWorld, pos, count));
-            timer.setRepeats(false);
-            timer.start();
+        if (Registrar.getConfig().cropStuff.cropSparkle) {
+            ClientWorld clientWorld = MinecraftClient.getInstance().world;
+            if (isMature(state)) {
+                int count = Registrar.getConfig().cropStuff.sparkleCount;
+                createParticles(clientWorld, pos, count);
+                Timer timer = new Timer(2000, e ->
+                        createParticles(clientWorld, pos, count));
+                timer.setRepeats(false);
+                timer.start();
+            }
         }
     }
     @Environment(EnvType.CLIENT)
