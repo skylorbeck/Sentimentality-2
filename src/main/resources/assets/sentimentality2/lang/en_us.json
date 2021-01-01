@@ -106,7 +106,8 @@
   "text.autoconfig.sentimentality2.option.cropStuff": "Crops",  
   "text.autoconfig.sentimentality2.option.cropStuff.cropSparkle": "Sparkle",  
   "text.autoconfig.sentimentality2.option.cropStuff.sparkleType": "Sparkle Particle",  
-  "text.autoconfig.sentimentality2.option.cropStuff.sparkleCount": "Particle Count",  
+  "text.autoconfig.sentimentality2.option.cropStuff.sparkleCount": "Particle Count",
+  "text.autoconfig.sentimentality2.option.durabilityWarn": "Durability Ping",
 
 
   "block.sentimentality2.charcoal_block_block": "Charcoal Block",
