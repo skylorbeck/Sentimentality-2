@@ -119,6 +119,7 @@ public class ModConfig implements ConfigData {
     static class sleepStuff {
         boolean doSleepStuff = true;
         boolean showSleepCount = true;
+
         @ConfigEntry.Gui.RequiresRestart
         @ConfigEntry.BoundedDiscrete(max = 100, min = 1)
         @ConfigEntry.Gui.Tooltip
