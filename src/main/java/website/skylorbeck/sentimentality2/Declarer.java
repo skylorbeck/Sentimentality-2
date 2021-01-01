@@ -12,11 +12,8 @@ import net.minecraft.item.*;
 import net.minecraft.particle.DefaultParticleType;
 import org.lwjgl.system.CallbackI;
 //todo durability config
-//todo ! over crops with code, not textures
+
 //todo compressed texture copy and overlay instead of new
-//todo texture options
-//todo new blocks for windowed doors
-//todo sawmill
 
 //todo remake compression textures
 //todo shields
