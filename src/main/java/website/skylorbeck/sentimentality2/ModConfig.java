@@ -117,6 +117,7 @@ public class ModConfig implements ConfigData {
         public int sparkleCount = 2;
     }
     static class sleepStuff {
+        boolean doSleepStuff = true;
         boolean showSleepCount = true;
         @ConfigEntry.Gui.RequiresRestart
         @ConfigEntry.BoundedDiscrete(max = 100, min = 1)

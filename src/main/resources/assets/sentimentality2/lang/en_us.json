@@ -108,7 +108,7 @@
   "text.autoconfig.sentimentality2.option.cropStuff.sparkleType": "Sparkle Particle",  
   "text.autoconfig.sentimentality2.option.cropStuff.sparkleCount": "Particle Count",
   "text.autoconfig.sentimentality2.option.durabilityWarn": "Durability Ping",
-
+  "text.autoconfig.sentimentality2.option.sleepStuff.doSleepStuff": "Enable Sleep Voting",
 
   "block.sentimentality2.charcoal_block_block": "Charcoal Block",
   "item.sentimentality2.charcoal_nugget": "Charcoal Nugget",

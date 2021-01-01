@@ -12,17 +12,19 @@ public class SleepEventManager {//this is needed to skip the night without all t
 
     public static int percent = Registrar.getConfig().sleepStuff.sleepPercent;
     public static void onTick(MinecraftServer server) {
-        server.getWorlds().forEach((world) -> {
-            List<ServerPlayerEntity> players = world.getPlayers();//look for sleeping players
-            int sleeping = 0;
-            for (PlayerEntity p : players) {//for each player, check to see if they are asleep
-                if (p.isSleeping() && p.isSleepingLongEnough())
-                    sleeping++;
-            }
-            if (sleeping != players.size() && sleeping * 100 / players.size() >= percent) {//if enough people are sleeping to pass the % threshold, sleep
-                sleep(world, players);
-            }
-        });
+        if (Registrar.getConfig().sleepStuff.doSleepStuff) {
+            server.getWorlds().forEach((world) -> {
+                List<ServerPlayerEntity> players = world.getPlayers();//look for sleeping players
+                int sleeping = 0;
+                for (PlayerEntity p : players) {//for each player, check to see if they are asleep
+                    if (p.isSleeping() && p.isSleepingLongEnough())
+                        sleeping++;
+                }
+                if (sleeping != players.size() && sleeping * 100 / players.size() >= percent) {//if enough people are sleeping to pass the % threshold, sleep
+                    sleep(world, players);
+                }
+            });
+        }
     }
 
     private static void sleep(ServerWorld world, List<ServerPlayerEntity> players) {//basically a copy of minecrafts vanilla but way more simple. Probably misses something critical but I don't know.
