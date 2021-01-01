@@ -103,6 +103,10 @@
   "text.autoconfig.sentimentality2.option.toggles.compressedBlocks.andesite.@Tooltip": "Game Must Be Restarted For Changes To Take Effect",  
   "text.autoconfig.sentimentality2.option.toggles.compressedBlocks.granite.@Tooltip": "Game Must Be Restarted For Changes To Take Effect",  
   "text.autoconfig.sentimentality2.option.toggles.compressedBlocks.netherrack.@Tooltip": "Game Must Be Restarted For Changes To Take Effect",  
+  "text.autoconfig.sentimentality2.option.cropStuff": "Crops",  
+  "text.autoconfig.sentimentality2.option.cropStuff.cropSparkle": "Sparkle",  
+  "text.autoconfig.sentimentality2.option.cropStuff.sparkleType": "Sparkle Particle",  
+  "text.autoconfig.sentimentality2.option.cropStuff.sparkleCount": "Particle Count",  
 
 
   "block.sentimentality2.charcoal_block_block": "Charcoal Block",

@@ -9,7 +9,7 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.particle.DefaultParticleType;
-
+//todo durability config
 //todo ! over crops with code, not textures
 //todo compressed texture copy and overlay instead of new
 //todo texture options

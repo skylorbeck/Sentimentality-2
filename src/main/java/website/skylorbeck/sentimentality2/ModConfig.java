@@ -22,6 +22,9 @@ public class ModConfig implements ConfigData {
     public boolean beehiveTips = true;
 
     @ConfigEntry.Gui.CollapsibleObject()
+    public cropStuff cropStuff = new cropStuff();
+
+    @ConfigEntry.Gui.CollapsibleObject()
     clockStuff clockStuff = new clockStuff();
 
     @ConfigEntry.Gui.CollapsibleObject()
@@ -88,7 +91,19 @@ public class ModConfig implements ConfigData {
     }
 
 
-
+    public static class cropStuff {
+        public boolean cropSparkle = true;
+        public enum SparkleType {
+            DRAGON_BREATH,
+            TOTEM_OF_UNDYING,
+            ENCHANTED_HIT,
+            HAPPY_VILLAGER,
+            INSTANT_EFFECT,
+        }
+        public SparkleType sparkleType = SparkleType.valueOf("DRAGON_BREATH");
+        @ConfigEntry.BoundedDiscrete(min=1,max = 15)
+        public int sparkleCount = 2;
+    }
     static class sleepStuff {
         boolean showSleepCount = true;
         @ConfigEntry.Gui.RequiresRestart
