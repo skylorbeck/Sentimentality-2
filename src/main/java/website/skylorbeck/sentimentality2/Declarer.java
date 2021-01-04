@@ -172,6 +172,44 @@ public class Declarer {
     public static final BlockItem octuple_compressed_netherrack = new BlockItem(octuple_compressed_netherrack_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Block nonuple_compressed_netherrack_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.NETHERRACK),9);
     public static final BlockItem nonuple_compressed_netherrack = new BlockItem(nonuple_compressed_netherrack_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    //compressed sand
+    public static final Block monuple_compressed_sand_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.SAND),1);
+    public static final BlockItem monuple_compressed_sand = new BlockItem(monuple_compressed_sand_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block couple_compressed_sand_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.SAND),2);
+    public static final BlockItem couple_compressed_sand = new BlockItem(couple_compressed_sand_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block triple_compressed_sand_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.SAND),3);
+    public static final BlockItem triple_compressed_sand = new BlockItem(triple_compressed_sand_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block quadruple_compressed_sand_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.SAND),4);
+    public static final BlockItem quadruple_compressed_sand = new BlockItem(quadruple_compressed_sand_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block quintuple_compressed_sand_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.SAND),5);
+    public static final BlockItem quintuple_compressed_sand = new BlockItem(quintuple_compressed_sand_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block sextuple_compressed_sand_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.SAND),6);
+    public static final BlockItem sextuple_compressed_sand = new BlockItem(sextuple_compressed_sand_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block septuple_compressed_sand_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.SAND),7);
+    public static final BlockItem septuple_compressed_sand = new BlockItem(septuple_compressed_sand_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block octuple_compressed_sand_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.SAND),8);
+    public static final BlockItem octuple_compressed_sand = new BlockItem(octuple_compressed_sand_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block nonuple_compressed_sand_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.SAND),9);
+    public static final BlockItem nonuple_compressed_sand = new BlockItem(nonuple_compressed_sand_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    //compressed gravel
+    public static final Block monuple_compressed_gravel_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.GRAVEL),1);
+    public static final BlockItem monuple_compressed_gravel = new BlockItem(monuple_compressed_gravel_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block couple_compressed_gravel_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.GRAVEL),2);
+    public static final BlockItem couple_compressed_gravel = new BlockItem(couple_compressed_gravel_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block triple_compressed_gravel_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.GRAVEL),3);
+    public static final BlockItem triple_compressed_gravel = new BlockItem(triple_compressed_gravel_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block quadruple_compressed_gravel_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.GRAVEL),4);
+    public static final BlockItem quadruple_compressed_gravel = new BlockItem(quadruple_compressed_gravel_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block quintuple_compressed_gravel_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.GRAVEL),5);
+    public static final BlockItem quintuple_compressed_gravel = new BlockItem(quintuple_compressed_gravel_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block sextuple_compressed_gravel_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.GRAVEL),6);
+    public static final BlockItem sextuple_compressed_gravel = new BlockItem(sextuple_compressed_gravel_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block septuple_compressed_gravel_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.GRAVEL),7);
+    public static final BlockItem septuple_compressed_gravel = new BlockItem(septuple_compressed_gravel_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block octuple_compressed_gravel_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.GRAVEL),8);
+    public static final BlockItem octuple_compressed_gravel = new BlockItem(octuple_compressed_gravel_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Block nonuple_compressed_gravel_block = new CompressedBlock(FabricBlockSettings.copyOf(Blocks.GRAVEL),9);
+    public static final BlockItem nonuple_compressed_gravel = new BlockItem(nonuple_compressed_gravel_block,new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     //furnaces
     public static final Block sandstone_furnaceblock = new ExtraFurnaceBlock(FabricBlockSettings.copyOf(Blocks.FURNACE),0);
     public static final BlockItem sandstone_furnace = new BlockItem(sandstone_furnaceblock,new FabricItemSettings().group(ItemGroup.DECORATIONS));

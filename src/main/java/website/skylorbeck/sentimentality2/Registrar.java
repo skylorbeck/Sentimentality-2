@@ -454,6 +454,46 @@ public class Registrar {
                 regItem("nonuple_compressed_netherrack", Declarer.nonuple_compressed_netherrack);
                 regBlock("nonuple_compressed_netherrack_block", Declarer.nonuple_compressed_netherrack_block);
             }
+            if (CONFIG.toggles.compressedBlocks.sand) {
+                regItem("monuple_compressed_sand", Declarer.monuple_compressed_sand);
+                regBlock("monuple_compressed_sand_block", Declarer.monuple_compressed_sand_block);
+                regItem("couple_compressed_sand", Declarer.couple_compressed_sand);
+                regBlock("couple_compressed_sand_block", Declarer.couple_compressed_sand_block);
+                regItem("triple_compressed_sand", Declarer.triple_compressed_sand);
+                regBlock("triple_compressed_sand_block", Declarer.triple_compressed_sand_block);
+                regItem("quadruple_compressed_sand", Declarer.quadruple_compressed_sand);
+                regBlock("quadruple_compressed_sand_block", Declarer.quadruple_compressed_sand_block);
+                regItem("quintuple_compressed_sand", Declarer.quintuple_compressed_sand);
+                regBlock("quintuple_compressed_sand_block", Declarer.quintuple_compressed_sand_block);
+                regItem("sextuple_compressed_sand", Declarer.sextuple_compressed_sand);
+                regBlock("sextuple_compressed_sand_block", Declarer.sextuple_compressed_sand_block);
+                regItem("septuple_compressed_sand", Declarer.septuple_compressed_sand);
+                regBlock("septuple_compressed_sand_block", Declarer.septuple_compressed_sand_block);
+                regItem("octuple_compressed_sand", Declarer.octuple_compressed_sand);
+                regBlock("octuple_compressed_sand_block", Declarer.octuple_compressed_sand_block);
+                regItem("nonuple_compressed_sand", Declarer.nonuple_compressed_sand);
+                regBlock("nonuple_compressed_sand_block", Declarer.nonuple_compressed_sand_block);
+            }
+            if (CONFIG.toggles.compressedBlocks.gravel) {
+                regItem("monuple_compressed_gravel", Declarer.monuple_compressed_gravel);
+                regBlock("monuple_compressed_gravel_block", Declarer.monuple_compressed_gravel_block);
+                regItem("couple_compressed_gravel", Declarer.couple_compressed_gravel);
+                regBlock("couple_compressed_gravel_block", Declarer.couple_compressed_gravel_block);
+                regItem("triple_compressed_gravel", Declarer.triple_compressed_gravel);
+                regBlock("triple_compressed_gravel_block", Declarer.triple_compressed_gravel_block);
+                regItem("quadruple_compressed_gravel", Declarer.quadruple_compressed_gravel);
+                regBlock("quadruple_compressed_gravel_block", Declarer.quadruple_compressed_gravel_block);
+                regItem("quintuple_compressed_gravel", Declarer.quintuple_compressed_gravel);
+                regBlock("quintuple_compressed_gravel_block", Declarer.quintuple_compressed_gravel_block);
+                regItem("sextuple_compressed_gravel", Declarer.sextuple_compressed_gravel);
+                regBlock("sextuple_compressed_gravel_block", Declarer.sextuple_compressed_gravel_block);
+                regItem("septuple_compressed_gravel", Declarer.septuple_compressed_gravel);
+                regBlock("septuple_compressed_gravel_block", Declarer.septuple_compressed_gravel_block);
+                regItem("octuple_compressed_gravel", Declarer.octuple_compressed_gravel);
+                regBlock("octuple_compressed_gravel_block", Declarer.octuple_compressed_gravel_block);
+                regItem("nonuple_compressed_gravel", Declarer.nonuple_compressed_gravel);
+                regBlock("nonuple_compressed_gravel_block", Declarer.nonuple_compressed_gravel_block);
+            }
         }
     }
 
