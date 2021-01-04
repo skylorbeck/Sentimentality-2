@@ -13,9 +13,6 @@ import net.minecraft.particle.DefaultParticleType;
 import org.lwjgl.system.CallbackI;
 //todo durability config
 
-//todo compressed texture copy and overlay instead of new
-
-//todo remake compression textures
 //todo shields
 //todo flight item
 //todo firstperson legs
