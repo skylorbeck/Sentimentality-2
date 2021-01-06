@@ -50,10 +50,10 @@ dependencies {
 	include "me.shedaniel.cloth:config-2:4.8.3"
 
 	//autoconfig
-	modApi("me.sargunvohra.mcmods:autoconfig1u:3.2.0-unstable") {
+	modApi("me.sargunvohra.mcmods:autoconfig1u:3.3.1") {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
-	include "me.sargunvohra.mcmods:autoconfig1u:3.2.0-unstable"
+	include "me.sargunvohra.mcmods:autoconfig1u:3.3.1"
 
 	//modmenu
 	modImplementation "io.github.prospector:modmenu:1.14.9+build.14"

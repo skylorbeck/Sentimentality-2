@@ -1,11 +1,14 @@
 package website.skylorbeck.sentimentality2;
 
 import me.sargunvohra.mcmods.autoconfig1u.ConfigData;
+import me.sargunvohra.mcmods.autoconfig1u.ConfigManager;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.Config;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
+import me.shedaniel.clothconfig2.api.ConfigBuilder;
 
 @Config(name = "sentimentality2")
 public class ModConfig implements ConfigData {
+
 
     @ConfigEntry.Gui.Tooltip
     boolean showItems = true;
@@ -120,7 +123,7 @@ public class ModConfig implements ConfigData {
         boolean doSleepStuff = true;
         boolean showSleepCount = true;
 
-        @ConfigEntry.Gui.RequiresRestart
+        //@ConfigEntry.Gui.RequiresRestart
         @ConfigEntry.BoundedDiscrete(max = 100, min = 1)
         @ConfigEntry.Gui.Tooltip
         int sleepPercent = 50;

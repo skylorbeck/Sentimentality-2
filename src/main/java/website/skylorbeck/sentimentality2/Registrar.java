@@ -1,6 +1,10 @@
 package website.skylorbeck.sentimentality2;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
+
+import me.sargunvohra.mcmods.autoconfig1u.ConfigHolder;
+import me.sargunvohra.mcmods.autoconfig1u.ConfigManager;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.GsonConfigSerializer;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
@@ -17,18 +21,14 @@ import java.util.Objects;
 
 //I used Declarer and Registrar to prevent the problem they have in vanilla code where a single class is a thousand lines long
 public class Registrar {
-    private static final ModConfig CONFIG = AutoConfig.register(ModConfig.class, GsonConfigSerializer::new).getConfig();
-    /*public static ModConfig getConfig() {
-    /    return CONFIG;
-    }*///old and bad way of getting config. Don't do this.
 
-    public static void clientRegister(){//separated because servers don't like when they have this stuff registered on them
+    public static void clientRegister() {//separated because servers don't like when they have this stuff registered on them
         //particles
         Declarer.END_FIRE_FLAME = Registry.register(Registry.PARTICLE_TYPE, new Identifier(Ref.MODID, "end_fire_flame"), FabricParticleTypes.simple());
         ParticleFactoryRegistry.getInstance().register(Declarer.END_FIRE_FLAME, FlameParticle.Factory::new);
         //tying the color provider to the wool armor
         ColorProviderRegistry.ITEM.register((stack, tintIndex) ->
-                        stack.getSubTag(Ref.display) != null && Objects.requireNonNull(stack.getSubTag(Ref.display)).contains(Ref.color, 99) ? Objects.requireNonNull(stack.getSubTag(Ref.display)).getInt(Ref.color) :16777215,
+                        stack.getSubTag(Ref.display) != null && Objects.requireNonNull(stack.getSubTag(Ref.display)).contains(Ref.color, 99) ? Objects.requireNonNull(stack.getSubTag(Ref.display)).getInt(Ref.color) : 16777215,
                 Declarer.wool_helmet,
                 Declarer.wool_chestplate,
                 Declarer.wool_leggings,
@@ -36,8 +36,8 @@ public class Registrar {
         );
 
     }
-
     public static void register() {
+
         //personal items
         if (Ref.daylighter) {
             regItem("personal_daylight_detector", Declarer.personal_daylight_detector);

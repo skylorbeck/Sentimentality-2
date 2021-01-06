@@ -13,6 +13,7 @@ public class ClientMain implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+        //Logger.getLogger(Ref.MODID).log(Level.WARNING,"This is when ClientMain is loaded");
         ClientSidePacketRegistry.INSTANCE.register(sentimentality2_send_seed, (packetContext, attachedData) -> {
             long seed = attachedData.readLong();
             packetContext.getTaskQueue().execute(() -> {
@@ -21,6 +22,5 @@ public class ClientMain implements ClientModInitializer {
         });
         Registrar.clientRegister();
         extraHUD = new ExtraHUD();//add in the custom hud
-        Logger.getLogger(Ref.MODID).log(Level.WARNING,"This is when ClientMain is loaded");
     }
 }

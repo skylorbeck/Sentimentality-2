@@ -1,7 +1,10 @@
 package website.skylorbeck.sentimentality2;
 
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
+import me.sargunvohra.mcmods.autoconfig1u.ConfigHolder;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
+import me.sargunvohra.mcmods.autoconfig1u.event.ConfigSerializeEvent;
+import net.minecraft.util.ActionResult;
 
 import java.util.logging.Logger;
 
@@ -70,8 +73,8 @@ public class Ref {//hardcoded references for use in registration and otherwise
     public static boolean sand = true;
     public static boolean gravel = true;
 
-
     public static void getSettings(){
+
         showItems = config.showItems;
         repairCost = config.repairCost;
         pingIndicator = config.pingIndicator;
@@ -132,4 +135,23 @@ public class Ref {//hardcoded references for use in registration and otherwise
         gravel = config.toggles.compressedBlocks.gravel;
     }
 
+    public static void getSomeSettings() {
+        showItems = config.showItems;
+        repairCost = config.repairCost;
+        pingIndicator = config.pingIndicator;
+        infinityFix = config.infinityFix;
+        itemEntity = config.itemEntity;
+        beehiveTips = config.beehiveTips;
+        durabilityWarn = config.durabilityWarn;
+        cropSparkle = config.cropStuff.cropSparkle;
+        sparkleType = config.cropStuff.sparkleType;
+        sparkleCount = config.cropStuff.sparkleCount;
+        doSleepStuff = config.sleepStuff.doSleepStuff;
+        showSleepCount = config.sleepStuff.showSleepCount;
+        sleepPercent = config.sleepStuff.sleepPercent;
+        doClock = config.clockStuff.doClock;
+        clockCorner = config.clockStuff.clockCorner;
+        clockMilitary = config.clockStuff.clockMilitary;
+        clockAmPm = config.clockStuff.clockAmPm;
+    }
 }
