@@ -10,9 +10,9 @@ import java.util.List;
 
 public class SleepEventManager {//this is needed to skip the night without all the players
 
-    public static int percent = Registrar.getConfig().sleepStuff.sleepPercent;
+    public static int percent = Ref.sleepPercent;
     public static void onTick(MinecraftServer server) {
-        if (Registrar.getConfig().sleepStuff.doSleepStuff) {
+        if (Ref.doSleepStuff) {
             server.getWorlds().forEach((world) -> {
                 List<ServerPlayerEntity> players = world.getPlayers();//look for sleeping players
                 int sleeping = 0;

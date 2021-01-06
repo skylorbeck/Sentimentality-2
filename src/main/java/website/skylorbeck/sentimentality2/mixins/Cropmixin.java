@@ -20,6 +20,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import website.skylorbeck.sentimentality2.Ref;
 import website.skylorbeck.sentimentality2.Registrar;
 
 import javax.swing.*;
@@ -32,7 +33,7 @@ public abstract class Cropmixin {
 
     @Inject(at = @At("HEAD"),cancellable = true,method = "hasRandomTicks")
     private boolean randomTicks(BlockState state, CallbackInfoReturnable<Boolean> cir) {
-        if (Registrar.getConfig().cropStuff.cropSparkle) {
+        if (Ref.cropSparkle) {
             cir.setReturnValue(true);
             return cir.getReturnValue();
         }else{
@@ -41,10 +42,10 @@ public abstract class Cropmixin {
 
     @Inject(at = @At("HEAD"),cancellable = true,method = "randomTick")
     private void sparkleTick(BlockState state, ServerWorld world, BlockPos pos, Random random, CallbackInfo ci) {
-        if (Registrar.getConfig().cropStuff.cropSparkle) {
+        if (Ref.cropSparkle) {
             ClientWorld clientWorld = MinecraftClient.getInstance().world;
             if (isMature(state)) {
-                int count = Registrar.getConfig().cropStuff.sparkleCount;
+                int count = Ref.sparkleCount;
                 createParticles(clientWorld, pos, count);
                 Timer timer = new Timer(2000, e ->
                         createParticles(clientWorld, pos, count));
@@ -85,7 +86,7 @@ public abstract class Cropmixin {
                 double o = (double)pos.getZ() + l + RANDOM.nextDouble() * d * 2.0D;
                 if (!world.getBlockState((new BlockPos(m, n, o)).down()).isAir()) {
                     ParticleEffect particleType = ParticleTypes.DRAGON_BREATH;
-                    switch (Registrar.getConfig().cropStuff.sparkleType){
+                    switch (Ref.sparkleType){
                         case DRAGON_BREATH:
                             particleType = ParticleTypes.DRAGON_BREATH;
                             break;

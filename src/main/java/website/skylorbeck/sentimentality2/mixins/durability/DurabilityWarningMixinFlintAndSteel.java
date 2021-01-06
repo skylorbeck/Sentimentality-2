@@ -17,6 +17,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import website.skylorbeck.sentimentality2.Ref;
 
 
 @Mixin(FlintAndSteelItem.class)
@@ -27,7 +28,7 @@ public abstract class DurabilityWarningMixinFlintAndSteel {
         PlayerEntity player = context.getPlayer();
         ItemStack stack = context.getStack();
         BlockPos pos = context.getBlockPos();
-        if (!world.isClient) {
+        if (Ref.durabilityWarn && !world.isClient) {
             int curDam = stack.getMaxDamage() - stack.getDamage();
             CompoundTag tag = stack.getOrCreateTag();
             if (curDam>=11){

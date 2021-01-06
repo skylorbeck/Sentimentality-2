@@ -16,6 +16,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import website.skylorbeck.sentimentality2.Ref;
 import website.skylorbeck.sentimentality2.Registrar;
 
 @Mixin(BeehiveBlock.class)
@@ -23,7 +24,7 @@ public class BeehiveMixin {
     @Inject(at = @At("HEAD"), method = "onUse")
     public void showBees(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<ActionResult> cir) {
         //we don't want the client to do this since we are sending packets to the client
-        if (Registrar.getConfig().beehiveTips) {
+        if (Ref.beehiveTips) {
             if (!world.isClient && player.getStackInHand(hand).isEmpty()) {//want to make sure the hand is empty
                 BeehiveBlockEntity beehiveBlockEntity = (BeehiveBlockEntity) world.getBlockEntity(pos);
                 int beeCount = 0;//will not produce exception, since the only time we can get here is if there is something to get

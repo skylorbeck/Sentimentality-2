@@ -9,11 +9,14 @@ import net.minecraft.network.PacketByteBuf;
 import net.minecraft.util.Identifier;
 
 import java.util.Objects;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main implements ModInitializer {
     public static final Identifier sentimentality2_get_seed= new Identifier("sentimentality2", "get_seed");
     @Override
     public void onInitialize() {
+        Logger.getLogger(Ref.MODID).log(Level.WARNING,"This is when Main is loaded");
         ServerSidePacketRegistry.INSTANCE.register(sentimentality2_get_seed, (packetContext, attachedData) -> {//get blank trigger packet
             packetContext.getTaskQueue().execute(() -> {
                 PacketByteBuf data = new PacketByteBuf(Unpooled.buffer());
@@ -23,6 +26,7 @@ public class Main implements ModInitializer {
         });
         Registrar.register();//register everything
         ServerTickCallback.EVENT.register(SleepEventManager::onTick);
+        Ref.getSettings();//gets all settings at launch to save on file reads. Certain settings would read every frame(!) insanely bad
     }
 
 }

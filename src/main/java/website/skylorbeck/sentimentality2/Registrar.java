@@ -18,9 +18,9 @@ import java.util.Objects;
 //I used Declarer and Registrar to prevent the problem they have in vanilla code where a single class is a thousand lines long
 public class Registrar {
     private static final ModConfig CONFIG = AutoConfig.register(ModConfig.class, GsonConfigSerializer::new).getConfig();
-    public static ModConfig getConfig() {
-        return CONFIG;
-    }
+    /*public static ModConfig getConfig() {
+    /    return CONFIG;
+    }*///old and bad way of getting config. Don't do this.
 
     public static void clientRegister(){//separated because servers don't like when they have this stuff registered on them
         //particles
@@ -39,49 +39,49 @@ public class Registrar {
 
     public static void register() {
         //personal items
-        if (CONFIG.toggles.daylighter) {
+        if (Ref.daylighter) {
             regItem("personal_daylight_detector", Declarer.personal_daylight_detector);
         }
-        if (CONFIG.toggles.slimer) {
+        if (Ref.slimer) {
             regItem("slime_chunk_locator", Declarer.slime_chunk_locator);
         }
-        if (CONFIG.toggles.chunker) {
+        if (Ref.chunker) {
             regItem("chunkloader", Declarer.chunk_loader);
         }
         //misc items
-        if (CONFIG.toggles.fleather) {
+        if (Ref.fleather) {
             regItem("fleather", Declarer.fleather);
         }
-        if (CONFIG.toggles.charcoal) {
+        if (Ref.charcoal) {
             regBlock("charcoal_block_block", Declarer.charcoal_block_block);
             regItem("charcoal_block", Declarer.charcoal_block);
             FuelRegistry.INSTANCE.add(Declarer.charcoal_block, 16000);
         }
-        if (CONFIG.toggles.sticks) {
+        if (Ref.sticks) {
             regItem("small_stick_bundle", Declarer.small_stick_bundle);
             FuelRegistry.INSTANCE.add(Declarer.small_stick_bundle, 400);
             regItem("large_stick_bundle", Declarer.large_stick_bundle);
             FuelRegistry.INSTANCE.add(Declarer.large_stick_bundle, 1600);
         }
-        if (CONFIG.toggles.featherBlock) {
+        if (Ref.featherBlock) {
             regBlock("feather_block_block", Declarer.feather_block_block);
             regItem("feather_block", Declarer.feather_block);
         }
-        if (CONFIG.toggles.coalChunks) {
+        if (Ref.coalChunks) {
             regItem("charcoal_nugget", Declarer.charcoal_nugget);
             FuelRegistry.INSTANCE.add(Declarer.charcoal_nugget, 200);
             regItem("coal_nugget", Declarer.coal_nugget);
             FuelRegistry.INSTANCE.add(Declarer.coal_nugget, 200);
         }
         //gliders
-        if (CONFIG.toggles.gliders) {
+        if (Ref.gliders) {
             regItem("glider_leather", Declarer.glider_leather);
             regItem("glider_iron", Declarer.glider_iron);
         }
 
         //block entities
         //furnace entity
-        if (CONFIG.toggles.furnaces) {
+        if (Ref.furnaces) {
             Declarer.EXTRA_FURNACE_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
                     "sentimentality2:furnace",
                     BlockEntityType.Builder.create(ExtraFurnaceBlockEntity::new,
@@ -97,7 +97,7 @@ public class Registrar {
                     ).build(null));
         }
         //blast furnace entity
-        if (CONFIG.toggles.blasts) {
+        if (Ref.blasts) {
             Declarer.EXTRA_BLAST_FURNACE_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
                     "sentimentality2:blast_furnace",
                     BlockEntityType.Builder.create(ExtraBlastFurnaceBlockEntity::new,
@@ -113,7 +113,7 @@ public class Registrar {
                     ).build(null));
         }
         //smoker entity
-        if (CONFIG.toggles.smokers) {
+        if (Ref.smokers) {
             Declarer.EXTRA_SMOKER_FURNACE_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
                     "sentimentality2:smoker",
                     BlockEntityType.Builder.create(ExtraSmokerBlockEntity::new,
@@ -129,7 +129,7 @@ public class Registrar {
                     ).build(null));
         }
         //furnaces
-        if (CONFIG.toggles.furnaces) {
+        if (Ref.furnaces) {
             regBlock("sandstone_furnace", Declarer.sandstone_furnaceblock);
             regItem("sandstone_furnaceitem", Declarer.sandstone_furnace);
             regBlock("red_sandstone_furnace", Declarer.red_sandstone_furnaceblock);
@@ -150,7 +150,7 @@ public class Registrar {
             regItem("basalt_furnaceitem", Declarer.basalt_furnace);
         }
         //blast furnaces
-        if (CONFIG.toggles.blasts) {
+        if (Ref.blasts) {
             regBlock("sandstone_blast_furnace", Declarer.sandstone_blast_furnaceblock);
             regItem("sandstone_blast_furnaceitem", Declarer.sandstone_blast_furnace);
             regBlock("red_sandstone_blast_furnace", Declarer.red_sandstone_blast_furnaceblock);
@@ -171,7 +171,7 @@ public class Registrar {
             regItem("basalt_blast_furnaceitem", Declarer.basalt_blast_furnace);
         }
         //smokers
-        if (CONFIG.toggles.smokers) {
+        if (Ref.smokers) {
             regBlock("sandstone_smoker", Declarer.sandstone_smokerblock);
             regItem("sandstone_smokeritem", Declarer.sandstone_smoker);
             regBlock("red_sandstone_smoker", Declarer.red_sandstone_smokerblock);
@@ -192,134 +192,134 @@ public class Registrar {
             regItem("basalt_smokeritem", Declarer.basalt_smoker);
         }
         //wool armor
-        if (CONFIG.toggles.woolArmor) {
+        if (Ref.woolArmor) {
             regItem("wool_helmet", Declarer.wool_helmet);
             regItem("wool_chestplate", Declarer.wool_chestplate);
             regItem("wool_leggings", Declarer.wool_leggings);
             regItem("wool_boots", Declarer.wool_boots);
         }
         //tools
-        if (CONFIG.toggles.allTools) {
-            if (CONFIG.toggles.toolToggles.graniteTools) {
+        if (Ref.allTools) {
+            if (Ref.graniteTools) {
                 regItem("granite_pick", Declarer.granite_pick);
                 regItem("granite_axe", Declarer.granite_axe);
                 regItem("granite_shovel", Declarer.granite_shovel);
                 regItem("granite_sword", Declarer.granite_sword);
                 regItem("granite_hoe", Declarer.granite_hoe);
             }
-            if (CONFIG.toggles.toolToggles.dioriteTools) {
+            if (Ref.dioriteTools) {
                 regItem("diorite_pick", Declarer.diorite_pick);
                 regItem("diorite_axe", Declarer.diorite_axe);
                 regItem("diorite_shovel", Declarer.diorite_shovel);
                 regItem("diorite_sword", Declarer.diorite_sword);
                 regItem("diorite_hoe", Declarer.diorite_hoe);
             }
-            if (CONFIG.toggles.toolToggles.andesiteTools) {
+            if (Ref.andesiteTools) {
                 regItem("andesite_pick", Declarer.andesite_pick);
                 regItem("andesite_axe", Declarer.andesite_axe);
                 regItem("andesite_shovel", Declarer.andesite_shovel);
                 regItem("andesite_sword", Declarer.andesite_sword);
                 regItem("andesite_hoe", Declarer.andesite_hoe);
             }
-            if (CONFIG.toggles.toolToggles.quartzTools) {
+            if (Ref.quartzTools) {
                 regItem("quartz_pick", Declarer.quartz_pick);
                 regItem("quartz_axe", Declarer.quartz_axe);
                 regItem("quartz_shovel", Declarer.quartz_shovel);
                 regItem("quartz_sword", Declarer.quartz_sword);
                 regItem("quartz_hoe", Declarer.quartz_hoe);
             }
-            if (CONFIG.toggles.toolToggles.netherrackTools) {
+            if (Ref.netherrackTools) {
                 regItem("netherrack_pick", Declarer.netherrack_pick);
                 regItem("netherrack_axe", Declarer.netherrack_axe);
                 regItem("netherrack_shovel", Declarer.netherrack_shovel);
                 regItem("netherrack_sword", Declarer.netherrack_sword);
                 regItem("netherrack_hoe", Declarer.netherrack_hoe);
             }
-            if (CONFIG.toggles.toolToggles.netherbrickTools) {
+            if (Ref.netherbrickTools) {
                 regItem("netherbrick_pick", Declarer.netherbrick_pick);
                 regItem("netherbrick_axe", Declarer.netherbrick_axe);
                 regItem("netherbrick_shovel", Declarer.netherbrick_shovel);
                 regItem("netherbrick_sword", Declarer.netherbrick_sword);
                 regItem("netherbrick_hoe", Declarer.netherbrick_hoe);
             }
-            if (CONFIG.toggles.toolToggles.redNetherbrickTools) {
+            if (Ref.redNetherbrickTools) {
                 regItem("rednetherbrick_pick", Declarer.rednetherbrick_pick);
                 regItem("rednetherbrick_axe", Declarer.rednetherbrick_axe);
                 regItem("rednetherbrick_shovel", Declarer.rednetherbrick_shovel);
                 regItem("rednetherbrick_sword", Declarer.rednetherbrick_sword);
                 regItem("rednetherbrick_hoe", Declarer.rednetherbrick_hoe);
             }
-            if (CONFIG.toggles.toolToggles.sandstoneTools) {
+            if (Ref.sandstoneTools) {
                 regItem("sandstone_pick", Declarer.sandstone_pick);
                 regItem("sandstone_axe", Declarer.sandstone_axe);
                 regItem("sandstone_shovel", Declarer.sandstone_shovel);
                 regItem("sandstone_sword", Declarer.sandstone_sword);
                 regItem("sandstone_hoe", Declarer.sandstone_hoe);
             }
-            if (CONFIG.toggles.toolToggles.redSandstoneTools) {
+            if (Ref.redSandstoneTools) {
                 regItem("redsandstone_pick", Declarer.redsandstone_pick);
                 regItem("redsandstone_axe", Declarer.redsandstone_axe);
                 regItem("redsandstone_shovel", Declarer.redsandstone_shovel);
                 regItem("redsandstone_sword", Declarer.redsandstone_sword);
                 regItem("redsandstone_hoe", Declarer.redsandstone_hoe);
             }
-            if (CONFIG.toggles.toolToggles.lapisTools) {
+            if (Ref.lapisTools) {
                 regItem("lapis_pick", Declarer.lapis_pick);
                 regItem("lapis_axe", Declarer.lapis_axe);
                 regItem("lapis_shovel", Declarer.lapis_shovel);
                 regItem("lapis_sword", Declarer.lapis_sword);
                 regItem("lapis_hoe", Declarer.lapis_hoe);
             }
-            if (CONFIG.toggles.toolToggles.emeraldTools) {
+            if (Ref.emeraldTools) {
                 regItem("emerald_pick", Declarer.emerald_pick);
                 regItem("emerald_axe", Declarer.emerald_axe);
                 regItem("emerald_shovel", Declarer.emerald_shovel);
                 regItem("emerald_sword", Declarer.emerald_sword);
                 regItem("emerald_hoe", Declarer.emerald_hoe);
             }
-            if (CONFIG.toggles.toolToggles.flintTools) {
+            if (Ref.flintTools) {
                 regItem("flint_pick", Declarer.flint_pick);
                 regItem("flint_axe", Declarer.flint_axe);
                 regItem("flint_shovel", Declarer.flint_shovel);
                 regItem("flint_sword", Declarer.flint_sword);
                 regItem("flint_hoe", Declarer.flint_hoe);
             }
-            if (CONFIG.toggles.toolToggles.redstoneTools) {
+            if (Ref.redstoneTools) {
                 regItem("redstone_pick", Declarer.redstone_pick);
                 regItem("redstone_axe", Declarer.redstone_axe);
                 regItem("redstone_shovel", Declarer.redstone_shovel);
                 regItem("redstone_sword", Declarer.redstone_sword);
                 regItem("redstone_hoe", Declarer.redstone_hoe);
             }
-            if (CONFIG.toggles.toolToggles.blackstoneTools) {
+            if (Ref.blackstoneTools) {
                 regItem("blackstone_pick", Declarer.blackstone_pick);
                 regItem("blackstone_axe", Declarer.blackstone_axe);
                 regItem("blackstone_shovel", Declarer.blackstone_shovel);
                 regItem("blackstone_sword", Declarer.blackstone_sword);
                 regItem("blackstone_hoe", Declarer.blackstone_hoe);
             }
-            if (CONFIG.toggles.toolToggles.basaltTools) {
+            if (Ref.basaltTools) {
                 regItem("basalt_pick", Declarer.basalt_pick);
                 regItem("basalt_axe", Declarer.basalt_axe);
                 regItem("basalt_shovel", Declarer.basalt_shovel);
                 regItem("basalt_sword", Declarer.basalt_sword);
                 regItem("basalt_hoe", Declarer.basalt_hoe);
             }
-            if (CONFIG.toggles.toolToggles.endstoneTools) {
+            if (Ref.endstoneTools) {
                 regItem("endstone_pick", Declarer.endstone_pick);
                 regItem("endstone_axe", Declarer.endstone_axe);
                 regItem("endstone_shovel", Declarer.endstone_shovel);
                 regItem("endstone_sword", Declarer.endstone_sword);
                 regItem("endstone_hoe", Declarer.endstone_hoe);
             }
-            if (CONFIG.toggles.toolToggles.warpedTools) {
+            if (Ref.warpedTools) {
                 regItem("warped_pick", Declarer.warped_pick);
                 regItem("warped_axe", Declarer.warped_axe);
                 regItem("warped_shovel", Declarer.warped_shovel);
                 regItem("warped_sword", Declarer.warped_sword);
                 regItem("warped_hoe", Declarer.warped_hoe);
             }
-            if (CONFIG.toggles.toolToggles.crimsonTools) {
+            if (Ref.crimsonTools) {
                 regItem("crimson_pick", Declarer.crimson_pick);
                 regItem("crimson_axe", Declarer.crimson_axe);
                 regItem("crimson_shovel", Declarer.crimson_shovel);
@@ -328,8 +328,8 @@ public class Registrar {
             }
         }
         //compressed cobble
-        if (CONFIG.toggles.allCompressedBlocks) {
-            if (CONFIG.toggles.compressedBlocks.cobble) {
+        if (Ref.allCompressedBlocks) {
+            if (Ref.cobble) {
                 regItem("monuple_compressed_cobblestone", Declarer.monuple_compressed_cobblestone);
                 regBlock("monuple_compressed_cobblestone_block", Declarer.monuple_compressed_cobblestone_block);
                 regItem("couple_compressed_cobblestone", Declarer.couple_compressed_cobblestone);
@@ -350,7 +350,7 @@ public class Registrar {
                 regBlock("nonuple_compressed_cobblestone_block", Declarer.nonuple_compressed_cobblestone_block);
             }
             //compressed dirt
-            if (CONFIG.toggles.compressedBlocks.dirt) {
+            if (Ref.dirt) {
                 regItem("monuple_compressed_dirt", Declarer.monuple_compressed_dirt);
                 regBlock("monuple_compressed_dirt_block", Declarer.monuple_compressed_dirt_block);
                 regItem("couple_compressed_dirt", Declarer.couple_compressed_dirt);
@@ -371,7 +371,7 @@ public class Registrar {
                 regBlock("nonuple_compressed_dirt_block", Declarer.nonuple_compressed_dirt_block);
             }
             //compressed diorite
-            if (CONFIG.toggles.compressedBlocks.diorite) {
+            if (Ref.diorite) {
                 regItem("monuple_compressed_diorite", Declarer.monuple_compressed_diorite);
                 regBlock("monuple_compressed_diorite_block", Declarer.monuple_compressed_diorite_block);
                 regItem("couple_compressed_diorite", Declarer.couple_compressed_diorite);
@@ -392,7 +392,7 @@ public class Registrar {
                 regBlock("nonuple_compressed_diorite_block", Declarer.nonuple_compressed_diorite_block);
             }
             //compressed granite
-            if (CONFIG.toggles.compressedBlocks.granite) {
+            if (Ref.granite) {
                 regItem("monuple_compressed_granite", Declarer.monuple_compressed_granite);
                 regBlock("monuple_compressed_granite_block", Declarer.monuple_compressed_granite_block);
                 regItem("couple_compressed_granite", Declarer.couple_compressed_granite);
@@ -413,7 +413,7 @@ public class Registrar {
                 regBlock("nonuple_compressed_granite_block", Declarer.nonuple_compressed_granite_block);
             }
             //compressed andesite
-            if (CONFIG.toggles.compressedBlocks.andesite) {
+            if (Ref.andesite) {
                 regItem("monuple_compressed_andesite", Declarer.monuple_compressed_andesite);
                 regBlock("monuple_compressed_andesite_block", Declarer.monuple_compressed_andesite_block);
                 regItem("couple_compressed_andesite", Declarer.couple_compressed_andesite);
@@ -434,7 +434,7 @@ public class Registrar {
                 regBlock("nonuple_compressed_andesite_block", Declarer.nonuple_compressed_andesite_block);
             }
             //compressed netherrack
-            if (CONFIG.toggles.compressedBlocks.netherrack) {
+            if (Ref.netherrack) {
                 regItem("monuple_compressed_netherrack", Declarer.monuple_compressed_netherrack);
                 regBlock("monuple_compressed_netherrack_block", Declarer.monuple_compressed_netherrack_block);
                 regItem("couple_compressed_netherrack", Declarer.couple_compressed_netherrack);
@@ -454,7 +454,7 @@ public class Registrar {
                 regItem("nonuple_compressed_netherrack", Declarer.nonuple_compressed_netherrack);
                 regBlock("nonuple_compressed_netherrack_block", Declarer.nonuple_compressed_netherrack_block);
             }
-            if (CONFIG.toggles.compressedBlocks.sand) {
+            if (Ref.sand) {
                 regItem("monuple_compressed_sand", Declarer.monuple_compressed_sand);
                 regBlock("monuple_compressed_sand_block", Declarer.monuple_compressed_sand_block);
                 regItem("couple_compressed_sand", Declarer.couple_compressed_sand);
@@ -474,7 +474,7 @@ public class Registrar {
                 regItem("nonuple_compressed_sand", Declarer.nonuple_compressed_sand);
                 regBlock("nonuple_compressed_sand_block", Declarer.nonuple_compressed_sand_block);
             }
-            if (CONFIG.toggles.compressedBlocks.gravel) {
+            if (Ref.gravel) {
                 regItem("monuple_compressed_gravel", Declarer.monuple_compressed_gravel);
                 regBlock("monuple_compressed_gravel_block", Declarer.monuple_compressed_gravel_block);
                 regItem("couple_compressed_gravel", Declarer.couple_compressed_gravel);

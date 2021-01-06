@@ -19,6 +19,7 @@ import java.util.List;
 public class ExtraHUD {
     private final MinecraftClient client;
 
+
     public ExtraHUD() {
         client = MinecraftClient.getInstance();
         HudRenderCallback.EVENT.register((__, ___) -> this.render());
@@ -26,11 +27,6 @@ public class ExtraHUD {
 
 
     private void render() {
-        boolean military = Registrar.getConfig().clockStuff.clockMilitary;//check to see if the user wants custom settings
-        boolean doAmPm = Registrar.getConfig().clockStuff.clockAmPm;
-        boolean showSleepCount = Registrar.getConfig().sleepStuff.showSleepCount;
-        boolean showItems = Registrar.getConfig().showItems;
-        int clockCorner = Registrar.getConfig().clockStuff.clockCorner;
         //gotta get a lot of references here
         final PlayerEntity player = client.player;
         if (player == null) return;
@@ -49,7 +45,9 @@ public class ExtraHUD {
         int localMinute = LocalTime.now().getMinute();
         String amPm = "AM";
         boolean left = false;
-        if (client.options.mainArm == Arm.LEFT){left = true;}//if player left handed
+        if (client.options.mainArm == Arm.LEFT) {
+            left = true;
+        }//if player left handed
 
 
         if (time >= 24000) {//compensate for the fact that time is counted upwards forever
@@ -57,7 +55,7 @@ public class ExtraHUD {
         }
         boolean isNight = (time < 23460) && (time > 12377);//was used for sleep calculations at one point. Times are based off minecraft wiki times light level changes
 
-        if(showItems) {
+        if (Ref.showItems) {
             for (int i = 9; i < 36; i++) {//check every slot in the players inventory starting from the top left
                 ItemStack stack = inventory.getStack(i);
                 Item item = stack.getItem();
@@ -83,9 +81,9 @@ public class ExtraHUD {
                 sleeping++;
             }
         }
-        if (sleeping >= 1 && showSleepCount) {//if at least one person is sleeping and the player has the icon enabled
+        if (sleeping >= 1 && Ref.showSleepCount) {//if at least one person is sleeping and the player has the icon enabled
             int sleepAdj = 0;
-            if(clockCorner == 2){//if the clock is in the bottom left, move the sleep icon up by 8px
+            if (Ref.clockCorner == 2) {//if the clock is in the bottom left, move the sleep icon up by 8px
                 sleepAdj = 8;
             }
             itemRenderer.renderInGui(new ItemStack(Items.RED_BED), 0, scaledHeight - 18 - sleepAdj);
@@ -97,16 +95,16 @@ public class ExtraHUD {
             int total = playerEntities.size();
             textRenderer.drawWithShadow(matrixStack, sleeping + "/" + total, 20, scaledHeight - 10 - sleepAdj, color);//show how many people are sleeping
         }
-        if (localHour >=12){//show pm if after noon
-             amPm = "PM";
+        if (localHour >= 12) {//show pm if after noon
+            amPm = "PM";
         }
-        if (!military && localHour >= 13) {//convert military time to standard time if its at least 1pm and not military enabled
+        if (!Ref.clockMilitary && localHour >= 13) {//convert military time to standard time if its at least 1pm and not military enabled
             localHour = localHour - 12;
         }
         int clockPosX = 0;
         int clockPosY = 0;
         int clockAdj = 0;
-        switch (clockCorner){
+        switch (Ref.clockCorner) {
             case 0://top left
                 clockPosX = 1;
                 clockPosY = 1;
@@ -119,20 +117,21 @@ public class ExtraHUD {
                 break;
             case 2://bottom left
                 clockPosX = 1;
-                clockPosY = scaledHeight-8;
+                clockPosY = scaledHeight - 8;
                 clockAdj = 0;
                 break;
             case 3://bottom right
                 clockPosX = scaledWidth - 38;
-                clockPosY = scaledHeight-8;
+                clockPosY = scaledHeight - 8;
                 clockAdj = -12;
                 break;
         }
-
-        if (doAmPm && !military) {//positioning changes if there is AMPM on the end or not.
-            textRenderer.drawWithShadow(matrixStack, String.format("%02d", localHour) + ":" + String.format("%02d", localMinute)+amPm, clockPosX, clockPosY, 16777215);
-        } else {
-            textRenderer.drawWithShadow(matrixStack, String.format("%02d", localHour) + ":" + String.format("%02d", localMinute), clockPosX-clockAdj, clockPosY, 16777215);
+        if (Ref.doClock) {
+            if (Ref.clockAmPm && !Ref.clockMilitary) {//positioning changes if there is AMPM on the end or not.
+                textRenderer.drawWithShadow(matrixStack, String.format("%02d", localHour) + ":" + String.format("%02d", localMinute) + amPm, clockPosX, clockPosY, 16777215);
+            } else {
+                textRenderer.drawWithShadow(matrixStack, String.format("%02d", localHour) + ":" + String.format("%02d", localMinute), clockPosX - clockAdj, clockPosY, 16777215);
+            }
         }
     }
 }

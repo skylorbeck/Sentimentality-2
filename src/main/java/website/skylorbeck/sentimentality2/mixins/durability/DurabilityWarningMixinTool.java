@@ -17,13 +17,14 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import website.skylorbeck.sentimentality2.Ref;
 import website.skylorbeck.sentimentality2.Registrar;
 
 @Mixin(MiningToolItem.class)
 public abstract class DurabilityWarningMixinTool {
     @Inject(at = @At("RETURN"), method = "postMine")
     public void checkDur(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner, CallbackInfoReturnable<Boolean> cir) {
-        if (Registrar.getConfig().durabilityWarn && !world.isClient && miner instanceof PlayerEntity && state.getHardness(world, pos) != 0.0F) {
+        if (Ref.durabilityWarn && !world.isClient && miner instanceof PlayerEntity && state.getHardness(world, pos) != 0.0F) {
             int curDam = stack.getMaxDamage() - stack.getDamage();
             CompoundTag tag = stack.getOrCreateTag();
             if (curDam >= 11) {

@@ -26,7 +26,7 @@ public class ModConfig implements ConfigData {
     public durabilityStuff durabilityStuff = new durabilityStuff();*/
 
     @ConfigEntry.Gui.CollapsibleObject()
-    public cropStuff cropStuff = new cropStuff();
+    public CropStuff cropStuff = new CropStuff();
 
     @ConfigEntry.Gui.CollapsibleObject()
     clockStuff clockStuff = new clockStuff();
@@ -103,7 +103,7 @@ public class ModConfig implements ConfigData {
         public int durabilityThreshold2 = 5;
     }*/
 
-    public static class cropStuff {
+    public static class CropStuff {
         public boolean cropSparkle = true;
         public enum SparkleType {
             DRAGON_BREATH,
@@ -112,7 +112,7 @@ public class ModConfig implements ConfigData {
             HAPPY_VILLAGER,
             INSTANT_EFFECT,
         }
-        public SparkleType sparkleType = SparkleType.valueOf("INSTANT_EFFECT");
+        public SparkleType sparkleType = SparkleType.INSTANT_EFFECT; //SparkleType.valueOf("INSTANT_EFFECT");
         @ConfigEntry.BoundedDiscrete(min=1,max = 15)
         public int sparkleCount = 2;
     }
@@ -127,6 +127,7 @@ public class ModConfig implements ConfigData {
     }
 
     static class clockStuff {
+        boolean doClock = true;
         @ConfigEntry.BoundedDiscrete(max = 3)
         @ConfigEntry.Gui.Tooltip(count = 4)
         int clockCorner = 1;

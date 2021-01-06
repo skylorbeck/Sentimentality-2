@@ -18,6 +18,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import website.skylorbeck.sentimentality2.Ref;
 
 @Mixin(CrossbowItem.class)
 public abstract class DurabilityWarningMixinCrossbowItem {
@@ -28,7 +29,7 @@ public abstract class DurabilityWarningMixinCrossbowItem {
 
     @Inject(at = @At("HEAD"), method = "use")
     public void checkDur(World world, PlayerEntity user, Hand hand, CallbackInfoReturnable<TypedActionResult<ItemStack>> cir) {
-        if (!world.isClient) {
+        if (Ref.durabilityWarn && !world.isClient) {
             ItemStack itemStack = user.getStackInHand(hand);
             if (isCharged(itemStack)) {
                 BlockPos pos = user.getBlockPos();

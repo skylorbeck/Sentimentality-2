@@ -17,12 +17,13 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import website.skylorbeck.sentimentality2.Ref;
 
 @Mixin(ShearsItem.class)
 public abstract class DurabilityWarningMixinShear {
     @Inject(at = @At("RETURN"), method = "postMine")
     public void checkDur(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner, CallbackInfoReturnable<Boolean> cir) {
-        if (!world.isClient && miner instanceof PlayerEntity) {
+        if (Ref.durabilityWarn && !world.isClient && miner instanceof PlayerEntity) {
             int curDam = stack.getMaxDamage() - stack.getDamage();
             CompoundTag tag = stack.getOrCreateTag();
             if (curDam>=11){

@@ -27,6 +27,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import website.skylorbeck.sentimentality2.ItemEntityRotator;
+import website.skylorbeck.sentimentality2.Ref;
 import website.skylorbeck.sentimentality2.Registrar;
 
 import java.util.Random;
@@ -54,7 +55,7 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
 
     @Inject(at = @At("HEAD"), method = "render", cancellable = true)
     private void render(ItemEntity itemEntity, float f, float partialTicks, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, CallbackInfo ci) {
-        if (Registrar.getConfig().itemEntity) {
+        if (Ref.itemEntity) {
             ItemStack itemStack = itemEntity.getStack();
             Item item = itemStack.getItem();
             int seed = itemStack.isEmpty() ? 187 : Item.getRawId(item) + itemStack.getDamage();//seeds the random with it's own rawid and the itemstacks damage. Usually ends up being only the raw id.
