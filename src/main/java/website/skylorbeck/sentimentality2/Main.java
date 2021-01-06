@@ -1,11 +1,8 @@
 package website.skylorbeck.sentimentality2;
 
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import io.netty.buffer.Unpooled;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
-import me.sargunvohra.mcmods.autoconfig1u.ConfigHolder;
-import me.sargunvohra.mcmods.autoconfig1u.ConfigManager;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.server.ServerTickCallback;
@@ -15,8 +12,6 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 
 import java.util.Objects;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Main implements ModInitializer {
     public static final Identifier sentimentality2_get_seed= new Identifier("sentimentality2", "get_seed");

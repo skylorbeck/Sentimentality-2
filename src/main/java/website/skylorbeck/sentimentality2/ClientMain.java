@@ -4,9 +4,6 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.network.ClientSidePacketRegistry;
 import net.minecraft.util.Identifier;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class ClientMain implements ClientModInitializer {
     public static final Identifier sentimentality2_send_seed = new Identifier("sentimentality2","send_seed");
     public ExtraHUD extraHUD;

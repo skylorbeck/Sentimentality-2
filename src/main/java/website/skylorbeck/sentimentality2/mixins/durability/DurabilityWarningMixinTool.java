@@ -18,7 +18,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import website.skylorbeck.sentimentality2.Ref;
-import website.skylorbeck.sentimentality2.Registrar;
 
 @Mixin(MiningToolItem.class)
 public abstract class DurabilityWarningMixinTool {

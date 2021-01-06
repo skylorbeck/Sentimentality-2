@@ -1,10 +1,8 @@
 package website.skylorbeck.sentimentality2;
 
 import me.sargunvohra.mcmods.autoconfig1u.ConfigData;
-import me.sargunvohra.mcmods.autoconfig1u.ConfigManager;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.Config;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
-import me.shedaniel.clothconfig2.api.ConfigBuilder;
 
 @Config(name = "sentimentality2")
 public class ModConfig implements ConfigData {

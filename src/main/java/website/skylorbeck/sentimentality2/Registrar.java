@@ -1,11 +1,5 @@
 package website.skylorbeck.sentimentality2;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
-import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
-
-import me.sargunvohra.mcmods.autoconfig1u.ConfigHolder;
-import me.sargunvohra.mcmods.autoconfig1u.ConfigManager;
-import me.sargunvohra.mcmods.autoconfig1u.serializer.GsonConfigSerializer;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;

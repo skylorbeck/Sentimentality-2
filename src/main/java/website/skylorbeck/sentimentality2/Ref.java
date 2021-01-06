@@ -1,12 +1,6 @@
 package website.skylorbeck.sentimentality2;
 
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
-import me.sargunvohra.mcmods.autoconfig1u.ConfigHolder;
-import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
-import me.sargunvohra.mcmods.autoconfig1u.event.ConfigSerializeEvent;
-import net.minecraft.util.ActionResult;
-
-import java.util.logging.Logger;
 
 public class Ref {//hardcoded references for use in registration and otherwise
     public static final String MODID = "sentimentality2";
